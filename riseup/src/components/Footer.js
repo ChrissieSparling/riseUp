@@ -5,7 +5,7 @@ const Footer = () => {
 return (
     <div>
         <h1>
-            Hello, this the footer!
+            Hello, this the footer! I need updating
         </h1>
     </div>
 )
