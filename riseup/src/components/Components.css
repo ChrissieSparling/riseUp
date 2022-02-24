@@ -3,3 +3,14 @@
     color: white;
     border: 2px;
 }
+.header{
+    background-color:pink;
+    color: black;
+    border: 2px;
+}
+
+.footer{
+    background-color:green;
+    color: black;
+    border: 2px;
+}
