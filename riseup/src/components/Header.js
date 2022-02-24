@@ -4,10 +4,11 @@ import React from 'react';
 const Header = () => {
 return (
     <div>
-        <h1>
-            Hello, this the header! I need updating
-        </h1>
-    </div>
+    <h1 className="header">
+        Hello, this the content! I need to be updated
+    </h1>
+</div>
 )
 }
+
 export default Header;
