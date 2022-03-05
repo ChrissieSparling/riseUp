@@ -1,13 +1,27 @@
-import React from 'react';
-// ToDo: import any other components of styles that will be needed for this component
+import React from "react";
 
-const Footer = () => {
-return (
-    <div>
-        <h1 className="footer">
-            Hello, this the footer! I need updating
-        </h1>
+function Footer() {
+  return (
+    <div className="main-footer">
+      <div className="container">
+        <div className="row">
+          {/* Column1 */}
+          <div className="col">
+            <h4 className="list-unstyled">
+            🌻Created by: Chrissie, Denise, Heather, Nile🌻
+            </h4>
+          </div>
+          <hr />
+          <div className="row">
+            <p className="col-sm">
+              &copy;{new Date().getFullYear()} Rise Up | All rights reserved |
+              Terms Of Service | Privacy
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-)
+  );
 }
-export default Footer
+
+export default Footer;
