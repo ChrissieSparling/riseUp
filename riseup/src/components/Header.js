@@ -1,14 +1,13 @@
-import React from 'react';
-// ToDo: import any other components of styles that will be needed for this component
+import React from 'react'
 
 const Header = () => {
-return (
+  return (
     <div>
-    <h1 className="header">
-        Hello, this the content! I need to be updated
-    </h1>
-</div>
-)
+      <header>
+      <h1>Rise Up</h1>
+    </header>
+    </div>
+  )
 }
 
-export default Header;
+export default Header

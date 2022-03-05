@@ -1,0 +1,12 @@
+.main-footer {
+    width: 100%;
+    padding: 0.25em;
+    background-color: rgb(47, 47, 56);
+    color: aliceblue;
+    display: grid;
+    place-content: center;
+  } 
+
+  .list-unstyled {
+      padding-left: 10%;
+  }
