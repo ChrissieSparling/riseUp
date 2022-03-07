@@ -1,0 +1,28 @@
+.sidebar {
+  display: flex;
+  flex: 3;
+  justify-content: flex-end;
+  margin: 0 25px 40px 25px;
+}
+
+.sidebarItem {
+  background-color: rgb(224, 230, 221);
+  width: 70%;
+  height: 90%;
+  border-radius: 20px;
+  margin: 20px;
+}
+.sidebarTitle {
+  display: flex;
+  justify-content: center;
+  padding: 20px 10%;
+}
+
+.sideBtn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px 20%;
+  font-size: 20px;
+  color: rgb(100, 100, 121)
+}

@@ -1,0 +1,14 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    background-color: rgb(162, 199, 206);
+  }
+  
+  .sign {
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    border: 3px solid rgb(0, 0, 0);
+    background-color: rgb(157, 112, 219);
+  }
