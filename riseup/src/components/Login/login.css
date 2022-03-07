@@ -1,0 +1,88 @@
+.main {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 90px 0 90px 0;
+    /* background-color: rgb(255,254,224); */
+    background-color: rgb(211, 201, 211);
+    width: 100%
+  }
+  
+  .sub-main {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 60%;
+    box-shadow: 11px 12px 13px 12px rgb(46, 45, 45);
+    padding-top: 30;
+    border-radius: 30px;
+    background-color: white;
+  }
+  
+  .img {
+    padding-top: 20px;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .container-images {
+    background-color: rgb(223, 221, 223);
+    border-radius: 100px;
+    align-items: center;
+    display: flex;
+    height: 115px;
+    width: 115px;
+  }
+  
+  .logo-img {
+    height: 150px;
+    border-radius: 30px;
+  }
+  
+  input {
+    display: flex;
+    width: 75%;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 25px 0px #888;
+    border: none;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  /* .email{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    padding: 14px 0 0 25px;
+  } */
+  
+  .input-field {
+    padding-left: 70px;
+    font-size: 20px;
+  }
+  
+  .email-input {
+    padding-bottom: 20px;
+  }
+  
+  .btnLogSign {
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    /* background-color: rgb(124, 43, 199); */
+    background-color: rgb(223, 199, 16);
+    font-size: 25px;
+    border: none;
+  
+  }
+  
+  .login-btn {
+    padding-top: 20px;
+  }
+  
+  a{
+    text-decoration: none;
+    color: blue;
+  }
+  

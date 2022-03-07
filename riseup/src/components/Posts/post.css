@@ -1,0 +1,37 @@
+.posts{
+    flex: 9;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+ .post {
+     background-color: rgb(218, 228, 228);
+     width: 385px;
+     margin: 0 25px 40px 25px;
+     border-radius: 20px;
+ }
+.postInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+ 
+.postTitle {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 130px
+}
+
+.postSub {
+    font-size: 18px;
+padding: 10px
+}
+ 
+.postDate{
+    margin-top: 30px;
+    font-size: 10px;
+    padding: 5px;
+    
+}
