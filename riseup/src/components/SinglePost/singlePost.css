@@ -7,8 +7,10 @@
 }
 .singlePostWrapper {
   padding: 20px;
+
   /* padding-right: 0; */
   /* border: 1px solid black; */
+
 }
 /* Img are future dev */
 /* .imgSinglePost{
@@ -24,6 +26,7 @@
 .singlePostEdit {
   display: flex;
   justify-content: space-between;
+
   font-size: 16px;
   width: 90%;
   padding: 1vh 2vw;
