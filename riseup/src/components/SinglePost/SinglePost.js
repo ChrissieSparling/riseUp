@@ -1,7 +1,12 @@
 import React from "react";
 import "../SinglePost/singlePost.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare, faTrashCan, faComment, faHeart} from "@fortawesome/free-solid-svg-icons";
+import {
+  faPenToSquare,
+  faTrashCan,
+  faComment,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
 
 //images are a futures dev
 // import logoImg  from '../../assets/images/riseup.png'
@@ -15,32 +20,30 @@ const SinglePost = () => {
         {/* <img className="imgSinglePost" src={logoImg} alt="rise up" /> */}
         <h1 className="singlePostTitle">Title of forum</h1>
         <div className="singlePostInfo">
-          <span className="singlePostAuthor">
-            Author: <b>Heather</b>{" "}
-          </span>
-          <br />
-          <span className="singlePostAuthor">1 hour ago </span>
           <div className="singlePostEdit">
+            <span className="singlePostAuthor">
+              Author: <b>Heather</b>{" "}
+            </span>
+            
+            <span className="singlePostAuthor">1 hour ago </span>
+          </div>
           
-        </div>
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          ipsa omnis libero sint magni tempora tempore voluptas exercitationem
-          doloribus, sit neque, ratione at non dolorem molestiae ipsum et
-          veritatis ullam?
-        </p>
-        
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+            ipsa omnis libero sint magni tempora tempore voluptas exercitationem
+            doloribus, sit neque, ratione at non dolorem molestiae ipsum et
+            veritatis ullam?
+          </p>
+</div>
           <div className="singlePostCommentIcon"></div>
           <FontAwesomeIcon className="singlePostIcon" icon={faPenToSquare} />
           <FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} />
-        </div>
+        
         <div className="singlePostCommentIcon"></div>
-          <FontAwesomeIcon className="singlePostIcon" icon={faComment} />
-          <FontAwesomeIcon className="singlePostIcon" icon={faHeart} />
-        </div>
+        <FontAwesomeIcon className="singlePostIcon" icon={faComment} />
+        <FontAwesomeIcon className="singlePostIcon" icon={faHeart} />
       </div>
-    
+    </div>
   );
 };
 
