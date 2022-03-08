@@ -1,6 +1,6 @@
 import React from "react";
 import "../Login/login.css";;
-
+//make a terms of service checkbox
 function SignUp() {
   return (
     <div className="main">
@@ -18,7 +18,7 @@ function SignUp() {
               <input
                 type="text"
                 placeholder="first name"
-                className="input-field"
+                className="input-field input"
               />
             </div>
             <div className="email-input">
@@ -26,7 +26,7 @@ function SignUp() {
                 type="text"
                 placeholder="
                 last name"
-                className="input-field"
+                className="input-field input"
               />
             </div>
            
@@ -34,39 +34,39 @@ function SignUp() {
               <input
                 type="text"
                 placeholder="birthday"
-                className="input-field"
+                className="input-field input"
               />
             </div>
             <div className="email-input">
               <input
                 type="text"
                 placeholder="zip code"
-                className="input-field"
+                className="input-field input"
               />
             </div>
             
             <div className="email-input">
-              <input type="text" placeholder="email" className="input-field" />
+              <input type="text" placeholder="email" className="input-field input" />
             </div>
             <div className="email-input">
               <input
                 type="text"
                 placeholder="user name"
-                className="input-field"
+                className="input-field input"
               />
             </div>
             <div className="email-input">
               <input
                 type="text"
                 placeholder="password"
-                className="input-field"
+                className="input-field input"
               />
             </div>
             <div className="email-input">
               <input
                 type="text"
                 placeholder="confirm password"
-                className="input-field"
+                className="input-field input"
               />
             </div>
 

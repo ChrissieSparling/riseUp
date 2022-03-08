@@ -20,13 +20,13 @@ function Login() {
             <div className="email-input">
               <input type="text" 
               placeholder="email" 
-              className="input-field" />
+              className="input-field input" />
             </div>
             <div>
               <input
                 type="text"
                 placeholder="password"
-                className="input-field"
+                className="input-field input"
               />
             </div>
 
