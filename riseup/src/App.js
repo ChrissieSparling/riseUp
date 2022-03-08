@@ -11,8 +11,10 @@ import Navbar from "./components/Navbar/Navbar";
 import Forum from "./pages/Forum/Forum"
 import SingleForum from "./pages/SingleForum/SingleForum";
 import Write from "./pages/Write/Write";
+import Settings from "./pages/Settings/Settings";
 import Homepage from "./pages/Homepage/Homepage";
 import Affirmations from "./components/Affirmations/Affirmations";
+// import ForgetPass from "./components/ForgetPassword/ForgetPass";
 
 function App() {
   return (
@@ -25,9 +27,11 @@ function App() {
         <Homepage />
         <Login />
         <SignUp />
+        {/* <ForgetPass /> */}
         <Forum />
         < SingleForum />
         <Write />
+        <Settings />
         <Footer />
       </Router>
     </div>
