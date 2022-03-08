@@ -57,7 +57,8 @@ function SignUp() {
               <input
                 type="text"
                 placeholder="first name"
-                className="input-field"
+                className="input-field input"
+                
                 required
                 value={firstName}
                 onChange={e=>setFirstName(e.target.value)}
@@ -68,7 +69,8 @@ function SignUp() {
                 type="text"
                 placeholder="
                 last name"
-                className="input-field"
+                className="input-field input"
+                
                 required
                 value={lastName}
                 onChange={e=>setLastName(e.target.value)}
@@ -79,7 +81,8 @@ function SignUp() {
               <input
                 type="text"
                 placeholder="birthday"
-                className="input-field"
+                className="input-field input"
+                
                 required
                 value={birthday}
                 onChange={e=>setBirthday(e.target.value)}
@@ -89,7 +92,8 @@ function SignUp() {
               <input
                 type="text"
                 placeholder="zip code"
-                className="input-field"
+                className="input-field input"
+                
                 required
                 value={zipCode}
                 onChange={e=>setZipCode(e.target.value)}
@@ -97,9 +101,10 @@ function SignUp() {
             </div>
             
             <div className="email-input">
+  
               <input type="text" 
               placeholder="email" 
-              className="input-field" 
+              className="input-field input" 
               required
               value={email}
               onChange={e=>setEmail(e.target.value)}/>
@@ -108,7 +113,8 @@ function SignUp() {
               <input
                 type="text"
                 placeholder="user name"
-                className="input-field"
+                className="input-field input"
+                
                 required
                 value={username}
                 onChange={e=>setUsername(e.target.value)}
@@ -118,7 +124,8 @@ function SignUp() {
               <input
                 type="text"
                 placeholder="password"
-                className="input-field"
+                className="input-field input"
+                
                 required
                 value={password}
                 onChange={e=>setPassword(e.target.value)}
@@ -127,8 +134,10 @@ function SignUp() {
             <div className="email-input">
               <input
                 type="text"
+               
+                className="input-field input"
                 placeholder="role"
-                className="input-field"
+               
                 required
                 value={role}
                 onChange={e=>setRole(e.target.value)}

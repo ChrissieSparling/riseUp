@@ -1,0 +1,52 @@
+.singlePost {
+  display: flex;
+  flex: 9;
+  background-color: goldenrod;
+  border-radius: 40px;
+  margin: 20px;
+}
+.singlePostWrapper {
+  padding: 20px;
+  padding-right: 0;
+}
+/* Img are future dev */
+/* .imgSinglePost{
+    height: 300px;
+    width: 90%;
+} */
+.singlePostTitle {
+  text-align: center;
+  margin: 10px;
+  border-radius: 40px;
+}
+.singlePostEdit {
+    float: right;
+  font-size: 16px;
+  padding: 10px;
+}
+.singlePostIcon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.singlePostCommentIcon {
+  font-size: 24px;
+  padding: 10px;
+}
+
+.singlePostIcon:first-child{
+    color: teal;
+}
+
+.singlePostIcon:last-child{
+    color: tomato;
+}
+
+.singlePostInfo {
+    margin-bottom: 20px;
+    padding: 20px;
+    justify-content: space-between;
+    display: flex;
+}
+.singlePostAuthor{
+     
+}

@@ -39,7 +39,7 @@
     border-radius: 30px;
   }
   
-  input {
+  .input {
     display: flex;
     width: 75%;
     height: 50px;
