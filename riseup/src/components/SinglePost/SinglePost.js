@@ -21,29 +21,31 @@ const SinglePost = () => {
         <h1 className="singlePostTitle">Title of forum</h1>
         <div className="singlePostInfo">
           <div className="singlePostEdit">
-            <span className="singlePostAuthor">
-              Author: <b>Heather</b>{" "}
-            </span>
-            
+
+            <span className="singlePostAuthor">Author: <b>Heather</b>{" "}</span>
             <span className="singlePostAuthor">1 hour ago </span>
           </div>
-          
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            ipsa omnis libero sint magni tempora tempore voluptas exercitationem
-            doloribus, sit neque, ratione at non dolorem molestiae ipsum et
-            veritatis ullam?
-          </p>
-</div>
-          <div className="singlePostCommentIcon"></div>
-          <FontAwesomeIcon className="singlePostIcon" icon={faPenToSquare} />
-          <FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} />
-        
-        <div className="singlePostCommentIcon"></div>
+          <div className="singlePostBody">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+              ipsa omnis libero sint magni tempora tempore voluptas exercitationem
+              doloribus, sit neque, ratione at non dolorem molestiae ipsum et
+              veritatis ullam?
+            </p>
+            <div className="singlePostCommentIcon">
+              <FontAwesomeIcon className="singlePostIcon" icon={faPenToSquare} />
+              <FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} />
+            </div>
+          </div>
+        </div>
+        <div className="singlePostCommentIcon singlePostCommentBox">
         <FontAwesomeIcon className="singlePostIcon" icon={faComment} />
         <FontAwesomeIcon className="singlePostIcon" icon={faHeart} />
+        </div>
       </div>
     </div>
+    
+
   );
 };
 
