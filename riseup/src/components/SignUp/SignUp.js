@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import "../Login/login.css";
 
-function SignUp() {
+function SignUp(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
@@ -12,25 +12,25 @@ function SignUp() {
   const [zipCode, setZipCode] = useState("");
   const [user, setUser] = useState({});
 
-  const buildUser = async (e) => {
-    e.preventDefault();
-    const newUser = await setUser({
-      firstName,
-      lastName,
-      username,
-      password,
-      role,
-      email,
-      birthday,
-      zipCode,
-    });
-    // setUser(newUser);
-    if (user.firstName) {
-      console.log("==========user", user);
-    } else {
-      alert("no new user");
-    }
-  };
+  // const buildUser = async (e) => {
+  //   e.preventDefault();
+  //   const newUser = await setUser({
+  //     firstName,
+  //     lastName,
+  //     username,
+  //     password,
+  //     role,
+  //     email,
+  //     birthday,
+  //     zipCode,
+  //   });
+  //   // setUser(newUser);
+  //   if (user.firstName) {
+  //     console.log("==========user", user);
+  //   } else {
+  //     alert("no new user");
+  //   }
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -159,9 +159,9 @@ function SignUp() {
             </form>
 
             <p className="links">
-              <a href="#">login</a>
+              <a href="/" id='login' onClick={props.handleNewUser}>Login</a>
               <br />
-              <a href="#">home</a>
+              <a href="/">Home</a>
             </p>
           </div>
         </div>
