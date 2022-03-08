@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Forum from "./pages/Forum/Forum"
 import SingleForum from "./pages/SingleForum/SingleForum";
 import Write from "./pages/Write/Write";
-
+import Homepage from "./pages/Homepage/Homepage";
 function App() {
   return (
     <div className="App">
@@ -19,6 +19,7 @@ function App() {
         <Header />
         <Navbar />
         <Horoscope />
+        <Homepage />
         <Login />
         <SignUp />
         <Forum />

@@ -83,6 +83,12 @@
   
   a{
     text-decoration: none;
-    color: blue;
+    color: rgb(67, 67, 212);;
   }
-  
+  .checkbox {
+    margin-right: 10px;
+  }
+
+  .checkboxLinks {
+    color: rgb(103, 103, 228);
+  }
