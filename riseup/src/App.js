@@ -12,12 +12,15 @@ import Forum from "./pages/Forum/Forum"
 import SingleForum from "./pages/SingleForum/SingleForum";
 import Write from "./pages/Write/Write";
 import Homepage from "./pages/Homepage/Homepage";
+import Affirmations from "./components/Affirmations/Affirmations";
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
         <Navbar />
+        <Affirmations/>
         <Horoscope />
         <Homepage />
         <Login />
