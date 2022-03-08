@@ -149,9 +149,10 @@ function SignUp() {
                   onChange={(e) => setRole(e.target.value)}
                 />
               </div>
-              <label><input type="checkbox" className="checkbox">
-                
-              </input>I have read and agree to the terms of privacy and service</label>
+              <label>
+                <input type="checkbox"  className="checkbox"></input>I have read and agreed to the 
+                <a href="#" className='checkboxLinks'>Terms of Service </a>and <a href="#" className='checkboxLinks'>Privacy</a>
+              </label>
               <div className="login-btn">
                 <button className="btnLogSign">Sign Up</button>
               </div>
