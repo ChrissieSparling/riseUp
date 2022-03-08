@@ -1,0 +1,54 @@
+.settings{
+    display: flex;
+    background-color: rgb(157, 235, 235);
+}
+
+.settingsWrapper{
+    padding: 20px;
+}
+
+.settingsTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ .settingsUpdateTitle{
+     font-size: 30px;
+     margin: 20px;
+ }
+
+ .settingsDeleteTitle{
+    font-size: 14px;
+    margin: 20px;
+    color:red;
+    cursor: pointer;
+}
+.settingsForm{
+    display: flex;
+    flex-direction: column;
+}
+/* img future dev */
+/* .setingsPP{
+ } */
+
+ .settingsForm > label {
+    font-size: 20px;
+    margin-top: 20px; 
+
+ }
+
+.settingsForm > input {
+  color: rgb(199, 193, 193);
+  margin: 10px 0;
+  height: 40px;
+} 
+
+.settingsForm > button {
+    background-color: goldenrod;
+    border-radius: 30px;
+    width: 20%;
+    height: 40px;
+    font-weight: 700;
+    border: 2px solid black;
+    align-self: center;
+}

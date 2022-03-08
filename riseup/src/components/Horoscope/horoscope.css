@@ -2,13 +2,21 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
-    background-color: rgb(162, 199, 206);
-  }
+    background-image: url(../../assets/images/universe-2303321_960_720.webp);
+
+}
   
   .sign {
+    color:rgb(255, 252, 252);
     padding: 10px;
     font-size: 25px;
     cursor: pointer;
-    border: 3px solid rgb(0, 0, 0);
-    background-color: rgb(157, 112, 219);
+    border: 3px opacity 10 rgb(255, 252, 252);
+    background: linear-gradient(217deg, rgba(174, 0, 255, 0.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(0, 0, 0, 0.8), rgba(229, 233, 229, 0) 70.71%),
+    linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    border-radius: 20px;
+    width: 50%;
+    margin:5% 23%;
+    
   }

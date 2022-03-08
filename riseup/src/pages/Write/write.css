@@ -21,4 +21,5 @@ width: 70vw;
    width: 100px;
    cursor: pointer;
    font-size: 20px;
+   border: 2px solid black;
 }

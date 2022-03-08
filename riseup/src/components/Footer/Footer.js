@@ -5,8 +5,11 @@ function Footer() {
   return (
     <div className="main-footer">
       <div className="container">
+        <div className="column">
+
         <div className="row">
           {/* Column1 */}
+    
           <div className="col">
             <h4 className="list-unstyled">
             🌻Created by: Chrissie, Denise, Heather, Nile🌻
@@ -21,6 +24,7 @@ function Footer() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
