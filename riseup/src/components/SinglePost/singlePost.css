@@ -7,7 +7,8 @@
 }
 .singlePostWrapper {
   padding: 20px;
-  padding-right: 0;
+  /* padding-right: 0; */
+  /* border: 1px solid black; */
 }
 /* Img are future dev */
 /* .imgSinglePost{
@@ -18,35 +19,57 @@
   text-align: center;
   margin: 10px;
   border-radius: 40px;
+  /* border: 1px solid black; */
 }
 .singlePostEdit {
-    float: right;
+  display: flex;
+  justify-content: space-between;
   font-size: 16px;
-  padding: 10px;
+  width: 90%;
+  padding: 1vh 2vw;
+  /* border: 1px solid black; */
 }
 .singlePostIcon {
   margin-left: 10px;
   cursor: pointer;
+  /* border: 1px solid black; */
 }
 .singlePostCommentIcon {
   font-size: 24px;
   padding: 10px;
+  /* border: 1px solid black; */
 }
 
 .singlePostIcon:first-child{
     color: teal;
+    /* border: 1px solid black; */
 }
 
 .singlePostIcon:last-child{
     color: tomato;
+    /* border: 1px solid black; */
 }
 
 .singlePostInfo {
-    margin-bottom: 20px;
-    padding: 20px;
-    justify-content: space-between;
-    display: flex;
+  display: flex;
+  flex-direction: column;
+    /* margin-bottom: 20px; */
+    padding: 0 20px; 
+    /* border: 1px solid black; */
+    /* justify-content: space-between; */
+    
 }
+
+.singlePostBody {
+  display: flex;
+  /* border: 1px solid black; */
+}
+
+.singlePostCommentBox {
+  display: flex;
+  justify-content: center;
+}
+
 .singlePostAuthor{
-     
+  /* border: 1px solid black; */
 }
