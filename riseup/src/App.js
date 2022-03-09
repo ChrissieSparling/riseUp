@@ -20,6 +20,7 @@ import UserHome from "./pages/UserHome/UserHome";
 import ForumTopicHome from "./pages/ForumTopicHome/ForumTopicHome";
 import ForumTopic from "./pages/ForumTopic/ForumTopic";
 import NewPost from "./pages/NewPost/NewPost";
+import SinglePost from "./components/SinglePost/SinglePost";
 
 function App() {
   let navigate = useNavigate();
@@ -98,7 +99,8 @@ function App() {
         <Route path='/users/:id' element={<UserHome  username={username} userId={userId}/>}/>
         <Route path='/forums'element={<ForumTopicHome />}/>
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
-        <Route path='/forums/post'element={<NewPost/>}/>
+        <Route path='/forums/post/:id'element={<SingleForum/>}/>
+        <Route path='/forums/post/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
         <Route path='/story'/>
         <Route path='*'/>

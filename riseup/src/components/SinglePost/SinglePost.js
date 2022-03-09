@@ -1,4 +1,5 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom'
 import "../SinglePost/singlePost.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,8 +14,9 @@ import {
 // import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const SinglePost = (props) => {
+  let navigate = useNavigate();
   return (
-    <div className="singlePost">
+    <div className="singlePost" id={props.id} onClick={()=>props.getSinglePost(props.id)}>
       <div className="singlePostWrapper">
         {/* images are a futures dev */}
         {/* <img className="imgSinglePost" src={logoImg} alt="rise up" /> */}
