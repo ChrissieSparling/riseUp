@@ -25,6 +25,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+}
+
+.postCats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .postTitleHome {
