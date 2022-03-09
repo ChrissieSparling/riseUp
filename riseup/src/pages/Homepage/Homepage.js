@@ -3,7 +3,44 @@ import "../../pages/Homepage/homepage.css"
 import happyImg from "../../assets/images/happyFlower.webp";
 
 const HomePage = () => {
+
+  const forumTopics = [
+  {
+    topic:"Testing",
+    image: Testing
+  },
+  {
+    topic:"Motivation",
+    image: ""
+  },
+  {
+    topic:"Philosophy",
+    image: ""
+  },
+  {
+    topic:"Healing Activities",
+    image: ""
+  },
+  {
+    topic:"Homeopathic Therapies",
+    image: ""
+  },
+]
+
+
   return (
+<div className="posts ">
+  {forumTopics.map(topic=>{
+    <div className="post cursor">
+        <div className="postCats"style={{height: "100%", width: "100%",backgroundImage: `url(${topic.image})`}}>
+          <div className="title-box">
+          <span className="postTitle">{topic.topic}</span>
+          </div>
+      </div>
+    </div>
+    })}
+    {/* <div className="post cursor">
+      <div className="postInfo">
 <div className="postsHome ">
     <div className="postHome cursor">
       <div className="postInfoHome">
@@ -49,7 +86,7 @@ const HomePage = () => {
         </div>
       </div>
     </div>
-    
+     */}
     </div>
   )
 }

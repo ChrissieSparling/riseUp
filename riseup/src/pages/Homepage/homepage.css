@@ -1,6 +1,6 @@
 .postsHome {
   display: flex;
-  flex-wrap: wrap;
+ 
   margin: 20px;
   background-color: #ffd400;
 }
@@ -20,7 +20,6 @@
   height: 50%;
   margin: 5% 3% 3% 9%;
   border-radius: 20px;
-  
 }
 .postInfoHome {
   display: flex;
