@@ -1,9 +1,10 @@
 .singlePost {
   display: flex;
   flex: 9;
-  background-color: goldenrod;
+  background-color: rgb(231, 225, 235);
   border-radius: 40px;
   margin: 20px;
+  border: 5px solid purple;
 }
 .singlePostWrapper {
   padding: 20px;

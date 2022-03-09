@@ -1,6 +1,6 @@
 .write{
     padding-top: 50px;
-    background-color: green;
+    background-color: rgb(233, 196, 126);
 }
 .writeForm {
 }
@@ -10,16 +10,20 @@
     align-items: center;
 } */
 .writeInput {
+    border: 5px solid #ff7700;
     font-size: 30px;
 padding: 20px;
 width: 70vw;
+margin: 20px;
 }
 .writeSubmit {
-   background-color: goldenrod;
+    
+   background-color: #ff7700 ;
    border-radius: 90px; 
    height: 40px;
    width: 100px;
    cursor: pointer;
    font-size: 20px;
-   border: 2px solid black;
+   border: none;
+   margin: 0 20px 20px;
 }

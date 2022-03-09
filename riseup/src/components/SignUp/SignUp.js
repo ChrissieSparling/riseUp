@@ -64,9 +64,9 @@ function SignUp(props) {
 
           <div>
             <form onSubmit={handleSubmit}>
-              <h1>Sign Up</h1>
+              <h1 className="signTitle">Sign Up</h1>
 
-              <div>
+              <div className="email-input">
                 <input
                   type="text"
                   placeholder="first name"

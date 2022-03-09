@@ -1,23 +1,8 @@
 .grid {
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
-    /* grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr; */
-    width: 70%;
-    grid-gap: 0 3vw;
-    /* background-image: url(../../assets/images/universe-2303321_960_720.webp);
-    background-size: cover;
-    background-position: no-repeat; */
-    /* height: 50vh; */
-}
-
-.horoscope-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: url(../../assets/images/universe-2303321_960_720.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* background-position: top -50vh; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    background-image: url(../../assets/images/universe.webp);
 }
 
 .horoscope-box  h1 {

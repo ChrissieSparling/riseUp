@@ -37,17 +37,18 @@ const Backdrop = styled("div")`
   bottom: 0;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-tap-highlight-color: transparent;
+  background-color: rgba(0, 0, 0, .7);
+  -webkit-tap-highlight-color: solid;
 `;
 
 const style = {
   width: 400,
-  bgcolor: "white",
+  bgcolor: "#46127D",
   border: "2px solid #000",
   p: 2,
   px: 4,
   pb: 3,
+  color: "white"
 };
 
 function Horoscope() {
@@ -94,29 +95,30 @@ function Horoscope() {
         BackdropComponent={Backdrop}
       >
         <Box sx={style}>
-        <div>
-        <h5>Color:</h5>
-        {horoscopeData.color}
-      </div>
+      
       <div>
-        <h5>Date Range:</h5>
+        <h3>Date Range:</h3>
         {horoscopeData.date_range}
       </div>
       <div>
-        <h5>Description:</h5>
+        <h3>Description:</h3>
         {horoscopeData.description}
       </div>
       <div>
-        <h5>Lucky Number:</h5>
+        <h3>Lucky Number:</h3>
         {horoscopeData.lucky_number}
       </div>
       <div>
-        <h5>Lucky Time:</h5>
+        <h3>Lucky Time:</h3>
         {horoscopeData.lucky_time}
       </div>
       <div>
-        <h5>Mood:</h5>
+        <h3>Mood:</h3>
         {horoscopeData.mood}
+      </div>
+      <div>
+        <h3>Color:</h3>
+        {horoscopeData.color}
       </div>
         </Box>
       </StyledModal>

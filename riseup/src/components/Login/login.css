@@ -38,7 +38,10 @@
     height: 150px;
     border-radius: 30px;
   }
-  
+  .signTitle{
+    
+    margin-bottom: 10px;
+  }
   .input {
     display: flex;
     width: 75%;
@@ -48,6 +51,7 @@
     border: none;
     outline: none;
     background-color: #fff;
+    margin-left: 25px;
   }
   
   /* .email{
