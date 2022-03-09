@@ -1,15 +1,18 @@
-import {React, useState, useHistory} from "react";
+import {React, useState} from "react";
+import { useHistory } from "react-router-dom"
 import "../Login/login.css";
 // import '../css/login.css';
 
 // import logoImg from "../images/20210930_101003.jpg";
 // import ReactDOM from "react-dom";
 
-function Login() {
+function Login(props) {
   const [user, setUser] = useState({});
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [uname, setUname] = useState('');
   const [pass, setPass] = useState('');
+
+  let history=useHistory();
 
   const handleUNameChange = (e) => {
     e.preventDefault();
@@ -28,7 +31,7 @@ function Login() {
     // makeAllFalse();
   // }
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit (e){
     e.preventDefault()
     console.log('the button was clicked')
     console.log('==========uname', uname)
@@ -45,11 +48,15 @@ function Login() {
         })
         console.log('result',result)
         if(result.ok){
+   
           const currUser = await result.json();
           console.log('yay, you\'re logged in!!!!!!!!', currUser)
           localStorage.setItem('token', currUser.accessToken)
-          setIsLoggedIn(true);
+  
+          props.handleLoggedIn();
           setUser(currUser);
+          history.push('/forums')
+          // document.location.replace("/posts");
 
         } else {alert('Your username/password combination was incorrect')}
       } else {
@@ -63,7 +70,7 @@ function Login() {
       // }
     } catch (err) {
       console.log('There was a problem: ', err)
-      alert({message: 'there was an error: ', err})
+      alert('there was an error: ', err)
     }
   }
 
@@ -105,7 +112,7 @@ function Login() {
             <p className="links">
               <a href="#">Forgot Password</a>
               <br />
-              <a href="#">Sign Up</a>
+              <a href="/" onClick={props.handleNewUser}>Sign Up</a>
             </p>
           </div>
         </div>

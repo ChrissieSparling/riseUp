@@ -12,7 +12,7 @@ import {
 // import logoImg  from '../../assets/images/riseup.png'
 // import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 
-const SinglePost = () => {
+const SinglePost = (props) => {
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">

@@ -1,3 +1,61 @@
-.app{
-    background-color: #faa613;
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.App {
+  background-image: url(./assets/images/universe-2303321_960_720.webp)
+}
+
+.nav {
+  width: 100%;
+  height: 70px;
+  background-color: yellowgreen;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link {
+  display: flex;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  /* color: black; */
+}
+
+.topLeft {
+  display: flex;
+  padding: 0.5% 65% 1%;
+}
+
+.logoImg {
+  border-radius: 30%;
+  width: 20vw;
+  height: 15vh;
+  object-fit: cover;
+  display: flex;
+}
+
+/* .navSearchIcon {
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  margin-left: 15px;
+  display: flex;
+} */
+
+header{
+    font-size: 100px;
+    background-color: plum;
+    width: 100%;
+    height: 15vh;
+    padding: 0 0.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    place-content: center;
+  }
+  
+  .logoImg {
+    
   }
