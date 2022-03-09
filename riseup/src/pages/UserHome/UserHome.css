@@ -1,0 +1,34 @@
+.user-home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 15vh;
+}
+
+.user-home h1 {
+    text-align:center;
+    background-color:plum;
+    color: whitesmoke;
+}
+
+.user-home-btn-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.user-home-btn-box button {
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color:  rgb(223, 199, 16);
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+}

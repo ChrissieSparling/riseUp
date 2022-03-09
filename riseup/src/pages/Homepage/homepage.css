@@ -1,4 +1,5 @@
 .postsHome {
+  flex-wrap: wrap;
   display: flex;
   margin: 20px;
   background-color: #ffd400;
