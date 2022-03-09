@@ -1,8 +1,9 @@
 
 import "."
 import "../src/App.css"
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import {React, useState, useEffect} from 'react';
+import {BrowserRouter as Router, Routes, Route, Link, useNavigate} from "react-router-dom";
+import API from "./utils/API"
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Horoscope from "./components/Horoscope/Horoscope";
@@ -11,32 +12,101 @@ import SignUp from "./components/SignUp/SignUp";
 import Navbar from "./components/Navbar/Navbar";
 import Forum from "./pages/Forum/Forum"
 import SingleForum from "./pages/SingleForum/SingleForum";
-import Write from "./pages/Write/Write";
+import Write from "./pages/NewPost/NewPost";
 import Homepage from "./pages/Homepage/Homepage";
 import Affirmations from "./components/Affirmations/Affirmations"
 import Settings from "./pages/Settings/Settings"
-// import PublicHomepage from "./pages/PublicHomepage/PublicHomepage";
+import UserHome from "./pages/UserHome/UserHome";
+import ForumTopic from "./pages/ForumTopic/ForumTopic";
+import NewPost from "./pages/NewPost/NewPost";
 
 function App() {
-  // const [loggedIn, setLoggedIn] = useState(false)
+  let navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [userId, setUserId] = useState(0);
+  const [token, setToken] = useState("");
+  const [loginInfo, setLoginInfo] = useState({
+    username: '',
+    password: ''
+  })
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      API.getTokenData(token)
+        .then(data => {
+          console.log(data);
+          setUserId(data.id);
+          setUsername(data.username);
+          setToken(token);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } else {navigate('/')}
+  }, []);
+
+  async function handleLogin (e){
+    e.preventDefault()
+  console.log('login info', loginInfo)
+    API.login(loginInfo.username,loginInfo.password)
+      .then(data => {
+        console.log(data);
+        setUserId(data.id);
+        setUsername(data.username);
+        setToken(data.accessToken);
+        localStorage.setItem("token", data.accessToken);
+        navigate(`/users/${data.id}`)
+        console.log('the button was clicked')
+        console.log('==========uname', loginInfo.username)
+        console.log('==========password', loginInfo.password)
+      }).catch(err=>{
+        console.log(err);
+      });
+  };
+
+  const logMeOut = ()=>{
+    localStorage.removeItem("token");
+    setUserId(0);
+    setUsername("");
+    setToken("");
+    console.log('you\'re logged out!')
+    navigate('/')
+  }
+
+  const handleInputChange = e=>{
+    console.log(e.target.name,e.target.value)
+    setLoginInfo({
+      ...loginInfo,
+      [e.target.name]:e.target.value
+    })
+  }
 
   return (
     <div className="app">
-      
-        <Header />
-        <Navbar />
-        <Affirmations/>
-        <Login />
-        <Homepage />
-        <Forum />
-        < SingleForum />
-        <Write />
-       
-        <SignUp />
-        <Settings />
-        <Horoscope />
-        <Footer />
-      
+      <Header />
+      <Navbar />
+      {/* <Affirmations />
+      <Login />
+      <Homepage />
+      <Forum />
+      < SingleForum />
+      <Write /> */}
+      <Routes>
+        <Route path='/' element={<Homepage handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
+        <Route path='/users/:id' element={<UserHome  username={username} userId={userId}/>}/>
+        <Route path='/forums'element={<Homepage />}/>
+        <Route path='/forums/:topic'element={<ForumTopic/>}/>
+        <Route path='/forums/post'element={<NewPost/>}/>
+        <Route path='/horoscope'element={<Horoscope/>}/>
+        <Route path='/story'/>
+        <Route path='*'/>
+      </Routes>
+      {/* <SignUp />
+      <Settings />
+      <Horoscope /> */}
+      <Footer />
+
     </div>
   );
 }
