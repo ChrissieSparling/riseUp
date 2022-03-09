@@ -1,52 +1,18 @@
-.posts {
-    display: flex;
-   
-    margin: 20px;
-  }
-  .cursor:hover{
-      cursor: pointer;
-      box-shadow: 0 0 5px 5px magenta;
-  }
-  
-  .post {
-    background-color: rgb(218, 228, 228);
-    width: 300px;
-    height: 200px;
-    margin: 30px;
-    border-radius: 20px;
-  }
-  
-  .postCats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
-  .postInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .title-box {
-    height: auto;
-    background-color: rgb(240, 168, 36);
-  }
-  
-  .postTitle {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 10px;
-    font-family: 'Sansita Swashed', Verdana;
-    background-color: rgb(255, 230, 0);
-  }
-  
-  .postSub {
-    font-size: 18px;
-    padding: 10px;
-  }
-  
-  
-  
+.FT-big-box {
+  display: flex; 
+  flex-direction: column
+}
+
+.FT-title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.FT-post-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}

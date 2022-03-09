@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../pages/Homepage/homepage.css"
+import "./homepage.css"
 import happyImg from "../../assets/images/happyFlower.webp";
 import {useState} from 'react'
 import SignUp from '../../components/SignUp/SignUp'
@@ -40,7 +40,7 @@ const HomePage = (props) => {
    
     <div className="postHome cursor">
       <div className="postInfoHome">
-        <div className="postCats">
+        <div className="postCatsHome">
         <img className="flowerImg" src={happyImg} />
         <span className="postTitleHome">Philosophy</span>
           <hr/>

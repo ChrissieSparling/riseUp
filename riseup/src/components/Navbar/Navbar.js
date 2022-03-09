@@ -3,7 +3,7 @@ import "../Navbar/navbar.css";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className="navContainer">
       <div className="nav">
@@ -13,6 +13,7 @@ const Navbar = () => {
         
           {/* <img src="#" alt="profile" className="logoImg" /> */}
         </div>
+        <button onClick={props.logMeOut}>Log Out</button>
         <a className="link" href="#">
           Home
         </a>

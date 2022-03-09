@@ -3,16 +3,19 @@
  
   margin: 20px;
   background-color: #ffd400;
+  border: 1px solid black;
 }
 .cursor:hover{
     cursor: pointer;
     box-shadow: 0 0 5px 5px rgb(248, 153, 28);
+    border: 1px solid black;
 }
 
 .flowerImg {
   height: 200px;
   width: 200px;
   margin-left: 25%;
+  border: 1px solid black;
 }
 .postHome {
   background-color: rgb(240, 238, 195);
@@ -20,29 +23,34 @@
   height: 50%;
   margin: 5% 3% 3% 9%;
   border-radius: 20px;
+  border: 1px solid black;
 }
 .postInfoHome {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
   
 }
 
-.postCats {
+.postCatsHome {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
 }
 
 .postTitleHome {
   font-size: 20px;
   font-weight: 700;
-  margin:30%;
+  /* margin:30%; */
+  border: 1px solid black;
 }
 
 .postSubHome {
   font-size: 18px;
   padding: 10px;
+  border: 1px solid black;
 }
 
 

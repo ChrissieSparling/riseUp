@@ -18,19 +18,16 @@ const SinglePost = (props) => {
       <div className="singlePostWrapper">
         {/* images are a futures dev */}
         {/* <img className="imgSinglePost" src={logoImg} alt="rise up" /> */}
-        <h1 className="singlePostTitle">Title of forum</h1>
+        <h1 className="singlePostTitle">{props.title}</h1>
         <div className="singlePostInfo">
           <div className="singlePostEdit">
 
             <span className="singlePostAuthor">Author: <b>Heather</b>{" "}</span>
-            <span className="singlePostAuthor">1 hour ago </span>
+            <span className="singlePostAuthor">{props.createdAt}</span>
           </div>
           <div className="singlePostBody">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-              ipsa omnis libero sint magni tempora tempore voluptas exercitationem
-              doloribus, sit neque, ratione at non dolorem molestiae ipsum et
-              veritatis ullam?
+            <p className="singlePostBody-p">
+            {props.body}
             </p>
             <div className="singlePostCommentIcon">
               <FontAwesomeIcon className="singlePostIcon" icon={faPenToSquare} />
