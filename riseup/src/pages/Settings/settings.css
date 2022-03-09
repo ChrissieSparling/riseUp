@@ -1,6 +1,105 @@
-.settings{
+.main {
+    text-align: center;
+    justify-content: center;
     display: flex;
-    background-color: rgb(157, 235, 235);
+    padding: 90px 0 90px 0;
+    /* background-color: rgb(255,254,224); */
+    background-color: rgb(211, 201, 211);
+    width: 100%
+  }
+  
+  .sub-main {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 60%;
+    box-shadow: 11px 12px 13px 12px rgb(46, 45, 45);
+    padding-top: 30;
+    border-radius: 30px;
+    background-color: white;
+  }
+  
+  .img {
+    padding-top: 20px;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .container-images {
+    background-color: rgb(223, 221, 223);
+    border-radius: 100px;
+    align-items: center;
+    display: flex;
+    height: 115px;
+    width: 115px;
+  }
+  
+  .logo-img {
+    height: 150px;
+    border-radius: 30px;
+  }
+  
+  .inputUpdate {
+    display: flex;
+    width: 75%;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 25px 0px #888;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+  
+  /* .email{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    padding: 14px 0 0 25px;
+  } */
+  
+  .input-field {
+    padding-left: 70px;
+    font-size: 20px;
+  }
+  
+  .updateInput {
+    padding-bottom: 20px;
+  }
+  
+  .updateBtn {
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    /* background-color: rgb(124, 43, 199); */
+    background-color: rgb(223, 199, 16);
+    font-size: 25px;
+    border:none;
+    margin-bottom: 10px;
+  }
+  
+  .login-btn {
+    padding-top: 20px;
+  }
+  
+  a{
+    text-decoration: none;
+    color: rgb(82, 82, 233);
+  }
+
+  .checkbox {
+    margin-right: 5px;
+  }
+  
+
+  .checkboxLinks {
+    color: rgb(103, 103, 228);
+  }
+
+/* .settings{
+    display: flex;
+    background-color: rgb(211, 201, 211);
 }
 
 .settingsWrapper{
@@ -11,10 +110,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
  .settingsUpdateTitle{
      font-size: 30px;
      margin: 20px;
+     text-align: center;
  }
 
  .settingsDeleteTitle{
@@ -22,16 +123,13 @@
     margin: 20px;
     color:red;
     cursor: pointer;
-}
-.settingsForm{
-    display: flex;
-    flex-direction: column;
-}
+} */
+
 /* img future dev */
 /* .setingsPP{
  } */
 
- .settingsForm > label {
+ /* .settingsForm > label {
     font-size: 20px;
     margin-top: 20px; 
 
@@ -39,8 +137,16 @@
 
 .settingsForm > input {
   color: rgb(199, 193, 193);
-  margin: 10px 0;
+  margin-left:  100%;
   height: 40px;
+  display: flex;
+  width: 75%;
+  height: 50px;
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 25px 0px #888;
+  border: none;
+  outline: none;
+  background-color: #fff;
 } 
 
 .settingsForm > button {
@@ -51,4 +157,4 @@
     font-weight: 700;
     border: 2px solid black;
     align-self: center;
-}
+}  */

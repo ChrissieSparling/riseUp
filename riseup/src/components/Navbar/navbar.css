@@ -6,7 +6,7 @@
 .nav {
   width: 100%;
   height: 70px;
-  background-color: yellowgreen;
+  background-color:rgb(228, 135, 85) ;
   display: flex;
   justify-content: flex-end;
 }
@@ -16,6 +16,7 @@
   padding: 10px;
   text-decoration: none;
   font-size: 20px;
+  color:gold
   /* color: black; */
 }
 

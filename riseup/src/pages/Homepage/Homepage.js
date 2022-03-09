@@ -1,46 +1,51 @@
 import React from 'react'
 import "../../pages/Homepage/homepage.css"
+import happyImg from "../../assets/images/happyFlower.webp";
 
 const HomePage = () => {
   return (
-<div className="posts ">
-    <div className="post cursor">
-      <div className="postInfo">
+<div className="postsHome ">
+    <div className="postHome cursor">
+      <div className="postInfoHome">
         <div className="postCats">
-        <span className="postTitle">Motivations</span>
+          <img className="flowerImg" src={happyImg} />
+        <span className="postTitleHome">Motivations</span>
           <hr/>
          
-          <p className="postSub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
+          <p className="postSubHome">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
         </div>
       </div>
     </div>
-    <div className="post cursor">
-      <div className="postInfo">
+    <div className="postHome cursor">
+      <div className="postInfoHome">
         <div className="postCats">
-        <span className="postTitle">Philosophy</span>
+        <img className="flowerImg" src={happyImg} />
+        <span className="postTitleHome">Philosophy</span>
           <hr/>
         
-          <p className="postSub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
+          <p className="postSubHome">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
         </div>
       </div>
     </div>
-    <div className="post cursor">
-      <div className="postInfo">
+    <div className="postHome cursor">
+      <div className="postInfoHome">
         <div className="postCats">
-          <span className="postTitle">Healing Activities</span>
+        <img className="flowerImg" src={happyImg} />
+          <span className="postTitleHome">Healing Activities</span>
           <hr/>
           
-          <p className="postSub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
+          <p className="postSubHome">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
         </div>
       </div>
     </div>
-    <div className="post cursor">
-      <div className="postInfo">
+    <div className="postHome cursor">
+      <div className="postInfoHome">
         <div className="postCats">
-        <span className="postTitle">Homeopathic Therapies</span>
+        <img className="flowerImg" src={happyImg} />
+        <span className="postTitleHome">HomeopathicTherapies</span>
           <hr/>
           
-          <p className="postSub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
+          <p className="postSubHome">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
         </div>
       </div>
     </div>

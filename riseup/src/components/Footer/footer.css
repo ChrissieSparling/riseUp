@@ -1,17 +1,23 @@
-.affirmations-container {
+.main-footer {
     width: 100%;
     height: 50%;
     padding: 0.25em;
-    background: linear-gradient(#c956e6, #5eda5e);
-    color: rgb(0, 0, 0);
+    background-color: rgb(47, 47, 56);
+    color: aliceblue;
     display: grid;
     place-content: center;
   } 
 
-.affTitle {
-    text-align: center;
-}
-.affWords {
-    text-align: center;
-    margin: 20px;
-}
+  .list-unstyled {
+      padding-left: 10%;
+  }
+
+  .footTag {
+      color: lightblue;
+  }
+
+  .links {
+      margin: 5px;
+      justify-content: space-between;
+      
+  }

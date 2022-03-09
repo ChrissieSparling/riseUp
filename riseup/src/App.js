@@ -1,5 +1,6 @@
 
 import "."
+import "../src/App.css"
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header/Header";
@@ -18,20 +19,22 @@ import Affirmations from "./components/Affirmations/Affirmations";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
         <Header />
         <Navbar />
         <Affirmations/>
-        <Horoscope />
+        
         <Homepage />
-        <Login />
-        <SignUp />
+        
         {/* <ForgetPass /> */}
         <Forum />
         < SingleForum />
         <Write />
+        <Login />
+        <SignUp />
         <Settings />
+        <Horoscope />
         <Footer />
       </Router>
     </div>
