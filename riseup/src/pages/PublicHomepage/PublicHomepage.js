@@ -1,15 +1,16 @@
 import './PublicHomepage.css'
 import {React, useState} from 'react'
-import { Redirect } from "react-router-dom"
+import { Redirect, Route, useLocation } from "react-router-dom"
 import SignUp from '../../components/SignUp/SignUp'
 import Login from '../../components/Login/Login'
 
 const PublicHomepage = () => {
+    const location = useLocation();
     const [loggedIn, setLoggedIn] = useState(false)
     const [newUser, setNewUser] = useState(false)
 
     if (loggedIn) {
-        return <Redirect to="/posts" />
+        return <Redirect to={{pathname: "/forums"}} />
     }
 
 

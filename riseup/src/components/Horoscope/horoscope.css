@@ -1,9 +1,30 @@
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
-    background-image: url(../../assets/images/universe-2303321_960_720.webp);
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+    /* grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr; */
+    width: 70%;
+    grid-gap: 0 3vw;
+    /* background-image: url(../../assets/images/universe-2303321_960_720.webp);
+    background-size: cover;
+    background-position: no-repeat; */
+    /* height: 50vh; */
+}
 
+.horoscope-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../../assets/images/universe-2303321_960_720.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: top -50vh; */
+}
+
+.horoscope-box  h1 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  font-family: 'Sansita Swashed', Verdana;
 }
   
   .sign {
@@ -16,7 +37,7 @@
     linear-gradient(127deg, rgba(0, 0, 0, 0.8), rgba(229, 233, 229, 0) 70.71%),
     linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
     border-radius: 20px;
-    width: 50%;
-    margin:5% 23%;
+    width: 100%;
+    margin:1.5vh;
     
   }

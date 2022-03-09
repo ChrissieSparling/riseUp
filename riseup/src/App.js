@@ -34,7 +34,7 @@ function App() {
         </div>
      
        
-        {/* <Link to="/forum-home">Forum Home</Link> */}
+        {/* <Link to="/forums">Forum Home</Link> */}
         {/* <Link to="/">Logout</Link> */}
         {/* <Link to="/">Edit My Info</Link> */}
         {/* <Link to="/">Manatee</Link> */}
@@ -43,21 +43,21 @@ function App() {
       
         {/* <Header /> */}
         {/* <Navbar /> */}
-        <Horoscope />
+      <Horoscope />
         {/* <Homepage /> */}
         <PublicHomepage /> 
         {/* <SignUp /> */}
         {/* <Forum />
         < SingleForum />
         <Write /> */}
-        <Footer />
+   
       <Switch>
         {/* <Route path=""></Route> */}
         {/* <Route path="/forum"><Forum/></Route> */}
-        <Route path="/posts" element={<Homepage/>}/>
-        <Route path="/" element={<App/>}/>
+        <Route path="/forums" children={<Homepage/>}/>
+        <Route path="/" children={<PublicHomepage/>}/>
       </Switch>
- 
+      <Footer />
     </div>
   );
 }

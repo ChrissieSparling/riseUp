@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-// import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import "../Login/login.css";
 // import '../css/login.css';
 
@@ -12,7 +12,7 @@ function Login(props) {
   const [uname, setUname] = useState('');
   const [pass, setPass] = useState('');
 
-  // let history=useHistory();
+  let history=useHistory();
 
   const handleUNameChange = (e) => {
     e.preventDefault();
@@ -48,14 +48,15 @@ function Login(props) {
         })
         console.log('result',result)
         if(result.ok){
-          // history.push('/posts')
+   
           const currUser = await result.json();
           console.log('yay, you\'re logged in!!!!!!!!', currUser)
           localStorage.setItem('token', currUser.accessToken)
   
           props.handleLoggedIn();
           setUser(currUser);
-          document.location.replace("/posts");
+          history.push('/forums')
+          // document.location.replace("/posts");
 
         } else {alert('Your username/password combination was incorrect')}
       } else {
