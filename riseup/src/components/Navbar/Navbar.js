@@ -5,13 +5,41 @@ import "../Navbar/navbar.css";
 
 const Navbar = () => {
   return (
-    <div className="navContainer">
+    <nav>
+      <div className="container">
+      <h1>heather</h1>
+      <div className="menu">
+        <a href="#" className="is-active">
+          Home
+        </a>
+        <a href="#">About</a>
+        <a href="#">Horoscope</a>
+        <a href="#">To Do List</a>
+        <a href="#">Login</a>
+        <a href="#">Smerthing</a>
+      </div>
+
+      <button className="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+// work, family, personal wellness, finacial, relationship, recovery
+
+{
+  /* <div className="navContainer">
       <div className="nav">
         <div className="topLeft">
-          {/* <FontAwesomeIcon className="searchIcon" icon={faMagnifyingGlass} /> */}
+          
           <input className="search" placeholder="Search" type="text" />
         
-          {/* <img src="#" alt="profile" className="logoImg" /> */}
         </div>
         <a className="link" href="#">
           Home
@@ -32,10 +60,5 @@ const Navbar = () => {
           Login
         </a>
       </div>
-    </div>
-  );
-};
-
-export default Navbar;
-
-// work, family, personal wellness, finacial, relationship, recovery
+      </div> */
+}

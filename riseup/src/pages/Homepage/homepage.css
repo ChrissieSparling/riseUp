@@ -1,6 +1,5 @@
 .postsHome {
   display: flex;
- 
   margin: 20px;
   background-color: #ffd400;
 }
@@ -10,21 +9,23 @@
 }
 
 .flowerImg {
-  height: 200px;
+  height:200px;
   width: 200px;
-  margin-left: 25%;
+  margin-left: 15%;
 }
 .postHome {
+  display: flex;
   background-color: rgb(240, 238, 195);
-  width: 35%;
+  width: 30%;
   height: 50%;
-  margin: 5% 3% 3% 9%;
+  margin: 1%;
   border-radius: 20px;
 }
 .postInfoHome {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .postTitleHome {
@@ -38,4 +39,16 @@
   padding: 10px;
 }
 
+.homeTags {
+ justify-content: space-between;
+align-content: center;
+border: 2px solid blueviolet;
+}
 
+.homeLogin {
+border: 2px solid black;
+}
+.homeSign {
+  
+  border: 2px solid black;
+}

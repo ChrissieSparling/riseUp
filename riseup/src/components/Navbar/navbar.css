@@ -1,4 +1,18 @@
-.navContainer {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+
+
+/* .navContainer {
   width: 100%;
   height: 100%;
 
@@ -17,7 +31,7 @@
   text-decoration: none;
   font-size: 20px;
   color: gold;
-  /* color: black; */
+  
 }
 
 .topLeft {
@@ -25,14 +39,7 @@
   padding: 0.5% 65% 1%;
 }
 
-/* .logoImg {
-  border-radius: 30%;
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  display: flex;
-  margin: 0 200%;
-} */
+
 
 .searchIcon {
   font-size: 18px;
@@ -41,4 +48,4 @@
   display: flex;
   position: relative;
   min-width: 100px;
-}
+} */

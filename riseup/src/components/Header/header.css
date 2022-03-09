@@ -1,7 +1,8 @@
 .header{
   font-size: 100px;
   background-image: linear-gradient(rgb(224, 230, 173), rgb(228, 135, 85));
-  width: calc(100% - 2px);
+  width: 100%;
+  height: 30%;
   padding: 0 0.25em;
   display: flex;
   justify-content: space-between;
@@ -14,5 +15,5 @@
   height: 400px;
   width: 650px;
   margin-right: 10%;
-
+margin-left: 15%;
 }
