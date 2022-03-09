@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-import { useHistory } from "react-router-dom"
+
 import "../Login/login.css";
 // import '../css/login.css';
 
@@ -12,7 +12,7 @@ function Login(props) {
   const [uname, setUname] = useState('');
   const [pass, setPass] = useState('');
 
-  let history=useHistory();
+  
 
   const handleUNameChange = (e) => {
     e.preventDefault();
@@ -55,7 +55,7 @@ function Login(props) {
   
           props.handleLoggedIn();
           setUser(currUser);
-          history.push('/forums')
+         
           // document.location.replace("/posts");
 
         } else {alert('Your username/password combination was incorrect')}

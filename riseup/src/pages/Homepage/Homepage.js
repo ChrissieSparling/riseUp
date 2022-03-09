@@ -7,7 +7,7 @@ const HomePage = () => {
   const forumTopics = [
   {
     topic:"Testing",
-    image: Testing
+   
   },
   {
     topic:"Motivation",
