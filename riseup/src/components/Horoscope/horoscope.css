@@ -3,13 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
     background-image: url(../../assets/images/universe.webp);
-}
-
-.horoscope-box  h1 {
-  font-size: 3rem;
-  color: white;
-  text-align: center;
-  font-family: 'Sansita Swashed', Verdana;
+width: 100%;
 }
   
   .sign {

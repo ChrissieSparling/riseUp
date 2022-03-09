@@ -13,14 +13,16 @@ import Forum from "./pages/Forum/Forum"
 import SingleForum from "./pages/SingleForum/SingleForum";
 import Write from "./pages/Write/Write";
 import Homepage from "./pages/Homepage/Homepage";
-import PublicHomepage from "./pages/PublicHomepage/PublicHomepage";
+import Affirmations from "./components/Affirmations/Affirmations"
+import Settings from "./pages/Settings/Settings"
+// import PublicHomepage from "./pages/PublicHomepage/PublicHomepage";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false)
+  // const [loggedIn, setLoggedIn] = useState(false)
 
   return (
     <div className="app">
-
+      
         <Header />
         <Navbar />
         <Affirmations/>
@@ -34,7 +36,7 @@ function App() {
         <Settings />
         <Horoscope />
         <Footer />
- 
+      
     </div>
   );
 }
