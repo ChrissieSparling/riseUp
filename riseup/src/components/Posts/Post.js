@@ -5,7 +5,7 @@ import "../Posts/post.css";
 const Post = () => {
   return (
       <div className="posts">
-    <div className="post">
+    <div className="post cursors">
       <div className="postInfo">
         <div className="postCats">
         <span className="postTitle">Subject 1</span>
@@ -15,7 +15,7 @@ const Post = () => {
         </div>
       </div>
     </div>
-    <div className="post">
+    <div className="post cursors">
       <div className="postInfo">
         <div className="postCats">
         <span className="postTitle">Subject 2</span>
@@ -25,7 +25,7 @@ const Post = () => {
         </div>
       </div>
     </div>
-    <div className="post">
+    <div className="post cursors">
       <div className="postInfo">
         <div className="postCats">
           <span className="postTitle">Subject 3</span>
@@ -35,7 +35,7 @@ const Post = () => {
         </div>
       </div>
     </div>
-    <div className="post">
+    <div className="post cursors">
       <div className="postInfo">
         <div className="postCats">
         <span className="postTitle">Subject 4</span>

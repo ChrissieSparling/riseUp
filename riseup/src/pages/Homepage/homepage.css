@@ -1,33 +1,40 @@
-.posts {
+.postsHome {
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
+  background-color: #ffd400;
 }
 .cursor:hover{
     cursor: pointer;
-    box-shadow: 0 0 5px 5px magenta;
+    box-shadow: 0 0 5px 5px rgb(248, 153, 28);
 }
 
-.post {
-  background-color: rgb(218, 228, 228);
-  width: 385px;
-  margin: 0 25px 40px 25px;
+.flowerImg {
+  height: 200px;
+  width: 200px;
+  margin-left: 25%;
+}
+.postHome {
+  background-color: rgb(240, 238, 195);
+  width: 35%;
+  height: 50%;
+  margin: 5% 3% 3% 9%;
   border-radius: 20px;
   
 }
-.postInfo {
+.postInfoHome {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.postTitle {
-  font-size: 30px;
+.postTitleHome {
+  font-size: 20px;
   font-weight: 700;
-  margin: 0 130px;
+  margin:30%;
 }
 
-.postSub {
+.postSubHome {
   font-size: 18px;
   padding: 10px;
 }

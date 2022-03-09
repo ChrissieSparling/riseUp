@@ -1,14 +1,17 @@
 import React from "react";
 import "../Navbar/navbar.css";
-// import navImg from "./images/20210930_100350.jpg";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="navContainer">
       <div className="nav">
         <div className="topLeft">
-          {/* <i className="fa-solid fa-magnifying-glass navSearchIcon"></i> */}
-          <img src="#" alt="profile" className="logoImg" />
+          {/* <FontAwesomeIcon className="searchIcon" icon={faMagnifyingGlass} /> */}
+          <input className="search" placeholder="Search" type="text" />
+        
+          {/* <img src="#" alt="profile" className="logoImg" /> */}
         </div>
         <a className="link" href="#">
           Home
@@ -16,7 +19,9 @@ const Navbar = () => {
         <a className="link" href="#">
           Horoscope
         </a>
-        <a className="link" href="#"></a>
+        <a className="link" href="#">
+          Planner
+        </a>
         <a className="link" href="#">
           About
         </a>
@@ -32,3 +37,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// work, family, personal wellness, finacial, relationship, recovery

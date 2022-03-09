@@ -1,23 +1,25 @@
-.main-footer {
-    width: 100%;
-    height: 50%;
-    padding: 0.25em;
-    background-color: rgb(47, 47, 56);
-    color: aliceblue;
-    display: grid;
-    place-content: center;
-  } 
-
-  .list-unstyled {
-      padding-left: 10%;
-  }
-
-  .footTag {
-      color: lightblue;
-  }
-
-  .links {
-      margin: 5px;
-      justify-content: space-between;
-      
-  }
+.affirmations-container {
+  width: 100%;
+  height: 100%;
+  padding: 0.25em;
+  background-image: url(../../assets/images/sunrisesss.jpeg);
+  background-size: 100%;
+  color: rgb(0, 0, 0);
+  display: grid;
+  place-content: center;
+}
+.affJumbo {
+  padding: 10px;
+  border-radius: 20px;
+  border: 5px solid #ffd400;
+  width: 75%;
+  margin: 5% 13%;
+  background-color: rgb(240, 238, 195);
+}
+.affTitle {
+  text-align: center;
+}
+.affWords {
+  text-align: center;
+  margin: 20px;
+}

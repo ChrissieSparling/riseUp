@@ -4,11 +4,17 @@
     flex-wrap: wrap;
     margin: 20px;
 }
+.cursors:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px 5px rgb(61, 5, 67);
+}
  .post {
-     background-color: rgb(218, 228, 228);
+   
+     background-color: rgb(231, 225, 235);
      width: 385px;
      margin: 0 25px 40px 25px;
      border-radius: 20px;
+     border: 5px solid purple
  }
 .postInfo {
     display: flex;
