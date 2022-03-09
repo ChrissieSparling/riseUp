@@ -24,11 +24,12 @@ function App() {
         <Header />
         <Navbar />
         <Affirmations/>
+        <Login />
         <Homepage />
         <Forum />
         < SingleForum />
         <Write />
-        <Login />
+       
         <SignUp />
         <Settings />
         <Horoscope />

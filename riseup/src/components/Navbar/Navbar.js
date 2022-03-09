@@ -37,3 +37,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// work, family, personal wellness, finacial, relationship, recovery

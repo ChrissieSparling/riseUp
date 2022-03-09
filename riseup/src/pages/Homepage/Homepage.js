@@ -31,7 +31,7 @@ const HomePage = () => {
       <div className="postInfoHome">
         <div className="postCats">
         <img className="flowerImg" src={happyImg} />
-          <span className="postTitleHome">Healing Activities</span>
+          <span className="postTitleHome">Inspirations</span>
           <hr/>
           
           <p className="postSubHome">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
@@ -42,7 +42,7 @@ const HomePage = () => {
       <div className="postInfoHome">
         <div className="postCats">
         <img className="flowerImg" src={happyImg} />
-        <span className="postTitleHome">HomeopathicTherapies</span>
+        <span className="postTitleHome">Aspirations</span>
           <hr/>
           
           <p className="postSubHome">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
