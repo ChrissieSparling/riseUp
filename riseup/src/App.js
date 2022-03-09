@@ -24,10 +24,7 @@ function App() {
         <Header />
         <Navbar />
         <Affirmations/>
-        
         <Homepage />
-        
-        {/* <ForgetPass /> */}
         <Forum />
         < SingleForum />
         <Write />
