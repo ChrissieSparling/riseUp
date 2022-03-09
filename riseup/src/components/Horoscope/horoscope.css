@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
     background-image: url(../../assets/images/universe.webp);
-
+width: 100%;
 }
   
   .sign {
