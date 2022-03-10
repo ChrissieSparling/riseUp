@@ -1,29 +1,29 @@
 .postsHome {
+  flex-wrap: wrap;
   display: flex;
- 
   margin: 20px;
   background-color: #ffd400;
   border: 1px solid black;
 }
-.cursor:hover{
+.cursorHome:hover{
     cursor: pointer;
     box-shadow: 0 0 5px 5px rgb(248, 153, 28);
     border: 1px solid black;
 }
 
 .flowerImg {
-  height: 200px;
+  height:200px;
   width: 200px;
-  margin-left: 25%;
-  border: 1px solid black;
+  margin-left: 30%;
 }
 .postHome {
+  display: flex;
   background-color: rgb(240, 238, 195);
-  width: 35%;
   height: 50%;
-  margin: 5% 3% 3% 9%;
+  width: 40%;
+  margin: 2% 1% 2% 6%;
   border-radius: 20px;
-  border: 1px solid black;
+  border:3px solid rgb(248, 153, 28)
 }
 .postInfoHome {
   display: flex;
@@ -33,18 +33,12 @@
   
 }
 
-.postCatsHome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
-}
-
 .postTitleHome {
   font-size: 20px;
   font-weight: 700;
-  /* margin:30%; */
-  border: 1px solid black;
+  margin:30%;
+  padding-left: 10%;
+  text-align: center;
 }
 
 .postSubHome {
@@ -53,4 +47,13 @@
   border: 1px solid black;
 }
 
+@media (min-width: 913px){
+ .MuiAccordion-root {
+  display: none}
+}
 
+@media (max-width: 912px){
+  .postsHome {
+    display: none;
+  }
+}
