@@ -1,7 +1,9 @@
 import { React, useState } from "react";
 import "../Login/login.css";
+import {useNavigate} from "react-router-dom";
 
 function SignUp(props) {
+  let navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
@@ -33,6 +35,8 @@ function SignUp(props) {
   // };
 
   const handleSubmit = (e) => {
+    
+
     e.preventDefault();
     fetch("http://localhost:3005/users/new", {
       method: "POST",
@@ -49,7 +53,10 @@ function SignUp(props) {
       }),
     })
       .then((data) => data.json())
-      .then((newData) => console.log(newData));
+      .then((newData) => {
+      console.log(newData)
+      navigate(`/users/${newData.id}`)
+      });
   };
 
   return (

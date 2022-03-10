@@ -14,7 +14,7 @@ const ForumHome = () => {
       navigate(`/forums/post/${id}`)
       console.log('id', id)
     }
-    
+    console.log(topic)
     useEffect(()=>{
         console.log(topic)
         fetch(`http://localhost:3005/posts/forum/${topic}`,{
@@ -36,8 +36,8 @@ const ForumHome = () => {
     return (
         <div className="FT-big-box">
             <div className='FT-title-box'>
-                <h1>{topic} Forum Page</h1>
-                <button onClick={()=> navigate('/forums/post/new')}>Make New Post</button>
+               {topic!=="undefined" ? <h1>{topic} Forum Page</h1> : null}
+                <button onClick={()=> navigate(`/forums/post/${topic}/new`)}>Make New Post</button>
             </div>
             <div className="FT-post-box">
             {posts.length ? (posts.map(p=>{
@@ -45,7 +45,7 @@ const ForumHome = () => {
                 <SinglePost getSinglePost={getSinglePost} id={p.id} title={p.title} body={p.body} createdAt={p.createdAt}/>
                 // <li className='list-group-item' style={{width: "40vw"}} key={p.id}><h1>{p.title}</h1><p>{p.topic}</p><p>{p.body}</p><p>User: {p.userId}</p></li>
                 )
-            })) : <li>No posts to display!</li>}
+            })) : <h1 className="nothing-to-show">No posts to display!</h1>}
             </div>
         </div>
     )

@@ -2,7 +2,7 @@ import {React, useState, useEffect} from 'react'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import "../SingleForum/singleForum.css"
 import SinglePost from '../../components/SinglePost/SinglePost'
-import {useParams, useNavigate} from 'react-router-dom'
+import {useParams, useNavigate, Link} from 'react-router-dom'
 
 const SingleForum = () => {
   let {id} = useParams();
@@ -29,8 +29,9 @@ const SingleForum = () => {
     
   return (
     <div className=" singleForum">
-      <SinglePost title={post.title} id={post.id} body={post.body} createdAt={post.createdAt} getSinglePost={'return'}/>
-      <Sidebar />
+      <button className="SF-home-btn"><Link to={`/forums/${post.topic}`}>Return to Topic</Link></button>
+      <SinglePost title={post.title} id={post.id} username={post.user.username}body={post.body} createdAt={post.createdAt} getSinglePost={'return'}/>
+      {/* <Sidebar /> */}
     </div>
   )
 }

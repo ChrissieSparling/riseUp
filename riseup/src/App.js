@@ -21,6 +21,7 @@ import ForumTopicHome from "./pages/ForumTopicHome/ForumTopicHome";
 import ForumTopic from "./pages/ForumTopic/ForumTopic";
 import NewPost from "./pages/NewPost/NewPost";
 import SinglePost from "./components/SinglePost/SinglePost";
+import Test from './components/SignUp/test'
 
 function App() {
   let navigate = useNavigate();
@@ -54,14 +55,16 @@ function App() {
     API.login(loginInfo.username,loginInfo.password)
       .then(data => {
         console.log(data);
-        setUserId(data.id);
-        setUsername(data.username);
-        setToken(data.accessToken);
-        localStorage.setItem("token", data.accessToken);
-        navigate(`/users/${data.id}`)
-        console.log('the button was clicked')
-        console.log('==========uname', loginInfo.username)
-        console.log('==========password', loginInfo.password)
+        if(data.accessToken){
+          setUserId(data.id);
+          setUsername(data.username);
+          setToken(data.accessToken);
+          localStorage.setItem("token", data.accessToken);
+          navigate(`/users/${data.id}`)
+          console.log('the button was clicked')
+          console.log('==========uname', loginInfo.username)
+          console.log('==========password', loginInfo.password)
+        } else {alert('Your username or password was incorrect!')}
       }).catch(err=>{
         console.log(err);
       });
@@ -88,6 +91,7 @@ function App() {
     <div className="app">
       <Header />
       <Navbar logMeOut={logMeOut}/>
+      {/* <Test></Test> */}
       {/* <Affirmations />
       <Login />
       <Homepage />
@@ -100,7 +104,8 @@ function App() {
         <Route path='/forums'element={<ForumTopicHome />}/>
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
         <Route path='/forums/post/:id'element={<SingleForum/>}/>
-        <Route path='/forums/post/new'element={<NewPost/>}/>
+        
+        <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
         <Route path='/story'/>
         <Route path='*'/>

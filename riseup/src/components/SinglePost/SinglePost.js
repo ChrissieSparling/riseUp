@@ -24,7 +24,7 @@ const SinglePost = (props) => {
         <div className="singlePostInfo">
           <div className="singlePostEdit">
 
-            <span className="singlePostAuthor">Author: <b>Heather</b>{" "}</span>
+            <span className="singlePostAuthor">Author: <b>{props.username}</b>{" "}</span>
             <span className="singlePostAuthor">{props.createdAt}</span>
           </div>
           <div className="singlePostBody">

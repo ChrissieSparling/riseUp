@@ -2,16 +2,34 @@ import {React, useState, useEffect} from 'react'
 import './UserHome.css'
 import UserHomeMenu from '../../components/UserHomeMenu/UserHomeMenu'
 import ForumTopicHome from '../ForumTopic/ForumTopic'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 
-const UserHome = (props) => {
+const UserHome = () => {
     let navigate = useNavigate();
+    let {id} = useParams();
+    const [posts, setPosts] = useState([])
     const [username, setUsername] = useState('')
     const [userId, setUserId] = useState('')
 
     useEffect(()=>{
-        setUsername(props.username);
-        setUserId(props.userId)
+        console.log(id)
+        fetch(`http://localhost:3005/users/${id}`,{
+            method: 'GET',
+            headers: {
+                'x-access-token': localStorage.getItem('token'),
+            },
+        })
+        .then(response => response.json())
+        .then(responseJson => {
+        console.log('=================userData', responseJson)
+          setUsername(responseJson.username)
+          setUserId(responseJson.id)
+        }).catch(err=>{
+            console.log(err)
+            alert(`There was an error: ${err}`)
+        })
+        // setUsername(username);
+        // setUserId(userId)
     }, [])
     // const [getForum, setGetForum] = useState(false)
     // const [getToDos, setGetToDos] = useState(false)

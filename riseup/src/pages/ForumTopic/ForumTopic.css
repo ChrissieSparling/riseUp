@@ -16,3 +16,13 @@
   align-items: center;
   /* flex-wrap: wrap; */
 }
+
+.nothing-to-show {
+  margin: 20px;
+  padding: 10px;
+  font-family: Verdana;
+  font-size: 2.5rem;
+  /* color: darkslategray; */
+  border: 3px solid rgb(240, 168, 36);
+  background-color: rgb(255, 230, 0);
+}
