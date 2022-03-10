@@ -13,22 +13,22 @@ const Navbar = (props) => {
           <input className="inputNav" type="text" />
         </div>
         <div className="menuNav">
-          <a className="navA is-active" href="#">
+          <a className="navA is-active" href="/">
             Home
           </a>
           <a className="navA" href="#">
             About
           </a>
-          <a className="navA" href="#">
+          <a className="navA" href="/horoscope">
             Horoscope
           </a>
           <a className="navA" href="/crisis">
             Crisis Links
           </a>
-          <a className="navA" href="#">
+          <a className="navA" href="/users/login">
             Login
           </a>
-          <a className="navA" href="#">
+          <a className="navA" onClick={props.logMeOut}>
             Logout
           </a>
         </div>
