@@ -1,5 +1,5 @@
-import React from "react";
-import "../../pages/Homepage/homepage.css";
+import React from 'react'
+import "./homepage.css"
 import happyImg from "../../assets/images/happyFlower.webp";
 import { useState } from "react";
 import Affirmations from "../../components/Affirmations/Affirmations";

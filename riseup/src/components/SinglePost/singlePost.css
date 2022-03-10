@@ -1,11 +1,16 @@
 .singlePost {
   display: flex;
-  flex: 9;
+  /* flex: 9; */
+
   background-color: rgb(231, 225, 235);
   border-radius: 40px;
   margin: 20px;
   border: 5px solid purple;
+  height: 300px;
+  width: 900px;
 }
+
+
 .singlePostWrapper {
   padding: 20px;
 
@@ -33,26 +38,8 @@
   padding: 1vh 2vw;
   /* border: 1px solid black; */
 }
-.singlePostIcon {
-  margin-left: 10px;
-  cursor: pointer;
-  /* border: 1px solid black; */
-}
-.singlePostCommentIcon {
-  font-size: 24px;
-  padding: 10px;
-  /* border: 1px solid black; */
-}
 
-.singlePostIcon:first-child{
-    color: teal;
-    /* border: 1px solid black; */
-}
 
-.singlePostIcon:last-child{
-    color: tomato;
-    /* border: 1px solid black; */
-}
 
 .singlePostInfo {
   display: flex;
@@ -66,12 +53,14 @@
 
 .singlePostBody {
   display: flex;
+  /* min-width: 300px; */
   /* border: 1px solid black; */
 }
 
-.singlePostCommentBox {
+.singlePostBody-p {
   display: flex;
-  justify-content: center;
+  min-width: 300px;
+  /* border: 1px solid black; */
 }
 
 .singlePostAuthor{

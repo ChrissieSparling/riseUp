@@ -3,7 +3,7 @@ import "../Navbar/navbar.css";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav>
       <div className="containerNav">
@@ -54,6 +54,7 @@ export default Navbar;
           <input className="search" placeholder="Search" type="text" />
         
         </div>
+        <button onClick={props.logMeOut}>Log Out</button>
         <a className="link" href="#">
           Home
         </a>

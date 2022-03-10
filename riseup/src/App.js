@@ -17,8 +17,12 @@ import Homepage from "./pages/Homepage/Homepage";
 import Affirmations from "./components/Affirmations/Affirmations"
 import Settings from "./pages/Settings/Settings"
 import UserHome from "./pages/UserHome/UserHome";
+import ForumTopicHome from "./pages/ForumTopicHome/ForumTopicHome";
 import ForumTopic from "./pages/ForumTopic/ForumTopic";
 import NewPost from "./pages/NewPost/NewPost";
+import SinglePost from "./components/SinglePost/SinglePost";
+import Test from './components/SignUp/test'
+import EditPost from "./pages/EditPost/EditPost";
 
 function App() {
   let navigate = useNavigate();
@@ -30,21 +34,21 @@ function App() {
     password: ''
   })
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      API.getTokenData(token)
-        .then(data => {
-          console.log(data);
-          setUserId(data.id);
-          setUsername(data.username);
-          setToken(token);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    } else {navigate('/')}
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     API.getTokenData(token)
+  //       .then(data => {
+  //         console.log(data);
+  //         setUserId(data.id);
+  //         setUsername(data.username);
+  //         setToken(token);
+  //       })
+  //       .catch(err => {
+  //         console.log(err);
+  //       });
+  //   } else {navigate('/')}
+  // }, []);
 
   async function handleLogin (e){
     e.preventDefault()
@@ -52,14 +56,16 @@ function App() {
     API.login(loginInfo.username,loginInfo.password)
       .then(data => {
         console.log(data);
-        setUserId(data.id);
-        setUsername(data.username);
-        setToken(data.accessToken);
-        localStorage.setItem("token", data.accessToken);
-        navigate(`/users/${data.id}`)
-        console.log('the button was clicked')
-        console.log('==========uname', loginInfo.username)
-        console.log('==========password', loginInfo.password)
+        if(data.accessToken){
+          setUserId(data.id);
+          setUsername(data.username);
+          setToken(data.accessToken);
+          localStorage.setItem("token", data.accessToken);
+          navigate(`/users/${data.id}`)
+          console.log('the button was clicked')
+          console.log('==========uname', loginInfo.username)
+          console.log('==========password', loginInfo.password)
+        } else {alert('Your username or password was incorrect!')}
       }).catch(err=>{
         console.log(err);
       });
@@ -85,7 +91,8 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Navbar />
+      <Navbar logMeOut={logMeOut}/>
+      {/* <Test></Test> */}
       {/* <Affirmations />
       <Login />
       <Homepage />
@@ -95,9 +102,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
         <Route path='/users/:id' element={<UserHome  username={username} userId={userId}/>}/>
-        <Route path='/forums'element={<Homepage />}/>
+        <Route path='/forums'element={<ForumTopicHome />}/>
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
-        <Route path='/forums/post'element={<NewPost/>}/>
+        <Route path='/forums/post/:id'element={<SingleForum/>}/>
+        <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
+        
+        <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
         <Route path='/story'/>
         <Route path='*'/>
