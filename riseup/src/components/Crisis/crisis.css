@@ -1,0 +1,46 @@
+.crisisBackground {
+  background-color: #24b5b2;
+}
+
+.crisis {
+    display: flex;
+    flex: 3;
+    justify-content: center;
+    margin: 0 25px 40px 25px;
+  }
+  
+  .crisisBox {
+    background-color: #bddddd;
+    width: 40%;
+    height: 90%;
+    border-radius: 20px;
+    /* margin: 20px; */
+    border: 5px solid #12706f;
+  }
+  .crisisTitle {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10%;
+  }
+  
+  .crisisBtn {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-size: 20px;
+    color: rgb(100, 100, 121)
+  }
+  
+.crisisLink {
+  text-decoration: none;
+  color: rgb(68, 68, 111);
+}
+
+
+  .crisisDesc {
+    display: flex;
+   margin-bottom: 20px;
+    justify-content: center;
+    font-size: 18px;
+    
+  }

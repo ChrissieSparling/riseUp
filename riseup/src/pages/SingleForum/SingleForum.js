@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react'
-import Sidebar from '../../components/Sidebar/Sidebar'
+
 import "../SingleForum/singleForum.css"
 import SinglePost from '../../components/SinglePost/SinglePost'
 import { useParams, useNavigate, Link } from 'react-router-dom'
@@ -59,7 +59,7 @@ const SingleForum = () => {
             <div className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /></div>
           </div>
       <button onClick={() => navigate(`/forums/post/${post.id}`)} className="SF-home-btn">Edit Post</button>
-      {/* <Sidebar /> */}
+     
 
     </div>
   )

@@ -1,5 +1,6 @@
 import React from "react";
 import "../Navbar/navbar.css";
+
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
@@ -21,8 +22,8 @@ const Navbar = (props) => {
           <a className="navA" href="#">
             Horoscope
           </a>
-          <a className="navA" href="#">
-            Stuff
+          <a className="navA" href="/crisis">
+            Crisis Links
           </a>
           <a className="navA" href="#">
             Login
