@@ -45,6 +45,28 @@ const SingleForum = () => {
     navigate(`/forums/edit/post/${post.id}`)
   }
 
+  const deletePost = e => {
+    e.preventDefault();
+    if(window.confirm('This will remove your post from the forum, do you want to proceed?')){
+      console.log(post.id);
+      fetch(`http://localhost:3005/posts/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'x-access-token': localStorage.getItem('token'),
+        },
+      })
+        .then(response => response.json())
+        .then(responseJson => {
+
+          console.log('=================postData', responseJson)
+          navigate(`/forums/${post.topic}`)
+        }).catch(err => {
+          console.log(err)
+          alert(`There was an error: ${err}`)
+        })
+    } else { return }
+  }
+
   return (
     <div className=" singleForum">
       <button onClick={() => navigate(`/forums/${post.topic}`)} className="SF-home-btn">Return to Topic</button>
@@ -52,15 +74,13 @@ const SingleForum = () => {
       <SinglePost title={post.title} id={post.id} body={post.body} createdAt={post.createdAt} getSinglePost={'return'} />
       <div className="singlePostCommentIcon">
         <div onClick={goEdit} className="first-icon icon" ><FontAwesomeIcon className="singlePostIcon" icon={faPenToSquare} /></div>
-        <div className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} /></div>
+        <div onClick={deletePost} className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} /></div>
       </div>
       <div className="singlePostCommentIcon singlePostCommentBox">
-            <div className="first-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /></div>
-            <div className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /></div>
-          </div>
-      <button onClick={() => navigate(`/forums/post/${post.id}`)} className="SF-home-btn">Edit Post</button>
+        <div className="first-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /></div>
+        <div className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /></div>
+      </div>
       {/* <Sidebar /> */}
-
     </div>
   )
 }
