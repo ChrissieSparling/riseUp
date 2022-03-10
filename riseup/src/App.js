@@ -34,21 +34,23 @@ function App() {
     password: ''
   })
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     API.getTokenData(token)
-  //       .then(data => {
-  //         console.log(data);
-  //         setUserId(data.id);
-  //         setUsername(data.username);
-  //         setToken(token);
-  //       })
-  //       .catch(err => {
-  //         console.log(err);
-  //       });
-  //   } else {navigate('/')}
-  // }, []);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      API.getTokenData(token)
+        .then(data => {
+          console.log(data);
+          setUserId(data.id);
+          setUsername(data.username);
+          setToken(token);
+          // navigate(`/users/${userId}`)
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } 
+    // else {navigate('/users/login')}
+  }, []);
 
   async function handleLogin (e){
     e.preventDefault()
@@ -92,15 +94,9 @@ function App() {
     <div className="app">
       <Header />
       <Navbar logMeOut={logMeOut}/>
-      {/* <Test></Test> */}
-      {/* <Affirmations />
-      <Login />
-      <Homepage />
-      <Forum />
-      < SingleForum />
-      <Write /> */}
       <Routes>
-        <Route path='/' element={<Homepage handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
+        <Route path='/' element={<Homepage />}/>
+        <Route path='/users/login' element={<Login handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
         <Route path='/users/:id' element={<UserHome  username={username} userId={userId}/>}/>
         <Route path='/forums'element={<ForumTopicHome />}/>
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
@@ -112,9 +108,6 @@ function App() {
         <Route path='/story'/>
         <Route path='*'/>
       </Routes>
-      {/* <SignUp />
-      <Settings />
-      <Horoscope /> */}
       <Footer />
 
     </div>

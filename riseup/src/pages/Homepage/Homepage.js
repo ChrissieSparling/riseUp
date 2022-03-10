@@ -6,16 +6,7 @@ import Affirmations from "../../components/Affirmations/Affirmations";
 import Accordion from "../../components/Accordion/Accordion";
 
 const HomePage = (props) => {
-  const [newUser, setNewUser] = useState(false);
 
-  const handleNewUser = (e) => {
-    e.preventDefault();
-    if (e.target.id === "login") {
-      setNewUser(false);
-    } else {
-      setNewUser(true);
-    }
-  };
 
   return (
     <div>

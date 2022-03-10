@@ -1,78 +1,19 @@
 import {React, useState} from "react";
 
 import "../Login/login.css";
-// import '../css/login.css';
 
-// import logoImg from "../images/20210930_101003.jpg";
-// import ReactDOM from "react-dom";
 
 function Login(props) {
-  // const [user, setUser] = useState({});
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [uname, setUname] = useState('');
-  // const [pass, setPass] = useState('');
+  const [newUser, setNewUser] = useState(false);
 
-  
-
-  // const handleUNameChange = (e) => {
-  //   e.preventDefault();
-  //   setUname(e.target.value);
-  // }
-
-  // const handlePassChange = (e) => {
-  //   e.preventDefault();
-  //   setPass(e.target.value)
-  // }
-
-  // const handleLogOut = e => {
-  //   e.preventDefault();
-  //   localStorage.removeItem('token')
-  //   setIsLoggedIn(false);
-    // makeAllFalse();
-  // }
-
-  // async function handleSubmit (e){
-  //   e.preventDefault()
-  //   console.log('the button was clicked')
-  //   console.log('==========uname', uname)
-  //   console.log('==========password', pass)
-    // const {uname, pass} = document.forms[0]
-    // try{
-    //   if(uname && pass){
-    //     const result = await fetch('http://localhost:3005/users/login',{
-    //       method: 'POST',
-    //       headers: {
-    //           'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify({username: uname, password: pass}),
-    //     })
-    //     console.log('result',result)
-    //     if(result.ok){
-   
-    //       const currUser = await result.json();
-    //       console.log('yay, you\'re logged in!!!!!!!!', currUser)
-    //       localStorage.setItem('token', currUser.accessToken)
-  
-    //       props.handleLoggedIn();
-    //       setUser(currUser);
-         
-          // document.location.replace("/posts");
-
-      //   } else {alert('Your username/password combination was incorrect')}
-      // } else {
-      //   alert('Fill out both username and password');
-      //   return;
-      // }
-      // else if (!pass){
-      //   setErrorMessages({ name: "pass", message: errors.pass });
-      // } else {
-      //   setErrorMessages({ name: "uname", message: errors.uname });
-      // }
-  //   } catch (err) {
-  //     console.log('There was a problem: ', err)
-  //     alert('there was an error: ', err)
-  //   }
-  // }
+  const handleNewUser = (e) => {
+    e.preventDefault();
+    if (e.target.id === "login") {
+      setNewUser(false);
+    } else {
+      setNewUser(true);
+    }
+  };
 
 
   return (
@@ -114,7 +55,7 @@ function Login(props) {
             <p className="links">
               <a href="#">Forgot Password</a>
               <br />
-              <a href="/" id="sign-up" onClick={props.handleNewUser}>Sign Up</a>
+              <a href="/" id="sign-up" onClick={handleNewUser}>Sign Up</a>
             </p>
           </div>
         </div>
