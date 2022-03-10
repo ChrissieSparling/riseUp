@@ -5,7 +5,8 @@
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    margin-top: 15vh;
+    padding-top: 15vh;
+    background-color:rgb(240, 238, 195);
 }
 
 .user-home h1 {
