@@ -26,3 +26,29 @@
 .SF-home-btn:hover {
     cursor: pointer;
 }
+.singlePostIcon {
+    margin-left: 10px;
+    cursor: pointer;
+    /* border: 1px solid black; */
+  }
+  .singlePostCommentIcon {
+    font-size: 24px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+  }
+
+.icon {
+    margin: 0 30px;
+}
+
+  .first-icon{
+      color: teal;
+      /* border: 1px solid black; */
+  }
+  
+  .last-icon{
+      color: tomato;
+    
+  }

@@ -38,26 +38,8 @@
   padding: 1vh 2vw;
   /* border: 1px solid black; */
 }
-.singlePostIcon {
-  margin-left: 10px;
-  cursor: pointer;
-  /* border: 1px solid black; */
-}
-.singlePostCommentIcon {
-  font-size: 24px;
-  padding: 10px;
-  /* border: 1px solid black; */
-}
 
-.singlePostIcon:first-child{
-    color: teal;
-    /* border: 1px solid black; */
-}
 
-.singlePostIcon:last-child{
-    color: tomato;
-    /* border: 1px solid black; */
-}
 
 .singlePostInfo {
   display: flex;
@@ -79,11 +61,6 @@
   display: flex;
   min-width: 300px;
   /* border: 1px solid black; */
-}
-
-.singlePostCommentBox {
-  display: flex;
-  justify-content: center;
 }
 
 .singlePostAuthor{

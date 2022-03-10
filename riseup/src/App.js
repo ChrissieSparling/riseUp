@@ -22,6 +22,7 @@ import ForumTopic from "./pages/ForumTopic/ForumTopic";
 import NewPost from "./pages/NewPost/NewPost";
 import SinglePost from "./components/SinglePost/SinglePost";
 import Test from './components/SignUp/test'
+import EditPost from "./pages/EditPost/EditPost";
 
 function App() {
   let navigate = useNavigate();
@@ -104,6 +105,7 @@ function App() {
         <Route path='/forums'element={<ForumTopicHome />}/>
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
         <Route path='/forums/post/:id'element={<SingleForum/>}/>
+        <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
         
         <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
