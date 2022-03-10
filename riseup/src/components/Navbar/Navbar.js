@@ -6,24 +6,37 @@ import "../Navbar/navbar.css";
 const Navbar = () => {
   return (
     <nav>
-      <div className="container">
-      <h1>heather</h1>
-      <div className="menu">
-        <a href="#" className="is-active">
-          Home
-        </a>
-        <a href="#">About</a>
-        <a href="#">Horoscope</a>
-        <a href="#">To Do List</a>
-        <a href="#">Login</a>
-        <a href="#">Smerthing</a>
-      </div>
+      <div className="containerNav">
+        <div className="searchNav">
+          <button className="searchNavBtn">Search</button>
+          <input className="inputNav" type="text" />
+        </div>
+        <div className="menuNav">
+          <a className="navA is-active" href="#">
+            Home
+          </a>
+          <a className="navA" href="#">
+            About
+          </a>
+          <a className="navA" href="#">
+            Horoscope
+          </a>
+          <a className="navA" href="#">
+            Stuff
+          </a>
+          <a className="navA" href="#">
+            Login
+          </a>
+          <a className="navA" href="#">
+            Logout
+          </a>
+        </div>
 
-      <button className="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <button className="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
   );

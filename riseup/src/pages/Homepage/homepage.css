@@ -4,7 +4,7 @@
   margin: 20px;
   background-color: #ffd400;
 }
-.cursor:hover{
+.cursorHome:hover{
     cursor: pointer;
     box-shadow: 0 0 5px 5px rgb(248, 153, 28);
 }
@@ -12,15 +12,16 @@
 .flowerImg {
   height:200px;
   width: 200px;
-  margin-left: 15%;
+  margin-left: 30%;
 }
 .postHome {
   display: flex;
   background-color: rgb(240, 238, 195);
-  width: 30%;
   height: 50%;
-  margin: 1%;
+  width: 40%;
+  margin: 2% 1% 2% 6%;
   border-radius: 20px;
+  border:3px solid rgb(248, 153, 28)
 }
 .postInfoHome {
   display: flex;
@@ -33,6 +34,8 @@
   font-size: 20px;
   font-weight: 700;
   margin:30%;
+  padding-left: 10%;
+  text-align: center;
 }
 
 .postSubHome {
@@ -40,16 +43,13 @@
   padding: 10px;
 }
 
-.homeTags {
- justify-content: space-between;
-align-content: center;
-border: 2px solid blueviolet;
+@media (min-width: 913px){
+ .MuiAccordion-root {
+  display: none}
 }
 
-.homeLogin {
-border: 2px solid black;
-}
-.homeSign {
-  
-  border: 2px solid black;
+@media (max-width: 912px){
+  .postsHome {
+    display: none;
+  }
 }

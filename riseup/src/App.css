@@ -2,7 +2,9 @@
   box-sizing: border-box;
   margin: 0;
 }
-
+.app{
+  background-color: rgb(248, 101, 2);
+}
 
 .nav {
   width: 100%;
