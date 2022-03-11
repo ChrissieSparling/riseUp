@@ -72,6 +72,7 @@
   
   .todo-input.edit {
     border: 2px solid #616283;
+    color:#868686;
   }
   
   .todo-button.edit {
