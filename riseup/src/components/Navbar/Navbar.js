@@ -12,7 +12,7 @@ const Navbar = (props) => {
           <input className="inputNav" type="text" />
         </div>
         <div className="menuNav">
-          <a className="navA is-active" href="/">
+          <a className="navA is-active" href={props.id==='' ? '/' : `/users/${props.id}`}>
             Home
           </a>
           <a className="navA" href="#">
@@ -26,6 +26,9 @@ const Navbar = (props) => {
           </a>
           <a className="navA" href="/users/login">
             Login
+          </a>
+          <a className="navA" href="/signup">
+            Sign Up
           </a>
           <a className="navA" onClick={props.logMeOut}>
             Logout
