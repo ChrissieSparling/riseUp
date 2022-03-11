@@ -3,18 +3,13 @@
     flex-direction: column;
     margin: 20px;
     width: 100%;
-  }
-
-  .FT-title-box h1{
-    font-family: 'Sansita Swashed', Verdana;
-    font-size: 3.5rem;
-    color: whitesmoke;
-    text-shadow: 1px 1px 6px black;
+    background-color: rgb(248, 153, 28);;
   }
 
   .FHpost-cursor:hover{
       cursor: pointer;
-      box-shadow: 0 0 5px 5px rgb(240, 168, 36);
+      box-shadow: 0 0 5px 5px #ffe100;
+      
   
   }
 
@@ -23,9 +18,10 @@
       height: 250px;
       margin: 30px;
       border-radius: 20px;
-      border: 1px solid black;
+      border: 3px solid rgb(248, 101, 2);
       background-size: cover;
       background-repeat: no-repeat;
+      background-color: rgb(235, 211, 167);
   }
   
   .FHpostCats {

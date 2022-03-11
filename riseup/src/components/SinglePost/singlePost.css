@@ -2,10 +2,10 @@
   display: flex;
   /* flex: 9; */
 
-  background-color: rgb(231, 225, 235);
+  background-color: rgb(235, 211, 167);
   border-radius: 40px;
   margin: 20px;
-  border: 5px solid purple;
+  border: 5px solid rgb(248, 101, 2);
   height: 300px;
   width: 900px;
 }
@@ -13,16 +13,8 @@
 
 .singlePostWrapper {
   padding: 20px;
-
-  /* padding-right: 0; */
-  /* border: 1px solid black; */
-
 }
-/* Img are future dev */
-/* .imgSinglePost{
-    height: 300px;
-    width: 90%;
-} */
+
 .singlePostTitle {
   text-align: center;
   margin: 10px;

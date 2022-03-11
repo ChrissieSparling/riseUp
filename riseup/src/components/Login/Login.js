@@ -8,8 +8,8 @@ function Login(props) {
   let navigate = useNavigate();
 
   return (
-    <div className="main">
-      <div className="sub-main">
+    <div className="mainLogin">
+      <div className="sub-main-login">
         <div>
           <div className="img">
             <div className="container-image">
@@ -17,14 +17,14 @@ function Login(props) {
             </div>
           </div>
           <div>
-            <h1>Login</h1>
+            <h1 className="loginTitle">Login</h1>
             <div className="email-input">
               <input type="text" 
               placeholder="username" 
               onChange={props.handleInputChange}
               value={props.loginInfo.username}
               name="username"
-              className="input-field input" />
+              className="input-field inputLogin" />
             </div>
             <div>
               <input
@@ -33,7 +33,7 @@ function Login(props) {
                 value={props.loginInfo.password}
                 placeholder="password"
                 name="password"
-                className="input-field input"
+                className="input-field inputLogin"
               />
             </div>
 
@@ -43,7 +43,7 @@ function Login(props) {
               type="submit">Login</button>
             </div>
 
-            <p className="links">
+            <p className="linksLogin">
               <a href="#">Forgot Password</a>
               New Here?
               <a href="/signup" id="sign-up">Sign Up</a>
