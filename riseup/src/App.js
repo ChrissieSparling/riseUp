@@ -23,6 +23,7 @@ import NewPost from "./pages/NewPost/NewPost";
 import SinglePost from "./components/SinglePost/SinglePost";
 import Test from './components/SignUp/test'
 import EditPost from "./pages/EditPost/EditPost";
+import Crisis from "./components/Crisis/Crisis";
 
 function App() {
   let navigate = useNavigate();
@@ -94,6 +95,14 @@ function App() {
     <div className="app">
       <Header />
       <Navbar logMeOut={logMeOut}/>
+
+      {/* <Test></Test> */}
+      {/* <Affirmations />
+      <Login />
+      <Homepage />
+      <Forum />
+      < SingleForum />
+      <Write /> */}
       <Routes>
         <Route path='/' element={<Homepage />}/>
         <Route path='/users/login' element={<Login handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
@@ -106,7 +115,10 @@ function App() {
         <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
         <Route path='/story'/>
+
+        <Route path='/crisis'element={<Crisis/>}/>
         <Route path='*'/>
+
       </Routes>
       <Footer />
 

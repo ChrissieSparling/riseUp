@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react'
-import Sidebar from '../../components/Sidebar/Sidebar'
+
 import "../SingleForum/singleForum.css"
 import SinglePost from '../../components/SinglePost/SinglePost'
 import { useParams, useNavigate, Link } from 'react-router-dom'
@@ -97,6 +97,7 @@ const SingleForum = (props) => {
         <div onClick={deletePost} className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} /></div>
       </div>) :
       <div className="singlePostCommentIcon singlePostCommentBox">
+
         <div className="first-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /></div>
         <div className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /></div>
       </div> }
