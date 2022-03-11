@@ -27,6 +27,11 @@ function Footer() {
               </p>
             </div>
           </div>
+          <div>
+          <SocialIcon network="instagram" bgColor="#fffff" style={{ height: 25, width: 25 }} target="_blank" url="https://www.instagram.com/weriseuptoday/" />
+          <SocialIcon network="spotify" bgColor="#fffff" style={{ height: 25, width: 25 }} target="_blank" url="https://open.spotify.com/user/31wpgbh5wy6ar4oh4q5z6ex4ctji" />
+          <SocialIcon network="twitter" bgColor="#fffff" style={{ height: 25, width: 25 }} target="_blank" url="https://twitter.com/weriseuptoday" />
+          </div>
         </div>
       </div>
     </div>
