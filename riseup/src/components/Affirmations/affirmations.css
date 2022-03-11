@@ -14,7 +14,8 @@
   border: 5px solid #ffd400;
   width: 75%;
   margin: 5% 13%;
-  background-color: rgb(240, 238, 195);
+  background-color: linear-gradient(to top, #fab1b6, #ffa28e, rgb(250, 231, 157),rgb(166, 210, 240),rgb(210, 210, 255));
+  
 }
 .affTitle {
   text-align: center;
@@ -22,4 +23,31 @@
 .affWords {
   text-align: center;
   margin: 20px;
+}
+.affirmations {
+  display: flex;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px 5px 20px 5px;
+  border: 5px solid rgb(240, 238, 195) #ffd400;
+  background-color: #ffd400;
+}
+.affirmations .visitor-btn {
+  border-top: 2%;
+  box-sizing: 30px;
+  border-radius: 10px 5 5 10px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0% 5% 10% 2%;
+  background-color: rgb(161, 248, 161);
+  color: rgb(9, 37, 27);
+  
+
+}
+
+.affirmations:hover{
+  filter: brightness(60%); 
+
+
 }

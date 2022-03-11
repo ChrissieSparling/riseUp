@@ -21,6 +21,7 @@ import ForumTopicHome from "./pages/ForumTopicHome/ForumTopicHome";
 import ForumTopic from "./pages/ForumTopic/ForumTopic";
 import NewPost from "./pages/NewPost/NewPost";
 import SinglePost from "./components/SinglePost/SinglePost";
+import AffPage from "./pages/AffirmationPage/AffPage";
 
 import EditPost from "./pages/EditPost/EditPost";
 import Crisis from "./components/Crisis/Crisis";
@@ -166,7 +167,8 @@ function App() {
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
         <Route path='/forums/post/:id'element={<SingleForum username={username} userId={userId}/>}/>
         <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
-        
+        {/* route for affirmation page */}
+        <Route path='/affirmations/:topic'element={<AffPage/>}/>
         <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
         <Route path='/story'/>
