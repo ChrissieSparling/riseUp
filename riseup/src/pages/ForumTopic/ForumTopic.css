@@ -9,6 +9,22 @@
   align-items: center;
   justify-content: center;
 }
+.FT-title-box h1 {
+  font-family: 'Sansita Swashed', Verdana;
+  font-size: 3.5rem;
+  color: whitesmoke;
+  text-shadow: 1px 1px 5px black;
+}
+
+.FT-title-box p {
+  margin: 10px;
+  margin-top: 10px;
+  width: 70vw;
+  line-height: 2rem;;
+  color: slategray;
+  font-family: Verdana;
+  font-size: 1.5rem;
+}
 
 .FT-post-box {
   display: flex;
@@ -25,4 +41,18 @@
   /* color: darkslategray; */
   border: 3px solid rgb(240, 168, 36);
   background-color: rgb(255, 230, 0);
+}
+
+.FT-btn {
+  background-color: #ff7700 ;
+  border-radius: 90px; 
+  margin: 10px 10px;
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+}
+
+.TF {
+  width: 175px;
 }
