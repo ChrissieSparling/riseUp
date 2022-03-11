@@ -1,10 +1,15 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import "../Navbar/navbar.css";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = (props) => {
+  const [navUID, setNavUID] = useState('')
+  useEffect(()=>{
+    setNavUID(props.id);
+  })
+ 
   return (
     <nav>
       <div className="containerNav">
@@ -13,7 +18,7 @@ const Navbar = (props) => {
           <input className="inputNav" type="text" />
         </div>
         <div className="menuNav">
-          <a className="navA is-active" href={props.id==='' ? '/' : `/users/${props.id}`}>
+          <a className="navA is-active" href={navUID==='' ? '/' : `/users/${navUID}`}>
             Home
           </a>
           <a className="navA" href="#">

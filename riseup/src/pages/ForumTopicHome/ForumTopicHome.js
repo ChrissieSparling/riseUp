@@ -9,11 +9,11 @@ import { flexbox } from '@mui/system'
 const ForumTopicHome = () => {
   let navigate = useNavigate();
     const forumTopics = [
-        {
-            topic: "Testing",
-            image: Sunrise,
-            description: 'Testing, testing, testing...'
-        },
+        // {
+        //     topic: "Testing",
+        //     image: Sunrise,
+        //     description: 'Testing, testing, testing...'
+        // },
         {
             topic: "Family",
             image: Sunrise,
@@ -42,7 +42,7 @@ const ForumTopicHome = () => {
         {
             topic: "Crisis Recovery and Grieving",
             image: Sunrise,
-            description: 'Everyone goes through hard times in their life. It\'s something that none of us can get away from. The only thing we can truly control is our reaction to them. Whether what happens is something minor, or something that rocks your existence, come in here if you\'re looking for help finding your center, new peace, or at least getting a foot on the path forward.'
+            description: 'Everyone goes through hard times in their life. The only thing we can truly control is our reaction to them. Whether what happens is something minor, or something that rocks your world, come in here if you\'re looking for help getting a foot on the path forward.'
         },
     ]
 

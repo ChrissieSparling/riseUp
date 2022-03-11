@@ -9,10 +9,19 @@
     background-color:rgb(240, 238, 195);
 }
 
-.user-home h1 {
+.user-welcome {
     text-align:center;
     background-color:plum;
     color: whitesmoke;
+}
+
+.user-post-list {
+    border: 2px solid orange;
+}
+
+.user-post-title {
+    background-color: none;
+    color: black;
 }
 
 .user-home-btn-box{
