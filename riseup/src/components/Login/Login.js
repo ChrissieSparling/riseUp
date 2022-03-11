@@ -43,7 +43,7 @@ function Login(props) {
               type="submit">Login</button>
             </div>
 
-            <p className="links">
+            <p className="linksLogin">
               <a href="#">Forgot Password</a>
               New Here?
               <a href="/signup" id="sign-up">Sign Up</a>
