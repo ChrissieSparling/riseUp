@@ -93,7 +93,7 @@ border: 3px solid rgb(240, 168, 36);
 }
 
 .whole-comment {
-    width: 90%;
+    width: 70%;
     display: flex;
     border: 2px solid rgb(240, 168, 36);
     margin: 10px
@@ -102,7 +102,7 @@ border: 3px solid rgb(240, 168, 36);
 .posted-comment {
     width: 100%;
     list-style: none;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding:10px;
 }
 
@@ -128,7 +128,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 padding: 0 10px;
-border: 1px solid black;
+/* border: 1px solid black; */
 }
 
 .comment-btn-box .icon {
