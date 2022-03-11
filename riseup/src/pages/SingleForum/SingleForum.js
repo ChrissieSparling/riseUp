@@ -17,6 +17,7 @@ const SingleForum = (props) => {
   const [post, setPost] = useState({})
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState({})
+  const [wantComment, setWantComment] = useState(false)
 
   useEffect(() => {
     console.log('incoming user Id', props.userId)
@@ -132,24 +133,25 @@ const SingleForum = (props) => {
           <div onClick={deletePost} className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} /></div>
         </div>) :
           <div className="singlePostCommentIcon singlePostCommentBox">
-            <div className="first-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /><p>Comment</p></div>
+            <div onClick={()=>setWantComment(true)} className="first-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /><p>Comment</p></div>
             <div className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /><p>Like</p></div>
           </div>}
 
+        {wantComment ?
         <form className="SF-comment-btn-box">
           <textarea name="body" onChange={handleComment} className="SF-comment-input" rows="3" placeholder="Leave a comment..."></textarea>
           <button onClick={postComment} className="SF-home-btn">Comment</button>
-        </form>
+        </form> : null}
 
         {comments.length ? (comments.map(p => {
           return (
             <div className="whole-comment">
               <div className="posted-comment" id={p.id}>
                 <li className="posted-comment-body">{p.body}</li>
-                <li>Created at: {p.createdAt} By: {p.author}</li>
+                <li>Created on: {p.createdAt} By: {p.author}</li>
               </div>
               <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
-                <div className="first-icon icon comment-icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /></div>
+                <div onClick={()=>setWantComment(true)} className="first-icon icon comment-icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /></div>
                 <div className="last-icon icon comment-icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /></div>
               </div>
             </div>
