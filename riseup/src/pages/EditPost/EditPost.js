@@ -38,7 +38,7 @@ const EditPost = props => {
     const showObject = e => {
       e.preventDefault();
       console.log('this is the new post', editedPost)
-      fetch('http://localhost:3005/posts/new',{
+      fetch(`http://localhost:3005/posts/${id}`,{
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
