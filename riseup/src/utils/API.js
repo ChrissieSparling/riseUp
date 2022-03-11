@@ -6,7 +6,7 @@ const API = {
     getTokenData: (token)=>{
         return fetch(`${BASEURL}/users/gettokendata`, {
             headers: {
-              authorization: `Bearer ${token}`
+              'x-access-token': token,
             }
           })
             .then(res => res.json())

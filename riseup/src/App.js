@@ -109,7 +109,7 @@ function App() {
         <Route path='/users/:id' element={<UserHome  username={username} userId={userId}/>}/>
         <Route path='/forums'element={<ForumTopicHome />}/>
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
-        <Route path='/forums/post/:id'element={<SingleForum/>}/>
+        <Route path='/forums/post/:id'element={<SingleForum userId={userId}/>}/>
         <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
         
         <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
