@@ -74,6 +74,7 @@ const SingleForum = (props) => {
         comments.push(newData)
         console.log(newData)
         document.querySelector('form').reset();
+        setWantComment(false);
         navigate(`/forums/post/${id}`)
       }).catch((err) => {
         console.log('There was a problem: ', err)
@@ -81,6 +82,12 @@ const SingleForum = (props) => {
       })
   }
 
+  const handleWantComment = e => {
+    e.preventDefault();
+    if(wantComment){
+      setWantComment(false);
+    } else {setWantComment(true)}
+  }
 
   const handleComment = e => {
     e.preventDefault();
@@ -133,7 +140,7 @@ const SingleForum = (props) => {
           <div onClick={deletePost} className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} /></div>
         </div>) :
           <div className="singlePostCommentIcon singlePostCommentBox">
-            <div onClick={()=>setWantComment(true)} className="first-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /><p>Comment</p></div>
+            <div onClick={handleWantComment} className="first-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /><p>Comment</p></div>
             <div className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /><p>Like</p></div>
           </div>}
 
@@ -151,7 +158,7 @@ const SingleForum = (props) => {
                 <li>Created on: {p.createdAt} By: {p.author}</li>
               </div>
               <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
-                <div onClick={()=>setWantComment(true)} className="first-icon icon comment-icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /></div>
+                <div onClick={handleWantComment} className="first-icon icon comment-icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /></div>
                 <div className="last-icon icon comment-icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /></div>
               </div>
             </div>

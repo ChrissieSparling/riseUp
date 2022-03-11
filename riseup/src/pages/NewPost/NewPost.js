@@ -58,6 +58,8 @@ const Write = () => {
         </div>
         <h1>What's on your mind?</h1>
         <p>Let your fellow users know what you'd like a different perspective on. Please keep in mind, you don't need to <em>feel</em> positive to post here, but this is a place for people <em>seeking</em> peace and positivity. Make sure what you post in the forums isn't intended to hurt anyone else.</p>
+        <br/>
+        <p>You are posting in {topic}.</p>
    
       <NewPostBox handleInputChange={handleInputChange} showObject={showObject} />
       <button onClick={showObject} className='SF-home-btn TF'>Publish</button>
