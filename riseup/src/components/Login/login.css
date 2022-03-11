@@ -4,7 +4,7 @@
     display: flex;
     padding: 90px 0 90px 0;
     /* background-color: rgb(255,254,224); */
-    background-color: rgb(211, 201, 211);
+    background-color: rgb(240, 238, 195);
     width: 100%
   }
   
@@ -12,14 +12,13 @@
     display: flex;
     justify-content: center;
     height: 100%;
-    width: 60%;
     box-shadow: 11px 12px 13px 12px rgb(46, 45, 45);
     padding-top: 30;
     border-radius: 30px;
     background-color: white;
   }
   
-  .img {
+  /* .img {
     padding-top: 20px;
     justify-content: center;
     display: flex;
@@ -33,7 +32,7 @@
     height: 115px;
     width: 115px;
   }
-  
+   */
   .logo-img {
     height: 150px;
     border-radius: 30px;
@@ -78,7 +77,6 @@
     background-color: rgb(223, 199, 16);
     font-size: 25px;
     border: none;
-  
   }
   
   .login-btn {
