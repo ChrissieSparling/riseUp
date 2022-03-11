@@ -17,6 +17,7 @@ const SingleForum = (props) => {
   const [post, setPost] = useState({})
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState({})
+  const [wantComment, setWantComment] = useState(false)
 
   useEffect(() => {
     console.log('incoming user Id', props.userId)
@@ -73,6 +74,7 @@ const SingleForum = (props) => {
         comments.push(newData)
         console.log(newData)
         document.querySelector('form').reset();
+        setWantComment(false);
         navigate(`/forums/post/${id}`)
       }).catch((err) => {
         console.log('There was a problem: ', err)
@@ -80,6 +82,12 @@ const SingleForum = (props) => {
       })
   }
 
+  const handleWantComment = e => {
+    e.preventDefault();
+    if (wantComment) {
+      setWantComment(false);
+    } else { setWantComment(true) }
+  }
 
   const handleComment = e => {
     e.preventDefault();
@@ -88,6 +96,29 @@ const SingleForum = (props) => {
       ...newComment,
       [e.target.name]: e.target.value
     })
+  }
+
+  const getComment = (id, e) => {
+    e.preventDefault()
+    setWantComment(true)
+    const clickedComment = comments.filter(comment=> {return comment.id===id})
+    console.log(clickedComment[0].body)
+    document.getElementById('comment-input').textContent = clickedComment[0].body
+    comments.forEach((comment)=>{
+      console.log('is this the clicked comment?', comment.id===id)
+      console.log(comment.id)
+      console.log(id)
+    })
+    console.log(comments)
+    console.log(clickedComment)
+  }
+
+  const editComment = e => {
+
+  }
+
+  const deleteComment = e => {
+
   }
 
   const goEdit = e => {
@@ -119,6 +150,8 @@ const SingleForum = (props) => {
     } else { return }
   }
   console.log('is this your post?', currUser.id === post.userId)
+  comments.forEach(c=>{console.log('is this your comment?',currUser.username === c.author)});
+
   return (
     <div className=" singleForum">
       <button onClick={() => navigate(`/forums/${post.topic}`)} className="SF-home-btn">Return to Topic</button>
@@ -132,26 +165,34 @@ const SingleForum = (props) => {
           <div onClick={deletePost} className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} /></div>
         </div>) :
           <div className="singlePostCommentIcon singlePostCommentBox">
-            <div className="first-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /><p>Comment</p></div>
+            <div onClick={handleWantComment} className="first-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /><p>Comment</p></div>
             <div className="last-icon icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /><p>Like</p></div>
           </div>}
 
-        <form className="SF-comment-btn-box">
-          <textarea name="body" onChange={handleComment} className="SF-comment-input" rows="3" placeholder="Leave a comment..."></textarea>
-          <button onClick={postComment} className="SF-home-btn">Comment</button>
-        </form>
+        {wantComment ?
+          <form className="SF-comment-btn-box">
+            <textarea id="comment-input" name="body" onChange={handleComment} className="SF-comment-input" rows="3" placeholder="Leave a comment..."></textarea>
+            <button onClick={postComment} className="SF-home-btn">Comment</button>
+          </form> : null}
 
         {comments.length ? (comments.map(p => {
           return (
             <div className="whole-comment">
-              <div className="posted-comment" id={p.id}>
+              <div className="posted-comment" key={p.id}>
                 <li className="posted-comment-body">{p.body}</li>
-                <li>Created at: {p.createdAt} By: {p.author}</li>
+                <li>Created on: {p.createdAt} By: {p.author}</li>
               </div>
               <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
-                <div className="first-icon icon comment-icon"><FontAwesomeIcon className="singlePostIcon" icon={faComment} /></div>
-                <div className="last-icon icon comment-icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /></div>
+                <div onClick={handleWantComment} className="first-icon icon comment-icon" data-index={p.id}><FontAwesomeIcon  className="singlePostIcon"  icon={faComment} /></div>
+                <div className="last-icon icon comment-icon" data-index={p.id}><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /></div>
               </div>
+        
+          {currUser.id === p.userId ? 
+              (<div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
+                <div onClick={(e)=>getComment(p.id, e)} className="first-icon icon" data-index={p.id}><FontAwesomeIcon className="singlePostIcon" icon={faPenToSquare} /></div>
+                <div onClick={deleteComment} className="last-icon icon" data-index={p.id}><FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} /></div>
+              </div>) : null}
+
             </div>
             // <li className='list-group-item' style={{width: "40vw"}} key={p.id}><h1>{p.title}</h1><p>{p.topic}</p><p>{p.body}</p><p>User: {p.userId}</p></li>
           )
