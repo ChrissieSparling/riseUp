@@ -2,7 +2,7 @@ import './NewPostBox.css'
 
 const NewPostBox = props => {
     if(props.titleContent && props.boxContent){
-        document.getElementById('post-title-input').innerHTML = props.titleContent;
+        document.getElementById('post-title-input').textContent = props.titleContent;
         document.getElementById('post-body-input').textContent = props.boxContent;
     }
 

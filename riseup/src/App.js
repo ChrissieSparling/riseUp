@@ -23,6 +23,7 @@ import NewPost from "./pages/NewPost/NewPost";
 import SinglePost from "./components/SinglePost/SinglePost";
 import Test from './components/SignUp/test'
 import EditPost from "./pages/EditPost/EditPost";
+import Crisis from "./components/Crisis/Crisis";
 
 function App() {
   let navigate = useNavigate();
@@ -94,19 +95,30 @@ function App() {
     <div className="app">
       <Header />
       <Navbar logMeOut={logMeOut}/>
+
+      {/* <Test></Test> */}
+      {/* <Affirmations />
+      <Login />
+      <Homepage />
+      <Forum />
+      < SingleForum />
+      <Write /> */}
       <Routes>
         <Route path='/' element={<Homepage />}/>
         <Route path='/users/login' element={<Login handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
         <Route path='/users/:id' element={<UserHome  username={username} userId={userId}/>}/>
         <Route path='/forums'element={<ForumTopicHome />}/>
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
-        <Route path='/forums/post/:id'element={<SingleForum/>}/>
+        <Route path='/forums/post/:id'element={<SingleForum userId={userId}/>}/>
         <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
         
         <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
         <Route path='/story'/>
+
+        <Route path='/crisis'element={<Crisis/>}/>
         <Route path='*'/>
+
       </Routes>
       <Footer />
 
