@@ -72,6 +72,7 @@ nav {
 }
 
 .navA {
+  min-width: 100px;
   color: rgb(255, 217, 0);
   margin: 0 16px;
   flex: 1 1 0%;

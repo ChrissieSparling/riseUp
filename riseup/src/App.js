@@ -21,13 +21,30 @@ import ForumTopicHome from "./pages/ForumTopicHome/ForumTopicHome";
 import ForumTopic from "./pages/ForumTopic/ForumTopic";
 import NewPost from "./pages/NewPost/NewPost";
 import SinglePost from "./components/SinglePost/SinglePost";
-import Test from './components/SignUp/test'
+
 import EditPost from "./pages/EditPost/EditPost";
 import Crisis from "./components/Crisis/Crisis";
 
 function App() {
   let navigate = useNavigate();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const [email, setEmail] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [newUser, setNewUser] = useState({
+    firstName: '',
+    lastName: '',
+    username: '',
+    password: '',
+    role: '',
+    email: '',
+    birthday: '',
+    zipCode: '',
+  });
   const [userId, setUserId] = useState(0);
   const [token, setToken] = useState("");
   const [loginInfo, setLoginInfo] = useState({
@@ -44,14 +61,51 @@ function App() {
           setUserId(data.id);
           setUsername(data.username);
           setToken(token);
-          // navigate(`/users/${userId}`)
         })
         .catch(err => {
           console.log(err);
         });
     } 
-    // else {navigate('/users/login')}
   }, []);
+
+  const handlePostUser = (e) => {
+    console.log(newUser)
+    e.preventDefault();
+    fetch("http://localhost:3005/users/new", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstName: newUser.firstName,
+        lastName: newUser.lastName,
+        username: newUser.username,
+        password: newUser.password,
+        role: newUser.role,
+        email: newUser.email,
+        birthday: parseInt(newUser.birthday.split('-').reverse().join('-')),
+        zipCode: newUser.zipCode,
+      }),
+    })
+      .then((data) => data.json())
+      .then((newData) => {
+        if(newData.id){
+          console.log(newData)
+          setUserId(newData.id);
+          setUsername(newData.username);
+          setToken(newData.accessToken);
+          localStorage.setItem("token", newData.accessToken);
+          navigate(`/users/${newData.id}`)
+        } else {
+          alert('Your request was not successful. \nPlease check the form and try again.');
+          console.log('front end post req prob:', newData)
+          return
+        }
+      })
+      .catch(err=>{
+        alert('Sorry! Our bad, there was a problem.');
+        console.log('there was an error', err)
+        return
+      })
+  };
 
   async function handleLogin (e){
     e.preventDefault()
@@ -91,32 +145,33 @@ function App() {
     })
   }
 
+  const handleCollectUser = e=>{
+    console.log(e.target.name,e.target.value)
+    setNewUser({
+      ...newUser,
+      [e.target.name]:e.target.value
+    })
+  }
+
   return (
     <div className="app">
       <Header />
-      <Navbar logMeOut={logMeOut}/>
-
-      {/* <Test></Test> */}
-      {/* <Affirmations />
-      <Login />
-      <Homepage />
-      <Forum />
-      < SingleForum />
-      <Write /> */}
+      <Navbar id={userId} logMeOut={logMeOut}/>
       <Routes>
-        <Route path='/' element={<Homepage />}/>
+       
+        <Route path='/signup' element={<SignUp handlePostUser={handlePostUser} handleCollectUser={handleCollectUser}/>}/>
         <Route path='/users/login' element={<Login handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
         <Route path='/users/:id' element={<UserHome  username={username} userId={userId}/>}/>
         <Route path='/forums'element={<ForumTopicHome />}/>
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
-        <Route path='/forums/post/:id'element={<SingleForum userId={userId}/>}/>
+        <Route path='/forums/post/:id'element={<SingleForum username={username} userId={userId}/>}/>
         <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
         
         <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
         <Route path='/story'/>
-
         <Route path='/crisis'element={<Crisis/>}/>
+        <Route path='/'element={<Homepage/>}/>
         <Route path='*'/>
 
       </Routes>

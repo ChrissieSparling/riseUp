@@ -1,20 +1,11 @@
 import {React, useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../Login/login.css";
 
 
 function Login(props) {
-  const [newUser, setNewUser] = useState(false);
-
-  const handleNewUser = (e) => {
-    e.preventDefault();
-    if (e.target.id === "login") {
-      setNewUser(false);
-    } else {
-      setNewUser(true);
-    }
-  };
-
+  let navigate = useNavigate();
 
   return (
     <div className="main">
@@ -54,8 +45,8 @@ function Login(props) {
 
             <p className="links">
               <a href="#">Forgot Password</a>
-              <br />
-              <a href="/" id="sign-up" onClick={handleNewUser}>Sign Up</a>
+              New Here?
+              <a href="/signup" id="sign-up">Sign Up</a>
             </p>
           </div>
         </div>
