@@ -4,6 +4,14 @@
     margin: 20px;
     width: 100%;
   }
+
+  .FT-title-box h1{
+    font-family: 'Sansita Swashed', Verdana;
+    font-size: 3.5rem;
+    color: whitesmoke;
+    text-shadow: 1px 1px 6px black;
+  }
+
   .FHpost-cursor:hover{
       cursor: pointer;
       box-shadow: 0 0 5px 5px rgb(240, 168, 36);

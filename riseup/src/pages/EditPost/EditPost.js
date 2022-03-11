@@ -64,14 +64,14 @@ const EditPost = props => {
         <>
             <div className="write">
                 <div>
-                    <button>Return to Single Post</button>
-                    <button>Return to Topic Page</button>
+                    <button onClick={()=>navigate(`/forums/post/${postToEdit.id}`)} className='SF-home-btn TF'>Return to Single Post</button>
+                    <button onClick={()=>navigate(`/forums/${postToEdit.topic}`)} className='SF-home-btn TF'>Return to Topic Page</button>
                 </div>
                 <h1>Edit Your Post</h1>
                 <p>Fix what you want fixed below, then hit the button! Remember, keep it respectful of others! This is a place for seeking positive growth and change.</p>
                 <NewPostBox handleInputChange={handleInputEdit} titleContent={postToEdit.title} boxContent={postToEdit.body}/>
        
-            <button onClick={showObject} className="writeSubmit">Edit</button>
+            <button onClick={showObject} className="SF-home-btn TF">Edit</button>
             </div>
         </>
     )
