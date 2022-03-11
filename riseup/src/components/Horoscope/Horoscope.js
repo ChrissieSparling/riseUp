@@ -75,7 +75,7 @@ function Horoscope() {
 
   return (
     <div className="horoscope-box">
-      <h1>Let's have some fun! What's your sign?</h1>
+      <h1 className="horoTitle">Let's have some fun! What's your sign?</h1>
     <div className="grid">
       
       {signs.map((sign) => (
