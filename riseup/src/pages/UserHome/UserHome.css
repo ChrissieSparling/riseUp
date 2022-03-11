@@ -6,15 +6,15 @@
     /* justify-content: center; */
     align-items: center;
     padding-top: 15vh;
-    background-color:rgb(240, 238, 195);
+    background-color:rgb(235, 211, 167);
 }
 
 .user-welcome {
     width:100%;
     padding:10px;
     text-align:center;
-    background-color:plum;
-    color: whitesmoke;
+    color:rgb(248, 101, 2);
+    
 }
 
 .aff-box {
@@ -41,6 +41,7 @@
 
 .user-post-list {
     border: 2px solid orange;
+    background-color: #ffd400;;
 }
 
 .user-post-title {
@@ -54,15 +55,17 @@
     align-items: center;
 
 }
-
+.btnUserHome{
+    border-color:2px solid rgb(248, 101, 2);   
+}
 .user-home-btn-box button {
     width: 200px;
     height: 40px;
     margin: 10px;
     font-size: 1.25rem;
     font-weight: bold;
-    background-color:  rgb(223, 199, 16);
+    background-color:  rgb(248, 153, 28);
     color: whitesmoke;
-    border: none;
+    /* border-color:2px solid rgb(248, 101, 2); */
     border-radius: 5px;
 }

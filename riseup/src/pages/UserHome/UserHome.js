@@ -131,9 +131,9 @@ const UserHome = (props) => {
             <div>
                 <div className="user-home-btn-box">
                     <h2>What would you like to do?</h2>
-                    <button onClick={() => navigate("/forums")}>Visit the Forums</button>
-                    <button>Visit ToDos</button>
-                    <button>Read a Story</button>
+                    <button className="btnUseHome" onClick={() => navigate("/forums")}>Visit the Forums</button>
+                    <button className="btnUseHome">Visit ToDos</button>
+                    <button className="btnUseHome">Read a Story</button>
 
                 </div>
                 <div className="todo-app">
