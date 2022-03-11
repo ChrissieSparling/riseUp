@@ -30,6 +30,7 @@
   /* border: 1px solid black; */
 }
 .singlePostEdit {
+  width:100%;
   display: flex;
   justify-content: space-between;
 
