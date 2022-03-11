@@ -161,7 +161,7 @@ function App() {
        
         <Route path='/signup' element={<SignUp handlePostUser={handlePostUser} handleCollectUser={handleCollectUser}/>}/>
         <Route path='/users/login' element={<Login handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
-        <Route path='/users/:id' element={<UserHome  username={username} userId={userId}/>}/>
+        <Route path={`/users/:id`} element={<UserHome  username={username} userId={userId}/>}/>
         <Route path='/forums'element={<ForumTopicHome />}/>
         <Route path='/forums/:topic'element={<ForumTopic/>}/>
         <Route path='/forums/post/:id'element={<SingleForum username={username} userId={userId}/>}/>
