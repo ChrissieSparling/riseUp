@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items:center;
-    background-color: rgb(62, 49, 97);
+    background-color: #ffd400;
 }
 
 .SF-home-btn {
@@ -26,7 +26,7 @@
 
 .SF-home-btn:hover {
     cursor: pointer;
-    box-shadow: 0 0 5px 5px inset rgb(187, 178, 161);
+    box-shadow: 0 0 5px 5px rgb(248, 101, 2);
 }
 .singlePostIcon {
     margin-left: 10px;

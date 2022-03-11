@@ -58,7 +58,7 @@ const ForumTopicHome = () => {
 
         <div className="FHposts">
 
-            <h1 style={{textAlign: "center"}} className='FT-title-box'>Welcome to the Forum!</h1>
+            <h1 style={{textAlign: "center", color: "whitesmoke", fontFamily: "sansita swashed", textShadow: "1px 1px 6px grey", fontSize:"3.5rem"}} className='FT-title-box'>Welcome to the Forum!</h1>
             <div style={{width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center"}}>
                 {forumTopics.map(topic => 
                     <div className="FHpost-cursor" value={topic.topic}  style={{backgroundImage: `url(${topic.image})` }} onClick={()=>getPosts(topic.topic)}>

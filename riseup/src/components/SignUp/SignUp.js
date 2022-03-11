@@ -3,45 +3,9 @@ import "../Login/login.css";
 // import {useNavigate} from "react-router-dom";
 
 function SignUp(props) {
-  // let navigate = useNavigate();
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [role, setRole] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [birthday, setBirthday] = useState("");
-  // const [zipCode, setZipCode] = useState("");
-  // const [user, setUser] = useState({});
-
-
-  // const handlePostUser = (e) => {
-    
-  //   e.preventDefault();
-  //   fetch("http://localhost:3005/users/new", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       firstName: firstName,
-  //       lastName: lastName,
-  //       username: username,
-  //       password: password,
-  //       role: role,
-  //       email: email,
-  //       birthday: birthday,
-  //       zipCode: zipCode,
-  //     }),
-  //   })
-  //     .then((data) => data.json())
-  //     .then((newData) => {
-  //     console.log(newData)
-  //     navigate(`/users/${newData.id}`)
-  //     });
-  // };
-
   return (
-    <div className="main">
-      <div className="sub-main">
+    <div className="mainSign">
+      <div className="sub-main-sign">
         <div>
           <div>
             <form onSubmit={props.handlePostUser}>
@@ -51,7 +15,7 @@ function SignUp(props) {
                 <input
                   type="text"
                   placeholder="first name"
-                  className="input-field input"
+                  className="input-field inputSign"
                   required
                   name='firstName'
                   onChange={props.handleCollectUser}
@@ -62,7 +26,7 @@ function SignUp(props) {
                   type="text"
                   placeholder="
                 last name"
-                  className="input-field input"
+                  className="input-field inputSign"
                   required
                   name='lastName'
                   onChange={props.handleCollectUser}
@@ -73,7 +37,7 @@ function SignUp(props) {
                 <input
                   type="date"
                   placeholder="birthday"
-                  className="input-field input"
+                  className="input-field inputSign"
                   required
                   name='birthday'
                   onChange={props.handleCollectUser}
@@ -83,7 +47,7 @@ function SignUp(props) {
                 <input
                   type="text"
                   placeholder="zip code"
-                  className="input-field input"
+                  className="input-field inputSign"
                   required
                   name='zipCode'
                   onChange={props.handleCollectUser}
@@ -94,7 +58,7 @@ function SignUp(props) {
                 <input
                   type="text"
                   placeholder="email"
-                  className="input-field input"
+                  className="input-field inputSign"
                   required
                   name='email'
                   onChange={props.handleCollectUser}
@@ -104,7 +68,7 @@ function SignUp(props) {
                 <input
                   type="text"
                   placeholder="user name"
-                  className="input-field input"
+                  className="input-field inputSign"
                   required
                   name='username'
                   onChange={props.handleCollectUser}
@@ -114,7 +78,7 @@ function SignUp(props) {
                 <input
                   type="text"
                   placeholder="password"
-                  className="input-field input"
+                  className="input-field inputSign"
                   required
                   name='password'
                   onChange={props.handleCollectUser}
@@ -123,7 +87,7 @@ function SignUp(props) {
               <div className="email-input">
                 <input
                   type="text"
-                  className="input-field input"
+                  className="input-field inputSign"
                   placeholder="role"
                   required
                   name='role'
