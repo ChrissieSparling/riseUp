@@ -18,9 +18,12 @@ const Navbar = (props) => {
           <input className="inputNav" type="text" />
         </div>
         <div className="menuNav">
-          <a className="navA is-active" href={navUID==='' ? '/' : `/users/${navUID}`}>
+          {navUID ? 
+          <a className="navA is-active" href={`/users/${navUID}`}>
             Home
-          </a>
+          </a> : <a className="navA is-active" href={'/'}>
+            Home
+          </a>}
           <a className="navA" href="#">
             About
           </a>

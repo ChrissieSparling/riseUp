@@ -159,18 +159,18 @@ function App() {
       <Navbar id={userId} logMeOut={logMeOut}/>
       <Routes>
        
-        <Route path='/signup' element={<SignUp handlePostUser={handlePostUser} handleCollectUser={handleCollectUser}/>}/>
-        <Route path='/users/login' element={<Login handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
-        <Route path={`/users/:id`} element={<UserHome  username={username} userId={userId}/>}/>
-        <Route path='/forums'element={<ForumTopicHome />}/>
-        <Route path='/forums/:topic'element={<ForumTopic/>}/>
+        <Route path='/signup' element={<SignUp handlePostUser={handlePostUser} handleCollectUser={handleCollectUser}  userId={userId}/>}/>
+        <Route path='/users/login' element={<Login handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin}  userId={userId}/>}/>
+        <Route path={`/users/${userId}`} element={<UserHome  username={username} userId={userId}/>}/>
+        <Route path='/forums'element={<ForumTopicHome userId={userId} />}/>
+        <Route path='/forums/:topic'element={<ForumTopic userId={userId}/>}/>
         <Route path='/forums/post/:id'element={<SingleForum username={username} userId={userId}/>}/>
-        <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
+        <Route path='/forums/edit/post/:id'element={<EditPost userId={userId}/>}/>
         
-        <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
-        <Route path='/horoscope'element={<Horoscope/>}/>
+        <Route path='/forums/post/:topic/new'element={<NewPost userId={userId}/>}/>
+        <Route path='/horoscope'element={<Horoscope userId={userId}/>}/>
         <Route path='/story'/>
-        <Route path='/crisis'element={<Crisis/>}/>
+        <Route path='/crisis'element={<Crisis userId={userId}/>}/>
         <Route path='/'element={<Homepage/>}/>
         <Route path='*'/>
 

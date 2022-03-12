@@ -125,9 +125,9 @@ const UserHome = (props) => {
                 return (<h1 key={post.id} onClick={()=>navigate(`/forums/post/${post.id}`)} className="user-post-title">{post.title}</h1>)
             })) : <h1>You don't have any posts</h1>}
             </div>
-            <div className="user-post-list">
+            {/* <div className="user-post-list">
                 <h1>My Dopamine Supply</h1>
-            </div>
+            </div> */}
             <div>
                 <div className="user-home-btn-box">
                     <h2>What would you like to do?</h2>
