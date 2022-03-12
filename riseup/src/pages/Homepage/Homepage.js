@@ -42,13 +42,7 @@ const HomePage = (props) => {
               <hr />
 
               <p className="postSubHome">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quaerat, maiores iusto perspiciatis, minus vel veniam debitis
-                magni praesentium, excepturi nisi sint. Ab aut numquam
-                temporibus, facilis vitae illum quae quibusdam.lit. Quaerat,
-                maiores iusto perspiciatis, minus vel veniam debitis magni
-                praesentium, excepturi nisi sint. Ab aut numquam temporibus,
-                facilis vitae illum quae quibusdam.
+              In order to get started on this journey, we need to be able to identify the real problems facing us. All problems are a matter of perspective. The better we understand our own perspectives, we are able to embark on the next phase of our journey. WeRiseUpToday will give you insight to our experiences, how we deal with things. It is always up to you on how you precieve this experience, but our gaurantee to you is that we will always strive to help you find silver linings by providing you pick me up's when you need them.
               </p>
             </div>
           </div>
@@ -61,13 +55,7 @@ const HomePage = (props) => {
               <hr />
 
               <p className="postSubHome">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quaerat, maiores iusto perspiciatis, minus vel veniam debitis
-                magni praesentium, excepturi nisi sint. Ab aut numquam
-                temporibus, facilis vitae illum quae quibusdam.lit. Quaerat,
-                maiores iusto perspiciatis, minus vel veniam debitis magni
-                praesentium, excepturi nisi sint. Ab aut numquam temporibus,
-                facilis vitae illum quae quibusdam.
+              WeRiseUpToday was Inspired by YOU! The world has seen some dark days and we have every intention of shining bright lights into that darkness by helping that one person in your life who matters most. YOU!
               </p>
             </div>
           </div>
@@ -80,13 +68,7 @@ const HomePage = (props) => {
               <hr />
 
               <p className="postSubHome">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quaerat, maiores iusto perspiciatis, minus vel veniam debitis
-                magni praesentium, excepturi nisi sint. Ab aut numquam
-                temporibus, facilis vitae illum quae quibusdam.lit. Quaerat,
-                maiores iusto perspiciatis, minus vel veniam debitis magni
-                praesentium, excepturi nisi sint. Ab aut numquam temporibus,
-                facilis vitae illum quae quibusdam.
+              We believe in Dreams. More than that, we Want to SEE your dreams come true. When you join every day you will access to a community who wants nothing more than to see you thrive. Get quotes, images, ideas, or send us an email and tell us what you'd like to see here to make your goals more achieveable.
               </p>
             </div>
           </div>

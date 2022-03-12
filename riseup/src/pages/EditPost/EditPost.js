@@ -9,7 +9,7 @@ const EditPost = props => {
     const [postToEdit, setPostToEdit] = useState({})
     const [editedPost, setEditedPost] = useState({})
     useEffect(()=>{
-        fetch(`http://localhost:3005/posts/${id}`,{
+        fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`,{
             method: 'GET',
             headers: {
                 'x-access-token': localStorage.getItem('token'),
@@ -38,7 +38,7 @@ const EditPost = props => {
     const showObject = e => {
       e.preventDefault();
       console.log('this is the new post', editedPost)
-      fetch(`http://localhost:3005/posts/${id}`,{
+      fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`,{
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
