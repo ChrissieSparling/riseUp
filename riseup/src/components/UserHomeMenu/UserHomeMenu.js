@@ -18,8 +18,8 @@ const UserHomeMenu = ({username, setGetMenu, setGetForum, setGetToDos, setGetSto
                 <div className="user-home-btn-box">
                     <h2>What would you like to do?</h2>
                     <button className="btnUserHome" id="forum" onClick={setGetForum(true)}>Visit the Forums</button>
-                    <button className="btnUserHome" id="todo" onClick={setGetToDos(true)}>Visit ToDos</button>
-                    <button className="btnUserHome" id="story" onClick={setGetStory(true)}>Read a Story</button>
+                    {/* <button className="btnUserHome" id="todo" onClick={setGetToDos(true)}>Visit ToDos</button>
+                    <button className="btnUserHome" id="story" onClick={setGetStory(true)}>Read a Story</button> */}
                 </div>
             </div>
         </div>
