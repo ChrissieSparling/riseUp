@@ -72,7 +72,7 @@ function App() {
   const handlePostUser = (e) => {
     console.log(newUser)
     e.preventDefault();
-    fetch("http://localhost:3005/users/new", {
+    fetch("https://rise-up-back-end.herokuapp.com/users/new", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
