@@ -10,19 +10,9 @@ function Affirmations(props) {
     <div className="affirmations-container" > 
      
       <div className="affJumbo">
-      <h1 className="affTitle">!!!! WELCOME SUNFLOWERS !!!!</h1>
+      <h1 className="affTitle">🌻WELCOME SUNFLOWERS🌻</h1>
       <h1 className="affWords">You did not end up here by accident. You're here to take control over your life. Your existence. And it is easy! All it takes is one very simple step. RECOGNIZE YOUR VALUE! We DO! RiseUp - the world needs all of us to embrace ourselves with loving arms, accept our POWERFUL EXISTENCE, and extend that respect to ALL.</h1>
-       <Link className ="affirmations"
-        activeClassName ="active"
-        isActive = {()=>window.location.pathname === '/affirmations'}
-        to = "/affirmations">
-        <div className="visitor-btn">
-            <button className="btnVisitor" theme ="Pink"
-            onClick={props.getAffirmations}
-              type="submit">!! Check us out !!
-            </button>
-            </div>
-        </Link>
+       
       </div>  
     </div>  
   );

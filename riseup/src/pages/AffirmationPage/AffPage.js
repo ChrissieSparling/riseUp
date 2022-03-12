@@ -16,7 +16,7 @@ const affPage = (props) => {
         <div className="affirmations-container" > 
          
           <div className="affJumbo">
-          <h1 className="affTitle">!!!! Today we celebrate you !!!!</h1>
+          <h1 className="affTitle">Today we celebrate you</h1>
           <h1 className="affWords">
           <TypeDelete />
           </h1>
