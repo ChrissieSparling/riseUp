@@ -25,7 +25,7 @@ const UserHome = (props) => {
 
     useEffect(() => {
         console.log(id);
-        fetch(`http://localhost:3005/users/${props.userId || id}`, {
+        fetch(`https://rise-up-back-end.herokuapp.com/users/${props.userId || id}`, {
             method: "GET",
             headers: {
                 "x-access-token": localStorage.getItem("token"),
@@ -46,7 +46,7 @@ const UserHome = (props) => {
             })
 
             const randNum = Math.floor(Math.random() * 30 + 1)
-            fetch(`http://localhost:3005/affirmations/${randNum}`, {
+            fetch(`https://rise-up-back-end.herokuapp.com/affirmations/${randNum}`, {
                 method: "GET",
                 // headers: {
                 //     "x-access-token": localStorage.getItem("token"),

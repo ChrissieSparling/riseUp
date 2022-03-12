@@ -17,7 +17,7 @@ const ForumHome = () => {
     console.log(topic)
     useEffect(()=>{
         console.log(topic)
-        fetch(`http://localhost:3005/posts/forum/${topic}`,{
+        fetch(`https://rise-up-back-end.herokuapp.com/posts/forum/${topic}`,{
             method: 'GET',
             headers: {
                 'x-access-token': localStorage.getItem('token'),

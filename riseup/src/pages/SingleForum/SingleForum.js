@@ -28,7 +28,7 @@ const SingleForum = (props) => {
     const timer = setTimeout(() => console.log('this is a delay'), 500)
     clearTimeout(timer)
     console.log(id)
-    fetch(`http://localhost:3005/posts/${id}`, {
+    fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
       method: 'GET',
       headers: {
         'x-access-token': localStorage.getItem('token'),
@@ -58,7 +58,7 @@ const SingleForum = (props) => {
   const postComment = e => {
     e.preventDefault();
     console.log('this is the new post', newComment, currUser.username)
-    fetch(`http://localhost:3005/posts/${id}/comments/new`, {
+    fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}/comments/new`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -132,7 +132,7 @@ const SingleForum = (props) => {
     if (window.confirm('This will remove your post from the forum, do you want to proceed?')) {
 
       console.log(post.id);
-      fetch(`http://localhost:3005/posts/${id}`, {
+      fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
         method: 'DELETE',
         headers: {
           'x-access-token': localStorage.getItem('token'),
