@@ -5,6 +5,10 @@
   background-color: #ffd400;
   
 }
+.homeAffLinks{
+  color:rgb(86, 86, 179);
+  font-size: 50px;
+}
 .cursorHome:hover{
     cursor: pointer;
     box-shadow: 0 0 5px 5px rgb(248, 153, 28);
@@ -24,7 +28,7 @@
   height:200px;
   width: 200px;
   margin-left: 33%;
-  animation: rotation 6s 2 linear;
+  animation: rotation 6s 1 linear;
   display: block;  
   margin-left: auto;  
   margin-right: auto;  

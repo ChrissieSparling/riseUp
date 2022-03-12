@@ -1,0 +1,30 @@
+
+[
+
+{ 
+    "id": 2,
+    "topic":"BestMe",
+    "authorName":"Chrissie Sparling",
+    "body": "I am walking in the truth of who I am",
+    "images": "https://mdbootstrap.com/img/new/slides/017.webp"
+
+},
+{   
+    "id": 1,
+    "topic":"BestMe",
+    "authorName":"Chrissie Sparling",
+    "body": "I am comfortable declaring my own worth.",
+    "images": "https://mdbootstrap.com/img/new/slides/017.webp"
+
+},
+{   
+    "id": 3,
+    "topic":"BestMe",
+    "authorName":"Chrissie Sparling",
+    "body": "I am amazing!",
+    "images": "https://mdbootstrap.com/img/new/slides/017.webp"
+
+}
+]
+
+

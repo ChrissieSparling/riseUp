@@ -26,7 +26,7 @@ const Write = () => {
   const showObject = e => {
     e.preventDefault();
     console.log('this is the new post', newPost)
-    fetch('http://localhost:3005/posts/new', {
+    fetch('https://rise-up-back-end.herokuapp.com/posts/new', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
