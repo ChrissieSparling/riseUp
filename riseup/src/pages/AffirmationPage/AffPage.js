@@ -30,7 +30,7 @@ const affPage = (props) => {
             </Link>
           </div>  
         </div>  
-      )
+      
       {/* <Affirmations /> */}
       <Accordion />
 
