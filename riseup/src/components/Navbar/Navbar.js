@@ -27,6 +27,9 @@ const Navbar = (props) => {
           <a className="navA" href="/horoscope">
             Horoscope
           </a>
+          <a className="navA" href="/horoscope">
+            Care List
+          </a>
           <a className="navA" href="/crisis">
             Crisis Links
           </a>

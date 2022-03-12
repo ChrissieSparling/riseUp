@@ -46,8 +46,8 @@ function TodoList() {
 
   return (
     <>
-      <h1>Self Care Checklist</h1>
-      <h4>Hey there Sunflower! It's time to create your own self care checklist. You can add any task to your list. If you click on your task, it will cross it out and dull it to show its been completed. If you would like to remove the task, simply select the trash icon. To update a task simply select the notepad icon. Go on and self care yourself 😉 </h4>
+      <h1 className='checkTitle' >Self Care Checklist</h1>
+      <h4 className='checkDescription'>Hey there Sunflower! It's time to create your own self care checklist. You can add any task to your list. If you click on your task, it will cross it out and dull it to show its been completed. If you would like to remove the task, simply select the trash icon. To update a task simply select the notepad icon. Go on and self care yourself 😉 </h4>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}
