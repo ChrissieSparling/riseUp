@@ -21,7 +21,7 @@ const Navbar = (props) => {
           <a className="navA is-active" href={navUID==='' ? '/' : `/users/${navUID}`}>
             Home
           </a>
-          <a className="navA" href="#">
+          <a className="navA" href="/about">
             About
           </a>
           <a className="navA" href="/horoscope">
@@ -59,32 +59,5 @@ export default Navbar;
 // work, family, personal wellness, finacial, relationship, recovery
 
 {
-  /* <div className="navContainer">
-      <div className="nav">
-        <div className="topLeft">
-          
-          <input className="search" placeholder="Search" type="text" />
-        
-        </div>
-        <button onClick={props.logMeOut}>Log Out</button>
-        <a className="link" href="#">
-          Home
-        </a>
-        <a className="link" href="#">
-          Horoscope
-        </a>
-        <a className="link" href="#">
-          Planner
-        </a>
-        <a className="link" href="#">
-          About
-        </a>
-        <a className="link" href="#">
-          Forums{" "}
-        </a>
-        <a className="link" href="#">
-          Login
-        </a>
-      </div>
-      </div> */
+  
 }
