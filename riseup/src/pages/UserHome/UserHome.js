@@ -116,7 +116,6 @@ const UserHome = (props) => {
                 <h2>Your Daily Dose of Dopamine:</h2>
                 <p style={{fontWeight: 'bold', fontSize:'2rem'}}>{userAff}</p>
                 <p>{userAffAuth}</p>
-                <div className="last-icon icon aff-icon"><FontAwesomeIcon className="singlePostIcon" icon={faHeart} /><p>Like</p></div>
             </div>
             
             <div className="user-post-list">
@@ -125,9 +124,7 @@ const UserHome = (props) => {
                 return (<h1 key={post.id} onClick={()=>navigate(`/forums/post/${post.id}`)} className="user-post-title">{post.title}</h1>)
             })) : <h1>You don't have any posts</h1>}
             </div>
-            <div className="user-post-list">
-                <h1>My Dopamine Supply</h1>
-            </div>
+        
             <div>
                 <div className="user-home-btn-box">
                     <h2>What would you like to do?</h2>
