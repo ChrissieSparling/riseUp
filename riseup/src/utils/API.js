@@ -1,6 +1,6 @@
-const BASEURL="http://localhost:3005"
+// const BASEURL="http://localhost:3005"
 
-// const BASEURL="https://joes-fishies-back.herokuapp.com"
+const BASEURL="https://rise-up-back-end.herokuapp.com"
 
 const API = {
     getTokenData: (token)=>{
