@@ -168,7 +168,7 @@ function App() {
         <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
         <Route path='/about'element={<About/>}/>
         {/* route for affirmation page */}
-        <Route path='/affirmations/:topic'element={<AffPage/>}/>
+        {/* <Route path='/affirmations/:topic'element={<AffPage/>}/> */}
         <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
         <Route path='/story'/>
