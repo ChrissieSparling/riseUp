@@ -45,7 +45,7 @@
 
 header{
     font-size: 100px;
-    background-color: plum;
+    /* background-color: plum; */
     width: 100%;
     height: 15vh;
     padding: 0 0.25em;
