@@ -53,6 +53,14 @@ function Footer() {
                 target="_blank"
                 url="https://twitter.com/weriseuptoday"
               />
+              <SocialIcon
+                className="socialFoot"
+                network="email"
+                bgColor="#e6dddd"
+                style={{ height: 25, width: 25 }}
+                target="_blank"
+                url="http://weriseuptoday@gmail.com"
+              />
             </div>
 
             <div className="crisisFooter">

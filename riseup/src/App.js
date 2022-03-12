@@ -21,7 +21,7 @@ import ForumTopicHome from "./pages/ForumTopicHome/ForumTopicHome";
 import ForumTopic from "./pages/ForumTopic/ForumTopic";
 import NewPost from "./pages/NewPost/NewPost";
 import SinglePost from "./components/SinglePost/SinglePost";
-
+import About from "./pages/About/About"
 import EditPost from "./pages/EditPost/EditPost";
 import Crisis from "./components/Crisis/Crisis";
 
@@ -175,6 +175,7 @@ function App() {
         <Route path='*'/>
 
       </Routes>
+      
       <Footer />
 
     </div>

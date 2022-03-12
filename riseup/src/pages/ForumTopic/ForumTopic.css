@@ -1,6 +1,7 @@
 .FT-big-box {
   display: flex; 
-  flex-direction: column
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .FT-title-box {
@@ -38,12 +39,12 @@
   padding: 10px;
   font-family: Verdana;
   font-size: 2.5rem;
-  /* color: darkslategray; */
-  border: 3px solid rgb(240, 168, 36);
-  background-color: rgb(243, 232, 131);
+  background-color: rgb(240, 168, 36) ;
+  border: 3px solid #ff7700;
+  /* background-color: rgb(255, 230, 0); */
 }
 
-.FT-btn {
+/* .FT-btn {
   background-color: #ff7700 ;
   border-radius: 90px; 
   margin: 10px 10px;
@@ -51,7 +52,7 @@
   font-size: 1rem;
   font-weight: bold;
   border: none;
-}
+} */
 
 .TF {
   width: 175px;

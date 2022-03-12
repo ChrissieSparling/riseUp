@@ -3,9 +3,14 @@
     display: flex;
     flex-direction: column;
     align-items:center;
-    background-color: #f0d96a;
+    
 }
 
+.singleFormBox{
+background-color: #ffd400; 
+
+padding: 20px;
+}
 .SF-home-btn {
     width:150px;
     height:30px;
