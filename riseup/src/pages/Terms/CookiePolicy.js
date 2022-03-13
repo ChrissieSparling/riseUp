@@ -5,6 +5,7 @@ const styles = {
   h1: {
     marginTop: '30px',
     color: 'Black',
+    backgroundColor: 'yellow',
   
   },
   p: {

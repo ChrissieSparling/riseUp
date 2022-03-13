@@ -3,14 +3,14 @@ import "./UserHome.css";
 import UserHomeMenu from "../../components/UserHomeMenu/UserHomeMenu";
 import ForumTopicHome from "../ForumTopic/ForumTopic";
 import { useNavigate, useParams } from "react-router-dom";
-import TodoList from '../../components/Todo/TodoList'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPenToSquare,
-  faTrashCan,
-  faComment,
-  faHeart,
-} from "@fortawesome/free-solid-svg-icons";
+import TodoList from '../../components/Todo/TodoList';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faPenToSquare,
+//   faTrashCan,
+//   faComment,
+//   faHeart,
+// } from "@fortawesome/free-solid-svg-icons";
 
 const UserHome = (props) => {
     let navigate = useNavigate();
@@ -129,6 +129,11 @@ const UserHome = (props) => {
                 <div className="user-home-btn-box">
                     <h2>What would you like to do?</h2>
                     <button className="btnUseHome" onClick={() => navigate("/forums")}>Visit the Forums</button>
+                    <button className="btnUseHome" onClick={() => navigate("/motivation")}>Motivation</button>
+                    <button className="btnUseHome" onClick={() => navigate("/aspiration")}>Aspirations</button>
+                    <button className="btnUseHome" onClick={() => navigate("/inspiration")}>Inspiration</button>
+                    <button className="btnUseHome" onClick={() => navigate("/philosophies")}>Philosophy</button>
+                    <button className="btnUseHome" onClick={() => navigate("/affirmation")}>Affirmations</button>
                     <button className="btnUseHome">Visit ToDos</button>
                     <button className="btnUseHome">Read a Story</button>
 
