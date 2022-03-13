@@ -27,6 +27,7 @@ import Crisis from "./components/Crisis/Crisis";
 import TermsCond from "./pages/Terms/TermsCond";
 import PrivacyPolicy from "./pages/Terms/PrivacyPolicy";
 import CookiePolicy from "./pages/Terms/CookiePolicy";
+import AffPage from "./pages/AffirmationPage/AffPage"
 
 
 function App() {
@@ -172,19 +173,20 @@ function App() {
         <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
         <Route path='/about'element={<About/>}/>
         {/* route for affirmation page */}
-        {/* <Route path='/affirmations/:topic'element={<AffPage/>}/> */}
+        <Route path ='/affirmations'element = {<AffPage/>} />
         <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
         <Route path='/horoscope'element={<Horoscope/>}/>
         <Route path='/story'/>
         <Route path='/crisis'element={<Crisis/>}/>
         <Route path='/'element={<Homepage/>}/>
+        <Route path='/terms'element={<TermsCond/>}/>
+        <Route path='/privacy'element={<PrivacyPolicy/>}/>
+        <Route path='/cookie'element={<CookiePolicy/>}/>
 
         <Route path='*'/>
 
       </Routes>
-      <TermsCond/>
-      <PrivacyPolicy/>
-      <CookiePolicy/>
+    
       <Footer />
 
     </div>
