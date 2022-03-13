@@ -24,6 +24,7 @@ import SinglePost from "./components/SinglePost/SinglePost";
 import About from "./pages/About/About"
 import EditPost from "./pages/EditPost/EditPost";
 import Crisis from "./components/Crisis/Crisis";
+import TermsCond from "./pages/Terms/TermsCond";
 
 function App() {
   let navigate = useNavigate();
@@ -174,10 +175,11 @@ function App() {
         <Route path='/story'/>
         <Route path='/crisis'element={<Crisis/>}/>
         <Route path='/'element={<Homepage/>}/>
+
         <Route path='*'/>
 
       </Routes>
-      
+      <TermsCond/>
       <Footer />
 
     </div>
