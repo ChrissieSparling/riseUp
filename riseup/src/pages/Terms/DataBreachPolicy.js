@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./Terms.css"
 const styles = {
   h1: {
     marginTop: '30px',

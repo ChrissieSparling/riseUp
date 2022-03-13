@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Terms.css"
 
 const styles = {
   h1: {
@@ -95,7 +96,7 @@ export function CookiePolicy () {
         <br />•	Safari
         <br />Opt-out of Third-Party Networks
         If you do not wish to have this information used for the purpose of serving you interest-based advertisements, you may exercise your preferences as described below. Please note this does not stop you from being served advertisements. You will continue to receive generic advertisements. If you reject or block all cookies in your browser settings, you will not be able to take advantage of WeRiseUpToday Services as some cookies are necessary for the Site to function properly.
-        <br />You can learn more about managing your preferences for ads online, particularly for many third-party advertising networks, through resources made available by the Digital Advertising Alliance at https://www.aboutads.info
+        <br />You can learn more about managing your preferences for ads online, particularly for many third-party advertising networks, through resources made available by the Digital Advertising companies.
         <br />Third-Party Tools
         <br />Various third parties provide browser plug-ins and apps that can help provide you information on and limit or block third-party cookies, web beacons, and some Javascript-based technologies. WeRiseUpToday cannot vouch for the efficacy of a particular third-party product, but popular products that provide these privacy enhancements include Ghostery and AdBlock Plus.
         <br />Both Google and Facebook provide tools to control use of advertising on their respective platforms, including advertising on and with WeRiseUpToday. More information can be found in your account settings on the respective platforms, including in Google/'s Privacy Center and in Facebook/'s Ad Settings.
