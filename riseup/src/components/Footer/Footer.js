@@ -19,11 +19,19 @@ function Footer() {
             <div className="row">
               <p className="col-sm">
                 &copy;{new Date().getFullYear()} Rise Up | All rights reserved |
-                <a href="#" className="footTag">
-                  Terms Of Service{" "}
+                <a
+                  href="pages/Terms/TermsCond
+"
+                  className="footTag"
+                >
+                  Terms Of Service
                 </a>
-                |{" "}
-                <a href="#" className="footTag">
+                |
+                <a
+                  href="pages/Terms/PrivacyPolicy
+"
+                  className="footTag"
+                >
                   Privacy
                 </a>
               </p>
@@ -66,6 +74,13 @@ function Footer() {
             <div className="crisisFooter">
               <a className="crisisLinkFoot" href="/crisis">
                 Crisis Links
+              </a>
+              <a
+                className="crisisLinkFoot"
+                href="pages/Terms/TermsCond"
+
+              >
+                Terms
               </a>
             </div>
           </div>

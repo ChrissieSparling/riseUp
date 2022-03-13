@@ -6,11 +6,10 @@
   border-radius: 40px;
   margin: 20px;
   border: 5px solid rgb(248, 101, 2);
-  height: 300px;
-  width: 900px;
+  height: auto;
+  min-width: 300px;
+  width: 70%;
 }
-
-
 .singlePostWrapper {
   padding: 20px;
 }
