@@ -20,14 +20,6 @@ const affPage = (props) => {
           <h1 className="affWords">
           <TypeDelete />
           </h1>
-           <Link className ="affirmations"
-            activeClassName ="active"
-            isActive = {()=>window.location.pathname === '/AppPage'}
-            to = "/affirmations">
-            <div className="login-btn">
-                <button className="btnLogSign">Sign Up NOW!</button>
-              </div>
-            </Link>
           </div>  
         </div>  
       

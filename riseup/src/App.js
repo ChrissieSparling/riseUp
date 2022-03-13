@@ -25,6 +25,9 @@ import About from "./pages/About/About"
 import EditPost from "./pages/EditPost/EditPost";
 import Crisis from "./components/Crisis/Crisis";
 import TermsCond from "./pages/Terms/TermsCond";
+import PrivacyPolicy from "./pages/Terms/PrivacyPolicy";
+import CookiePolicy from "./pages/Terms/CookiePolicy";
+
 
 function App() {
   let navigate = useNavigate();
@@ -180,6 +183,8 @@ function App() {
 
       </Routes>
       <TermsCond/>
+      <PrivacyPolicy/>
+      <CookiePolicy/>
       <Footer />
 
     </div>
