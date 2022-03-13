@@ -1,5 +1,4 @@
 // const BASEURL="http://localhost:3005"
-
 const BASEURL="https://rise-up-back-end.herokuapp.com"
 
 const API = {
@@ -24,12 +23,13 @@ const API = {
     })
       .then(res => res.json())
     },
-    // getTanks:()=>{
-    //     return fetch(`${BASEURL}/api/tanks`)
+    // cs- hopfully routes grabbing the apis 
+    // getAffirmationData: (affirmation)=>{
+    //     return fetch(`${BASEURL}/AffirmationData`)
     //     .then(res => res.json())
     // },
-    // getSingleTank:id=>{
-    //     return  fetch(`${BASEURL}/api/tanks/${id}`).then(res=>res.json())
+    // getSingleAffirmation:(Affirmation)=>{
+    //     return  fetch(`${BASEURL}/Affirmation`).then(res=>res.json())
     // }
 }
 

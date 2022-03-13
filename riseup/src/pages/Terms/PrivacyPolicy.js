@@ -272,3 +272,4 @@ export function PrivacyPolicy () {
         </>
        )
 }
+export default PrivacyPolicy
