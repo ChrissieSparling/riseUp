@@ -4,6 +4,8 @@ import UserHomeMenu from "../../components/UserHomeMenu/UserHomeMenu";
 import ForumTopicHome from "../ForumTopic/ForumTopic";
 import { useNavigate, useParams } from "react-router-dom";
 import TodoList from '../../components/Todo/TodoList';
+
+
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {
 //   faPenToSquare,
@@ -47,10 +49,10 @@ const UserHome = (props) => {
 
             const randNum = Math.floor(Math.random() * 30 + 1)
             fetch(`https://rise-up-back-end.herokuapp.com/affirmations/${randNum}`, {
-                method: "GET",
-                // headers: {
-                //     "x-access-token": localStorage.getItem("token"),
-                // },
+                method: "GET",    
+                headers: {
+                    "x-access-token": localStorage.getItem("token"),
+                },
             })
                 .then((response) => response.json())
                 .then((responseJson) => {
@@ -133,7 +135,7 @@ const UserHome = (props) => {
                     <button className="btnUseHome" onClick={() => navigate("/aspiration")}>Aspirations</button>
                     <button className="btnUseHome" onClick={() => navigate("/inspiration")}>Inspiration</button>
                     <button className="btnUseHome" onClick={() => navigate("/philosophies")}>Philosophy</button>
-                    <button className="btnUseHome" onClick={() => navigate("/affirmation")}>Affirmations</button>
+                    <button className="btnUseHome" onClick={() => navigate("/affirmations")}>Affirmations</button>
                     <button className="btnUseHome">Visit ToDos</button>
                     <button className="btnUseHome">Read a Story</button>
 
