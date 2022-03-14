@@ -101,7 +101,7 @@ const SingleForum = (props) => {
     const clickedComment = comments.filter((comment) => {
       return comment.id === id;
     });
-    console.log(clickedComment[0].body);
+    console.log( 'here\'s the comment body', clickedComment[0].body);
     document.getElementById("comment-input").textContent =
       clickedComment[0].body;
     comments.forEach((comment) => {
