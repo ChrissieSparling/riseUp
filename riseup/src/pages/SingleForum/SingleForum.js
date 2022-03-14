@@ -28,23 +28,18 @@ const SingleForum = (props) => {
   const [wantComment, setWantComment] = useState(false);
   const [commId, setCommId] = useState(1)
 
+
+  console.log('sf line 34', currUser)
   useEffect(() => {
     console.log("incoming user Id", auth.userId);
     setCurrUser({
       id: auth.userId,
-      username: auth.username,
+      username: auth.userName,
     });
     const timer = setTimeout(() => console.log("this is a delay"), 500);
     clearTimeout(timer);
     console.log(id);
     console.log('this is current user', currUser)
-    // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
-    //   method: "GET",
-    //   headers: {
-    //     "x-access-token": localStorage.getItem("token"),
-    //   },
-    // })
-    //   .then((response) => response.json())
     API.getPost(id)
       .then((responseJson) => {
         console.log("=================postData", responseJson);
@@ -67,20 +62,8 @@ const SingleForum = (props) => {
 
   const postComment = (e) => {
     e.preventDefault();
-    console.log("this is the new comment", newComment, auth.username);
-    // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}/comments/new`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "x-access-token": localStorage.getItem("token"),
-    //   },
-    //   body: JSON.stringify({
-    //     body: newComment.body,
-    //     author: currUser.username,
-    //   }),
-    // })
-    //   .then((data) => data.json())
-    API.saveComment(id, newComment.body, currUser.username)
+    console.log("this is the new comment", newComment);
+    API.saveComment(id, newComment)
       .then((newData) => {
         comments.push(newData);
         console.log(newData);
@@ -107,8 +90,8 @@ const SingleForum = (props) => {
     e.preventDefault();
     console.log("you're typing", e.target.name, e.target.value);
     setNewComment({
-      ...newComment,
-      [e.target.name]: e.target.value,
+      body: e.target.value,
+      author: auth.userName
     });
   };
 
@@ -160,13 +143,6 @@ const SingleForum = (props) => {
       )
     ) {
       console.log(post.id);
-      // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
-      //   method: "DELETE",
-      //   headers: {
-      //     "x-access-token": localStorage.getItem("token"),
-      //   },
-      // })
-      //   .then((response) => response.json())
       API.deletePost(id)
         .then((responseJson) => {
           console.log("=================postData", responseJson);
@@ -188,6 +164,7 @@ const SingleForum = (props) => {
   return (
     <div className=" singleForum">
       <div className="singleFormBox">
+{/* buttons at top of page */}
         <button
           onClick={() => navigate(`/forums/${post.topic}`)}
           className="SF-home-btn"
@@ -197,6 +174,8 @@ const SingleForum = (props) => {
         <button onClick={() => navigate(`/forums`)} className="SF-home-btn">
           Go to Forums
         </button>
+
+{/* single post displayed here */}
         <SinglePost
           title={post.title}
           author={post.author}
@@ -206,6 +185,7 @@ const SingleForum = (props) => {
           getSinglePost={"return"}
         />
 
+{/* big comment box below single post */}
         <div className="SF-comment-box">
           {currUser.id === post.userId ? (
             <div className="singlePostCommentIcon">
@@ -238,6 +218,8 @@ const SingleForum = (props) => {
             </div>
           )}
 
+
+{/* comment input box pops up when comment button clicked */}
           {wantComment ? (
             <form className="SF-comment-btn-box">
               <textarea
@@ -254,6 +236,8 @@ const SingleForum = (props) => {
             </form>
           ) : null}
 
+
+{/* comments are populated as boxes below comment input box */}
           {comments.length ? (
             comments.map((p) => {
               return (
@@ -285,7 +269,7 @@ const SingleForum = (props) => {
                       />
                     </div>
                   </div>
-
+              {/* buttons on each comment's box */}
                   {currUser.id === p.userId ? (
                     <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
                       <div
@@ -311,7 +295,6 @@ const SingleForum = (props) => {
                     </div>
                   ) : null}
                 </div>
-                // <li className='list-group-item' style={{width: "40vw"}} key={p.id}><h1>{p.title}</h1><p>{p.topic}</p><p>{p.body}</p><p>User: {p.userId}</p></li>
               );
             })
           ) : (

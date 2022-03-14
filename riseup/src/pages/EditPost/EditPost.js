@@ -10,13 +10,6 @@ const EditPost = props => {
     const [postToEdit, setPostToEdit] = useState({})
     const [editedPost, setEditedPost] = useState({})
     useEffect(()=>{
-        // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`,{
-        //     method: 'GET',
-        //     headers: {
-        //         'x-access-token': localStorage.getItem('token'),
-        //     },
-        // })
-        // .then(response => response.json())
         API.getPost(id)
         .then(responseJson => {
     
@@ -40,19 +33,6 @@ const EditPost = props => {
     const editPost = e => {
       e.preventDefault();
       console.log('this is the new post', editedPost)
-      // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`,{
-      //   method: 'PUT',
-      //   headers: {
-      //       'Content-Type': 'application/json',
-      //       'x-access-token': localStorage.getItem('token'),
-      //   },
-      //   body: JSON.stringify({
-      //       // topic: editedPost.topic,
-      //       title: editedPost.title,
-      //       body: editedPost.body
-      //    }),
-      // })
-      // .then((data) => data.json())
       API.editPost(id, editedPost)
       .then((newData) => {
         console.log(newData)

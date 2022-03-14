@@ -15,7 +15,6 @@ import Horoscope from "./components/Horoscope/Horoscope";
 import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import Navbar from "./components/Navbar/Navbar";
-import Forum from "./pages/Forum/Forum"
 import SingleForum from "./pages/SingleForum/SingleForum";
 import Write from "./pages/NewPost/NewPost";
 import Homepage from "./pages/Homepage/Homepage";
@@ -39,14 +38,7 @@ import AffPage from "./pages/AffirmationPage/AffPage"
 function App() {
   const navigate = useNavigate();
   const {auth, setAuth} = useAuth();
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [role, setRole] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [birthday, setBirthday] = useState("");
-  // const [zipCode, setZipCode] = useState("");
   const [newUser, setNewUser] = useState({
     firstName: '',
     lastName: '',
@@ -59,32 +51,6 @@ function App() {
   });
   const [userId, setUserId] = useState(0);
   const [token, setToken] = useState("");
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-
-  //     API.getTokenData(localStorage.getItem('token'))
-  //       .then(data => {
-  //         console.log('data from token check', data);
-  //         setAuth({
-  //           userId: data.userId, 
-  //           userName: data.username, 
-  //           role: [data.role], 
-            // token: localStorage.getItem('token')
-        // })
-          // setUserId(data.id);
-          // setUsername(data.username);
-          // setToken(token);
-      
-  //       })
-  //       .catch(err => {
-  //         console.log(err);
-  //       });
-
-  //   } else {console.log('no token')}
-  // }, [auth.userName]);
-  // console.log('this is auth', auth)
 
   const handlePostUser = (e) => {
     console.log(newUser)
@@ -121,11 +87,8 @@ function App() {
 
   return (
     <div className="app">
-      {/* <Header />
-      <Navbar id={userId} logMeOut={logMeOut}/> */}
 
       <Routes>
-        {/* <Route path='/'element={<Homepage/>}/> */}
         <Route path='/'element={<Layout/>}>
           
           {/* public routes */}
@@ -133,7 +96,6 @@ function App() {
           <Route path='/signup' element={<SignUp handlePostUser={handlePostUser} handleCollectUser={handleCollectUser}  userId={userId}/>}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/horoscope'element={<Horoscope userId={userId}/>}/>
-          {/* <Route path='/story'/> */}
           <Route path='/crisis'element={<Crisis userId={userId}/>}/>
           <Route path='/about'element={<About/>}/>
 
