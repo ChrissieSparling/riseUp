@@ -3,12 +3,14 @@ import "./NewPost.css";
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import NewPostBox from '../../components/NewPostBox/NewPostBox'
+import API from "../../utils/API";
 
 const Write = () => {
   let navigate = useNavigate();
   let { topic } = useParams();
   const [newPost, setNewPost] = useState({
     topic: topic,
+    title: '',
     body: ''
 
   })
@@ -23,22 +25,23 @@ const Write = () => {
     })
   }
 
-  const showObject = e => {
+  const savePost = e => {
     e.preventDefault();
     console.log('this is the new post', newPost)
-    fetch('https://rise-up-back-end.herokuapp.com/posts/new', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token'),
-      },
-      body: JSON.stringify({
-        topic: newPost.topic,
-        title: newPost.title,
-        body: newPost.body
-      }),
-    })
-      .then((data) => data.json())
+    // fetch('https://rise-up-back-end.herokuapp.com/posts/new', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'x-access-token': localStorage.getItem('token'),
+    //   },
+    //   body: JSON.stringify({
+    //     topic: newPost.topic,
+    //     title: newPost.title,
+    //     body: newPost.body
+    //   }),
+    // })
+    //   .then((data) => data.json())
+    API.savePost(newPost)
       .then((newData) => {
         console.log(newData)
         navigate(`/forums/${topic}`)
@@ -61,8 +64,8 @@ const Write = () => {
         <br/>
         <p>You are posting in {topic}.</p>
    
-      <NewPostBox handleInputChange={handleInputChange} showObject={showObject} />
-      <button onClick={showObject} className='SF-home-btn TF'>Publish</button>
+      <NewPostBox handleInputChange={handleInputChange}/>
+      <button onClick={savePost} className='SF-home-btn TF'>Publish</button>
       </div>
     </>
   );

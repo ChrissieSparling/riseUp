@@ -4,8 +4,13 @@ import "../src/App.css"
 import {React, useState, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route, Link, useNavigate} from "react-router-dom";
 import API from "./utils/API"
+import Layout from './pages/Layout/Layout'
+import RequireAuth from './components/RequireAuth/RequireAuth'
+import useAuth from './utils/hooks/useAuth'
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Unauthorized from './pages/Unauthorized/Unauthorized'
+import Profile from './pages/Profile/Profile'
 import Horoscope from "./components/Horoscope/Horoscope";
 import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
@@ -24,6 +29,7 @@ import SinglePost from "./components/SinglePost/SinglePost";
 import About from "./pages/About/About"
 import EditPost from "./pages/EditPost/EditPost";
 import Crisis from "./components/Crisis/Crisis";
+import Missing from './components/Missing/Missing'
 import TermsCond from "./pages/Terms/TermsCond";
 import PrivacyPolicy from "./pages/Terms/PrivacyPolicy";
 import CookiePolicy from "./pages/Terms/CookiePolicy";
@@ -31,15 +37,16 @@ import AffPage from "./pages/AffirmationPage/AffPage"
 
 
 function App() {
-  let navigate = useNavigate();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const navigate = useNavigate();
+  const {auth, setAuth} = useAuth();
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
-  const [email, setEmail] = useState("");
-  const [birthday, setBirthday] = useState("");
-  const [zipCode, setZipCode] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [role, setRole] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [birthday, setBirthday] = useState("");
+  // const [zipCode, setZipCode] = useState("");
   const [newUser, setNewUser] = useState({
     firstName: '',
     lastName: '',
@@ -52,45 +59,37 @@ function App() {
   });
   const [userId, setUserId] = useState(0);
   const [token, setToken] = useState("");
-  const [loginInfo, setLoginInfo] = useState({
-    username: '',
-    password: ''
-  })
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      API.getTokenData(token)
-        .then(data => {
-          console.log(data);
-          setUserId(data.id);
-          setUsername(data.username);
-          setToken(token);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    } 
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+
+  //     API.getTokenData(localStorage.getItem('token'))
+  //       .then(data => {
+  //         console.log('data from token check', data);
+  //         setAuth({
+  //           userId: data.userId, 
+  //           userName: data.username, 
+  //           role: [data.role], 
+            // token: localStorage.getItem('token')
+        // })
+          // setUserId(data.id);
+          // setUsername(data.username);
+          // setToken(token);
+      
+  //       })
+  //       .catch(err => {
+  //         console.log(err);
+  //       });
+
+  //   } else {console.log('no token')}
+  // }, [auth.userName]);
+  // console.log('this is auth', auth)
 
   const handlePostUser = (e) => {
     console.log(newUser)
     e.preventDefault();
-    fetch("https://rise-up-back-end.herokuapp.com/users/new", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        firstName: newUser.firstName,
-        lastName: newUser.lastName,
-        username: newUser.username,
-        password: newUser.password,
-        role: newUser.role,
-        email: newUser.email,
-        birthday: parseInt(newUser.birthday.split('-').reverse().join('-')),
-        zipCode: newUser.zipCode,
-      }),
-    })
-      .then((data) => data.json())
+    API.signUp(newUser)
       .then((newData) => {
         if(newData.id){
           console.log(newData)
@@ -98,7 +97,7 @@ function App() {
           setUsername(newData.username);
           setToken(newData.accessToken);
           localStorage.setItem("token", newData.accessToken);
-          navigate(`/users/${newData.id}`)
+          navigate(`/users/profile`)
         } else {
           alert('Your request was not successful. \nPlease check the form and try again.');
           console.log('front end post req prob:', newData)
@@ -112,44 +111,6 @@ function App() {
       })
   };
 
-  async function handleLogin (e){
-    e.preventDefault()
-  console.log('login info', loginInfo)
-    API.login(loginInfo.username,loginInfo.password)
-      .then(data => {
-        console.log(data);
-        if(data.accessToken){
-          setUserId(data.id);
-          setUsername(data.username);
-          setToken(data.accessToken);
-          localStorage.setItem("token", data.accessToken);
-          navigate(`/users/${data.id}`)
-          console.log('the button was clicked')
-          console.log('==========uname', loginInfo.username)
-          console.log('==========password', loginInfo.password)
-        } else {alert('Your username or password was incorrect!')}
-      }).catch(err=>{
-        console.log(err);
-      });
-  };
-
-  const logMeOut = ()=>{
-    localStorage.removeItem("token");
-    setUserId(0);
-    setUsername("");
-    setToken("");
-    console.log('you\'re logged out!')
-    navigate('/')
-  }
-
-  const handleInputChange = e=>{
-    console.log(e.target.name,e.target.value)
-    setLoginInfo({
-      ...loginInfo,
-      [e.target.name]:e.target.value
-    })
-  }
-
   const handleCollectUser = e=>{
     console.log(e.target.name,e.target.value)
     setNewUser({
@@ -160,34 +121,45 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
-      <Navbar id={userId} logMeOut={logMeOut}/>
-      <Routes>
-       
-        <Route path='/signup' element={<SignUp handlePostUser={handlePostUser} handleCollectUser={handleCollectUser}/>}/>
-        <Route path='/users/login' element={<Login handleInputChange={handleInputChange} loginInfo={loginInfo} handleLogin={handleLogin} />}/>
-        <Route path={`/users/:id`} element={<UserHome  username={username} userId={userId}/>}/>
-        <Route path='/forums'element={<ForumTopicHome />}/>
-        <Route path='/forums/:topic'element={<ForumTopic/>}/>
-        <Route path='/forums/post/:id'element={<SingleForum username={username} userId={userId}/>}/>
-        <Route path='/forums/edit/post/:id'element={<EditPost/>}/>
-        <Route path='/about'element={<About/>}/>
-        {/* route for affirmation page */}
-        <Route path ='/affirmations'element = {<AffPage/>} />
-        <Route path='/forums/post/:topic/new'element={<NewPost/>}/>
-        <Route path='/horoscope'element={<Horoscope/>}/>
-        <Route path='/story'/>
-        <Route path='/crisis'element={<Crisis/>}/>
-        <Route path='/'element={<Homepage/>}/>
-        <Route path='/terms'element={<TermsCond/>}/>
-        <Route path='/privacy'element={<PrivacyPolicy/>}/>
-        <Route path='/cookie'element={<CookiePolicy/>}/>
+      {/* <Header />
+      <Navbar id={userId} logMeOut={logMeOut}/> */}
 
-        <Route path='*'/>
+      <Routes>
+        {/* <Route path='/'element={<Homepage/>}/> */}
+        <Route path='/'element={<Layout/>}>
+          
+          {/* public routes */}
+          <Route path='/'element={<Homepage/>}/>
+          <Route path='/signup' element={<SignUp handlePostUser={handlePostUser} handleCollectUser={handleCollectUser}  userId={userId}/>}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/horoscope'element={<Horoscope userId={userId}/>}/>
+          {/* <Route path='/story'/> */}
+          <Route path='/crisis'element={<Crisis userId={userId}/>}/>
+          <Route path='/about'element={<About/>}/>
+
+
+          {/* protected routes */}
+          <Route element={<RequireAuth allowedRoles={['paidUser', 'mod', 'admin']}/>}>
+            <Route path={`/profile`} element={<Profile />}/>
+            <Route path='/forums'element={<ForumTopicHome userId={userId} />}/>
+            <Route path='/forums/:topic'element={<ForumTopic userId={userId}/>}/>
+            <Route path='/forums/post/:id'element={<SingleForum username={username} userId={userId}/>}/>
+            <Route path='/forums/edit/post/:id'element={<EditPost userId={userId}/>}/>
+            
+            <Route path='/forums/post/:topic/new'element={<NewPost userId={userId}/>}/>
+          </Route>
+
+          <Route element={<RequireAuth allowedRoles={['mod']}/>}>
+          </Route>
+          <Route element={<RequireAuth allowedRoles={['admin']}/>}>
+          </Route>
+          
+          {/* error route */}
+          <Route path='/unauthorized' element={<Unauthorized/>}/>
+          <Route path='*' element={<Missing/>}/>
+        </Route>
 
       </Routes>
-    
-      <Footer />
 
     </div>
   );
