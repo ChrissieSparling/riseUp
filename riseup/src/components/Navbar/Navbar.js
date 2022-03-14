@@ -4,14 +4,9 @@ import useAuth from "../../utils/hooks/useAuth";
 import API from '../../utils/API';
 import "../Navbar/navbar.css";
 
-
 const Navbar = (props) => {
   const navigate = useNavigate();
   const {auth, setAuth} = useAuth();
-  // const [navUID, setNavUID] = useState('')
-  // useEffect(()=>{
-  //   setNavUID(props.id);
-  // })
 
 const redirect = (e, url) => {
   e.preventDefault();
@@ -30,15 +25,11 @@ const redirect = (e, url) => {
         }).then(newdata=>{
           navigate(url);
         })
-        
         .catch(err => {
           console.log(err);
         });
-
     } else {console.log('no token')}
   }
-
-  console.log('this is auth', auth)
 
   const logMeOut = ()=>{
     localStorage.removeItem("token");
@@ -101,5 +92,4 @@ const redirect = (e, url) => {
 };
 
 export default Navbar;
-
 

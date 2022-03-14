@@ -8,7 +8,7 @@ import TodoList from '../../components/Todo/TodoList'
 
 import API from "../../utils/API";
 
-const UserHome = (props) => {
+const UserHome = () => {
     let navigate = useNavigate();
   
 

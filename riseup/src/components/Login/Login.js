@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../../utils/hooks/useAuth";
 import API from "../../utils/API";
 
@@ -8,14 +8,11 @@ import "../Login/login.css";
 
 function Login() {
   const {setAuth} = useAuth();
-  // console.log(setAuth);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/profile';
 
   const [username, setUsername] = useState("");
-  // const [userId, setUserId] = useState(0);
-  // const [token, setToken] = useState("");
   const [loginInfo, setLoginInfo] = useState({
     username: '',
     password: ''
@@ -42,16 +39,12 @@ function Login() {
           const role = data?.role;
           setAuth({userId, userName, role, token})
           console.log('auth info', userId, userName, role, token)
-
           localStorage.setItem("token", data.accessToken);
           setLoginInfo({
             username: '',
             password: ''
           })
-
           navigate(from, {replace: true});
-
- 
         } else {alert('Your username or password was incorrect!')}
       }).catch(err=>{
         console.log(err);
@@ -64,7 +57,6 @@ function Login() {
         <div>
           <div className="img">
             <div className="container-image">
-              {/* <img src="#" alt="profile" className="logo-img" /> */}
             </div>
           </div>
           <div>
