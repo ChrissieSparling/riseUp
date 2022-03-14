@@ -8,6 +8,7 @@ import { flexbox } from '@mui/system'
 
 const ForumTopicHome = () => {
   let navigate = useNavigate();
+  
     const forumTopics = [
         // {
         //     topic: "Testing",

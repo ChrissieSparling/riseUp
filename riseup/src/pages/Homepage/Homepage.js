@@ -60,7 +60,7 @@ const HomePage = (props) => {
           <div className="postInfoHome">
             <div className="postCatsHome">
               <img className="flowerImg" src={happyImg} />
-              <span className="postTitleHome"><a classname="homeAffLinks" href="#">Aspirations</a></span>
+              <span className="postTitleHome"><a className="homeAffLinks" href="#">Aspirations</a></span>
               <hr />
 
               <p className="postSubHome">
