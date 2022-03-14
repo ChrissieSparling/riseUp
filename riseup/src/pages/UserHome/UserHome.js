@@ -10,7 +10,6 @@ import API from "../../utils/API";
 
 const UserHome = (props) => {
     let navigate = useNavigate();
-<<<<<<< HEAD
   
 
     return (
@@ -18,14 +17,6 @@ const UserHome = (props) => {
             
         </div>
     );
-=======
-    
-
-    return (
-        <div></div>
-
-  );
->>>>>>> e59a4206129725abfc495dc3dcdd8f53cc4f6b8e
 };
 
 export default UserHome;
