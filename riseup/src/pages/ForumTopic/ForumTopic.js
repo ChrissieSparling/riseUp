@@ -12,7 +12,6 @@ const ForumHome = (props) => {
     let navigate = useNavigate();
 
     const getSinglePost = (id) => {
-      // e.preventDefault();
       navigate(`/forums/post/${id}`)
       console.log('id', id)
     }
@@ -20,13 +19,7 @@ const ForumHome = (props) => {
     useEffect(()=>{
         setSavedUserID(props.userId)
         console.log(topic)
-        // fetch(`https://rise-up-back-end.herokuapp.com/posts/forum/${topic}`,{
-        //     method: 'GET',
-        //     headers: {
-        //         'x-access-token': localStorage.getItem('token'),
-        //     },
-        // })
-        // .then(response => response.json())
+
         API.getTopicPosts(topic)
         .then(responseJson => {
         console.log('=================postData', responseJson)
@@ -51,7 +44,6 @@ const ForumHome = (props) => {
             {posts.length ? (posts.map(p=>{
                 return(
                 <SinglePost author={p.user.username} getSinglePost={()=>getSinglePost(p.id)} id={p.id} title={p.title} body={p.body} createdAt={p.createdAt}/>
-                // <li className='list-group-item' style={{width: "40vw"}} key={p.id}><h1>{p.title}</h1><p>{p.topic}</p><p>{p.body}</p><p>User: {p.userId}</p></li>
                 )
             })) : <h1 className="nothing-to-show">No posts to display!</h1>}
             </div>
