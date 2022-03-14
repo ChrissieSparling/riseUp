@@ -42,20 +42,15 @@ function Login() {
           const role = data?.role;
           setAuth({userId, userName, role, token})
           console.log('auth info', userId, userName, role, token)
-          // setUserId(data.id);
-          // setUsername(data?.username);
-          // setToken(data?.accessToken);
+
           localStorage.setItem("token", data.accessToken);
           setLoginInfo({
             username: '',
             password: ''
           })
-          // console.log('userID', data.id)
-          // console.log('data', data)
+
           navigate(from, {replace: true});
-          // console.log('the button was clicked')
-          // console.log('==========uname', loginInfo.username)
-          // console.log('==========password', loginInfo.password)
+
  
         } else {alert('Your username or password was incorrect!')}
       }).catch(err=>{

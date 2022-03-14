@@ -15,7 +15,6 @@ import Horoscope from "./components/Horoscope/Horoscope";
 import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import Navbar from "./components/Navbar/Navbar";
-import Forum from "./pages/Forum/Forum"
 import SingleForum from "./pages/SingleForum/SingleForum";
 import Write from "./pages/NewPost/NewPost";
 import Homepage from "./pages/Homepage/Homepage";

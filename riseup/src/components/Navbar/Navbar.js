@@ -5,9 +5,6 @@ import API from '../../utils/API';
 import "../Navbar/navbar.css";
 
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
-
 const Navbar = (props) => {
   const navigate = useNavigate();
   const {auth, setAuth} = useAuth();
@@ -28,11 +25,7 @@ const redirect = (e, url) => {
             userId: data.userId, 
             userName: data.username, 
             role: data.role, 
-            // token: localStorage.getItem('token')
         })
-          // setUserId(data.id);
-          // setUsername(data.username);
-          // setToken(token);
       
         }).then(newdata=>{
           navigate(url);
@@ -54,9 +47,6 @@ const redirect = (e, url) => {
       userName: '', 
       role: '', 
       token: ''})
-    // setUserId(0);
-    // setUsername("");
-    // setToken("");
     console.log('you\'re logged out!')
     navigate('/')
   }
@@ -112,8 +102,4 @@ const redirect = (e, url) => {
 
 export default Navbar;
 
-// work, family, personal wellness, finacial, relationship, recovery
 
-{
-  
-}
