@@ -14,13 +14,17 @@ const EditPost = props => {
         .then(responseJson => {
     
         console.log('=================postData', responseJson)
+        console.log('edit post line 17',responseJson)
           setPostToEdit(responseJson)
         }).catch(err=>{
             console.log(err)
             alert(`There was an error: ${err}`)
         })
     }, [])
-  
+
+    console.log(postToEdit)
+
+    
     const handleInputEdit = e =>{
       e.preventDefault();
       console.log ('you\'re typing', e.target.name,e.target.value)

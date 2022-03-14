@@ -14,7 +14,7 @@ import {
 
 const SingleForum = (props) => {
   const navigate = useNavigate();
-  const {auth, setAuth} = useAuth();
+  const { auth, setAuth } = useAuth();
 
   let { id } = useParams();
   const [currUser, setCurrUser] = useState({});
@@ -22,7 +22,7 @@ const SingleForum = (props) => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({
     body: '',
-    author:''
+    author: ''
   });
   const [editedComment, setEditedComment] = useState({});
   const [wantComment, setWantComment] = useState(false);
@@ -116,17 +116,17 @@ const SingleForum = (props) => {
   const editComment = (e) => {
     e.preventDefault();
     API.editComment(commId, editedComment)
-    .then(data=>{
-      console.log('data', data)
-    })
+      .then(data => {
+        console.log('data', data)
+      })
   }
 
   const deleteComment = (e) => {
     e.preventDefault();
     API.deleteComment(commId)
-    .then(data => {
-      console.log('data', data)
-    })
+      .then(data => {
+        console.log('data', data)
+      })
   };
 
   const goEdit = (e) => {
@@ -164,18 +164,19 @@ const SingleForum = (props) => {
   return (
     <div className=" singleForum">
       <div className="singleFormBox">
-{/* buttons at top of page */}
-        <button
-          onClick={() => navigate(`/forums/${post.topic}`)}
-          className="SF-home-btn"
-        >
-          Return to Topic
-        </button>
-        <button onClick={() => navigate(`/forums`)} className="SF-home-btn">
-          Go to Forums
-        </button>
-
-{/* single post displayed here */}
+        {/* buttons at top of page */}
+        <div className='SF-btn-box'>
+          <button
+            onClick={() => navigate(`/forums/${post.topic}`)}
+            className="SF-home-btn"
+          >
+            Return to Topic
+          </button>
+          <button onClick={() => navigate(`/forums`)} className="SF-home-btn">
+            Go to Forums
+          </button>
+        </div>
+        {/* single post displayed here */}
         <SinglePost
           title={post.title}
           author={post.author}
@@ -185,7 +186,7 @@ const SingleForum = (props) => {
           getSinglePost={"return"}
         />
 
-{/* big comment box below single post */}
+        {/* big comment box below single post */}
         <div className="SF-comment-box">
           {currUser.id === post.userId ? (
             <div className="singlePostCommentIcon">
@@ -219,7 +220,7 @@ const SingleForum = (props) => {
           )}
 
 
-{/* comment input box pops up when comment button clicked */}
+          {/* comment input box pops up when comment button clicked */}
           {wantComment ? (
             <form className="SF-comment-btn-box">
               <textarea
@@ -237,7 +238,7 @@ const SingleForum = (props) => {
           ) : null}
 
 
-{/* comments are populated as boxes below comment input box */}
+          {/* comments are populated as boxes below comment input box */}
           {comments.length ? (
             comments.map((p) => {
               return (
@@ -248,52 +249,56 @@ const SingleForum = (props) => {
                       Created on: {p.createdAt} By: {p.author}
                     </li>
                   </div>
-                  <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
-                    <div
-                      onClick={handleWantComment}
-                      className="first-icon icon comment-icon"
-                      data-index={p.id}
-                    >
-                      <FontAwesomeIcon
-                        className="singlePostIcon"
-                        icon={faComment}
-                      />
-                    </div>
-                    <div
-                      className="last-icon icon comment-icon"
-                      data-index={p.id}
-                    >
-                      <FontAwesomeIcon
-                        className="singlePostIcon"
-                        icon={faHeart}
-                      />
-                    </div>
-                  </div>
-              {/* buttons on each comment's box */}
-                  {currUser.id === p.userId ? (
+                  <div className='SF-comm-icon-box'>
                     <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
                       <div
-                        onClick={(e) => getComment(p.id, e)}
-                        className="first-icon icon"
+                        onClick={handleWantComment}
+                        className="first-icon icon comment-icon"
                         data-index={p.id}
                       >
                         <FontAwesomeIcon
                           className="singlePostIcon"
-                          icon={faPenToSquare}
+                          icon={faComment}
                         />
                       </div>
+                  {currUser.id !== p.userId ? (
                       <div
-                        onClick={deleteComment}
-                        className="last-icon icon"
+                        className="last-icon icon comment-icon"
                         data-index={p.id}
                       >
                         <FontAwesomeIcon
                           className="singlePostIcon"
-                          icon={faTrashCan}
+                          icon={faHeart}
                         />
                       </div>
+                      ) : null}
                     </div>
-                  ) : null}
+                    {/* buttons on each comment's box */}
+                  {currUser.id === p.userId ? (
+                      <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
+                        <div
+                          onClick={(e) => getComment(p.id, e)}
+                          className="first-icon icon"
+                          data-index={p.id}
+                        >
+                          <FontAwesomeIcon
+                            className="singlePostIcon"
+                            icon={faPenToSquare}
+                          />
+                        </div>
+                        <div
+                          onClick={deleteComment}
+                          className="last-icon icon"
+                          data-index={p.id}
+                        >
+                          <FontAwesomeIcon
+                            className="singlePostIcon"
+                            icon={faTrashCan}
+                          />
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
               );
             })
