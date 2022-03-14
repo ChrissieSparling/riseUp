@@ -14,7 +14,7 @@ function TypeDelete(){
 
         ],
         autoStart: true,
-        loop: false (10),
+        loop: false,
         typeSpeed: 1000,
         deleteSpeed: 10,
         
