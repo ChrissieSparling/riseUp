@@ -1,0 +1,11 @@
+
+@media (min-width: 913px){
+    .MuiAccordion-root {
+     display: none}
+   }
+   
+   @media (max-width: 912px){
+     .postsHome {
+       display: none;
+     }
+   }

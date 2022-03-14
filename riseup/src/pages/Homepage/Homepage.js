@@ -5,6 +5,8 @@ import { useState } from "react";
 import Affirmations from "../../components/Affirmations/Affirmations";
 import Accordion from "../../components/Accordion/Accordion";
 
+
+
 const HomePage = (props) => {
 
 
@@ -18,17 +20,11 @@ const HomePage = (props) => {
           <div className="postInfoHome">
             <div className="postCatsHome">
               <img className="flowerImg" src={happyImg} />
-              <span className="postTitleHome"><a classname="homeAffLinks" href="#">Motivation</a></span>
+              <span className="postTitleHome"><a classname="homeAffLinks" href="../MotPages">Motivation</a></span>
               <hr />
 
               <p className="postSubHome">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quaerat, maiores iusto perspiciatis, minus vel veniam debitis
-                magni praesentium, excepturi nisi sint. Ab aut numquam
-                temporibus, facilis vitae illum quae quibusdam.lit. Quaerat,
-                maiores iusto perspiciatis, minus vel veniam debitis magni
-                praesentium, excepturi nisi sint. Ab aut numquam temporibus,
-                facilis vitae illum quae quibusdam.
+              Get Motivated everyday by subscribing to our community. WeRiseUpToday has one goal! Helping you improve your life by reaching out to a community that appreciates you. We want to give you encouragement to be that ideal person you want to be.
               </p>
             </div>
           </div>

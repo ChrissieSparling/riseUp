@@ -30,6 +30,11 @@ import About from "./pages/About/About"
 import EditPost from "./pages/EditPost/EditPost";
 import Crisis from "./components/Crisis/Crisis";
 import Missing from './components/Missing/Missing'
+import TermsCond from "./pages/Terms/TermsCond";
+import PrivacyPolicy from "./pages/Terms/PrivacyPolicy";
+import CookiePolicy from "./pages/Terms/CookiePolicy";
+import AffPage from "./pages/AffirmationPage/AffPage"
+
 
 function App() {
   const navigate = useNavigate();
