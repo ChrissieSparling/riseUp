@@ -15,7 +15,7 @@ import TodoList from '../../components/Todo/TodoList'
 // } from "@fortawesome/free-solid-svg-icons";
 import API from "../../utils/API";
 
-const UserHome = (props) => {
+const UserHome = () => {
     let navigate = useNavigate();
     // const {auth} = useAuth();
 

@@ -20,13 +20,16 @@ const SingleForum = (props) => {
   const [currUser, setCurrUser] = useState({});
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState({});
+  const [newComment, setNewComment] = useState({
+    body: '',
+    author:''
+  });
   const [editedComment, setEditedComment] = useState({});
   const [wantComment, setWantComment] = useState(false);
   const [commId, setCommId] = useState(1)
 
   useEffect(() => {
-    console.log("incoming user Id", props.userId);
+    console.log("incoming user Id", auth.userId);
     setCurrUser({
       id: auth.userId,
       username: auth.username,
@@ -34,6 +37,7 @@ const SingleForum = (props) => {
     const timer = setTimeout(() => console.log("this is a delay"), 500);
     clearTimeout(timer);
     console.log(id);
+    console.log('this is current user', currUser)
     // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
     //   method: "GET",
     //   headers: {
@@ -63,7 +67,7 @@ const SingleForum = (props) => {
 
   const postComment = (e) => {
     e.preventDefault();
-    console.log("this is the new post", newComment, currUser.username);
+    console.log("this is the new comment", newComment, auth.username);
     // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}/comments/new`, {
     //   method: "POST",
     //   headers: {
@@ -210,9 +214,15 @@ const SingleForum = (props) => {
                   className="singlePostIcon"
                   icon={faPenToSquare}
                 />
+                <p>Edit Post</p>
               </div>
               <div onClick={deletePost} className="last-icon icon">
                 <FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} />
+                <p>Delete Post</p>
+              </div>
+              <div onClick={handleWantComment} className="first-icon icon">
+                <FontAwesomeIcon className="singlePostIcon" icon={faComment} />
+                <p>Comment</p>
               </div>
             </div>
           ) : (
