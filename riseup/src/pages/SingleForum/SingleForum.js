@@ -1,5 +1,7 @@
 import { React, useState, useEffect } from "react";
 import "../SingleForum/singleForum.css";
+import API from "../../utils/API";
+import useAuth from "../../utils/hooks/useAuth";
 import SinglePost from "../../components/SinglePost/SinglePost";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,30 +13,35 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const SingleForum = (props) => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const {auth, setAuth} = useAuth();
+
   let { id } = useParams();
   const [currUser, setCurrUser] = useState({});
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({});
+  const [editedComment, setEditedComment] = useState({});
   const [wantComment, setWantComment] = useState(false);
+  const [commId, setCommId] = useState(1)
 
   useEffect(() => {
     console.log("incoming user Id", props.userId);
     setCurrUser({
-      id: props.userId,
-      username: props.username,
+      id: auth.userId,
+      username: auth.username,
     });
     const timer = setTimeout(() => console.log("this is a delay"), 500);
     clearTimeout(timer);
     console.log(id);
-    fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
-      method: "GET",
-      headers: {
-        "x-access-token": localStorage.getItem("token"),
-      },
-    })
-      .then((response) => response.json())
+    // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
+    //   method: "GET",
+    //   headers: {
+    //     "x-access-token": localStorage.getItem("token"),
+    //   },
+    // })
+    //   .then((response) => response.json())
+    API.getPost(id)
       .then((responseJson) => {
         console.log("=================postData", responseJson);
         setPost({
@@ -57,18 +64,19 @@ const SingleForum = (props) => {
   const postComment = (e) => {
     e.preventDefault();
     console.log("this is the new post", newComment, currUser.username);
-    fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}/comments/new`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-access-token": localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        body: newComment.body,
-        author: currUser.username,
-      }),
-    })
-      .then((data) => data.json())
+    // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}/comments/new`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "x-access-token": localStorage.getItem("token"),
+    //   },
+    //   body: JSON.stringify({
+    //     body: newComment.body,
+    //     author: currUser.username,
+    //   }),
+    // })
+    //   .then((data) => data.json())
+    API.saveComment(id, newComment.body, currUser.username)
       .then((newData) => {
         comments.push(newData);
         console.log(newData);
@@ -118,9 +126,21 @@ const SingleForum = (props) => {
     console.log(clickedComment);
   };
 
-  const editComment = (e) => {};
+  const editComment = (e) => {
+    e.preventDefault();
+    API.editComment(commId, editedComment)
+    .then(data=>{
+      console.log('data', data)
+    })
+  }
 
-  const deleteComment = (e) => {};
+  const deleteComment = (e) => {
+    e.preventDefault();
+    API.deleteComment(commId)
+    .then(data => {
+      console.log('data', data)
+    })
+  };
 
   const goEdit = (e) => {
     e.preventDefault();
@@ -136,13 +156,14 @@ const SingleForum = (props) => {
       )
     ) {
       console.log(post.id);
-      fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
-        method: "DELETE",
-        headers: {
-          "x-access-token": localStorage.getItem("token"),
-        },
-      })
-        .then((response) => response.json())
+      // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
+      //   method: "DELETE",
+      //   headers: {
+      //     "x-access-token": localStorage.getItem("token"),
+      //   },
+      // })
+      //   .then((response) => response.json())
+      API.deletePost(id)
         .then((responseJson) => {
           console.log("=================postData", responseJson);
           navigate(`/forums/${post.topic}`);

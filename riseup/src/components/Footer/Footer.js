@@ -47,7 +47,7 @@ function Footer() {
                 bgColor="#e6dddd"
                 style={{ height: 25, width: 25 }}
                 target="_blank"
-                url="https://open.spotify.com/user/31wpgbh5wy6ar4oh4q5z6ex4ctji"
+                url="https://open.spotify.com/playlist/24pppfkeLYc9pj4hCxbsuJ"
               />
               <SocialIcon
                 className="socialFoot"
