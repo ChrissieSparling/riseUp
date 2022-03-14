@@ -71,13 +71,13 @@ function Footer() {
               <a className="crisisLinkFoot" href="/crisis">
                 Crisis Links
               </a>
-              <a
+              {/* <a
                 className="crisisLinkFoot"
                 href="pages/Terms/TermsCond"
 
               >
                 Terms
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -32,6 +32,7 @@ import AffPage from "./pages/AffirmationPage/AffPage"
 
 function App() {
   let navigate = useNavigate();
+  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");

@@ -4,20 +4,22 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { useMediaQuery } from "@mui/material";
 
 const options = [
-  "Home",
-  "About",
-  "Horoscope",
-  "Crisis Links",
-  "Login",
-  "Sign Up",
-  "Logout",
+  {name:"Home", href:"/"},
+  {name:"About", href:"/about"},
+  {name:"Horoscope", href:"/horoscope"},
+  {name:"Crisis Links", href:"/crisis"},
+  {name:"Login",href:"/users/login"},
+  {name:"Sign Up", href:"/signup"},
+  {name:"Logout",href:"/logout"}
 ];
 
 const ITEM_HEIGHT = 48;
 
 const Navbar = (props) => {
+  const isBigScreen = useMediaQuery("(min-width:913px)")
   const [navUID, setNavUID] = useState("");
   useEffect(() => {
     setNavUID(props.id);
@@ -64,7 +66,8 @@ const Navbar = (props) => {
             Logout
           </a>
         </div>
-
+    {!isBigScreen?(
+      <>
         <IconButton
           aria-label="more"
           id="long-button"
@@ -85,33 +88,27 @@ const Navbar = (props) => {
           onClose={handleClose}
           PaperProps={{
             style: {
+              display: "flex",
+              flexDirection: "column",
               maxHeight: ITEM_HEIGHT * 4.5,
-              width: "100ch",
             },
+            
           }}
         >
           {options.map((option) => (
             <MenuItem
-              key={options}
+              key={option.name}
               selected={option === "Pyxis"}
               onClick={handleClose}
             >
-              {/* {options} */}
-              <a href="/horoscope">
-                {options[0]}
+              <a href={option.href}>
+                {option.name} 
               </a>
-              {/* <a href="/horoscope">
-                {options[1]}
-              </a>
-              <a href="/horoscope">
-                {options[2]}
-              </a>
-              <a href="/horoscope">
-                {options[3]}
-              </a> */}
             </MenuItem>
           ))}
         </Menu>
+        </>
+    ):null}
       </div>
     </nav>
   );
@@ -119,6 +116,4 @@ const Navbar = (props) => {
 
 export default Navbar;
 
-{
-  /* <a href="/horoscope">{options[0]}, {options[2]}</a> */
-}
+
