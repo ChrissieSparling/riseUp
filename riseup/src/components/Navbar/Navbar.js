@@ -20,6 +20,7 @@ const redirect = (e, url) => {
 
       API.getTokenData(localStorage.getItem('token'))
         .then(data => {
+    
           console.log('data from token check', data);
           setAuth({
             userId: data.userId, 
