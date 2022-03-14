@@ -36,14 +36,12 @@ padding: 20px;
 .singlePostIcon {
     margin-left: 10px;
     cursor: pointer;
-    /* border: 1px solid black; */
   }
   .singlePostCommentIcon {
     font-size: 24px;
     padding: 10px;
     display: flex;
     justify-content: center;
-    /* border: 1px solid black; */
   }
 
   
@@ -62,7 +60,6 @@ padding: 20px;
 
   .first-icon{
       color: teal;
-      /* border: 1px solid black; */
   }
   
   .last-icon{
@@ -89,7 +86,6 @@ padding: 20px;
     align-items:center;
     justify-content: center;
     width: 100%;
-    /* border: 1px solid black; */
 }
 
 .SF-comment-input {
@@ -107,7 +103,6 @@ border: 3px solid rgb(240, 168, 36);
 .posted-comment {
     width: 100%;
     list-style: none;
-    /* border: 1px solid black; */
     padding:10px;
 }
 
@@ -133,7 +128,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 padding: 0 10px;
-/* border: 1px solid black; */
 }
 
 .comment-btn-box .icon {
