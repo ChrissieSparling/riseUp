@@ -92,13 +92,6 @@ const redirect = (e, url) => {
           <input className="inputNav" type="text" />
         </div>
         <div className="menuNav">
-          <a
-            className="navA is-active"
-            href={navUID === "" ? "/" : `/users/${navUID}`}
-          >
-            Home
-          </a>
-          <a className="navA" href="/about"></a>
       {!auth.userName ? 
           <>
             <a className="navA is-active" href='/'>
