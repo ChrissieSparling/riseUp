@@ -182,17 +182,14 @@ const API = {
       })
       .then((response) => response.json())
     },
-    saveComment: (postId, newComment, username)=>{
+    saveComment: (postId, newComment)=>{
       return fetch(`${BASEURL}/posts/${postId}/comments/new`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "x-access-token": localStorage.getItem("token"),
         },
-        body: JSON.stringify({
-          body: newComment.body,
-          author: username,
-        }),
+        body: JSON.stringify(newComment),
       })
         .then((data) => data.json())
     },
@@ -219,13 +216,6 @@ const API = {
       })
         .then((response) => response.json())
     }
-    // getTanks:()=>{
-    //     return fetch(`${BASEURL}/api/tanks`)
-    //     .then(res => res.json())
-    // },
-    // getSingleAffirmation:(Affirmation)=>{
-    //     return  fetch(`${BASEURL}/Affirmation`).then(res=>res.json())
-    // }
 }
 
 export default API;
