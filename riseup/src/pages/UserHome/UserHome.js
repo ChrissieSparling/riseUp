@@ -1,9 +1,10 @@
 import { React, useState, useEffect } from "react";
+import useAuth from '../../utils/hooks/useAuth'
 import "./UserHome.css";
 import UserHomeMenu from "../../components/UserHomeMenu/UserHomeMenu";
 import ForumTopicHome from "../ForumTopic/ForumTopic";
 import { useNavigate, useParams } from "react-router-dom";
-import TodoList from '../../components/Todo/TodoList';
+
 
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,38 +15,21 @@ import TodoList from '../../components/Todo/TodoList';
 //   faHeart,
 // } from "@fortawesome/free-solid-svg-icons";
 
+
 const UserHome = (props) => {
     let navigate = useNavigate();
-    let { id } = useParams();
-    const [uHomePosts, setUHomePosts] = useState([]);
-    const [uHomePostsFoll, setUHomePostsFoll] = useState([]);
-    const [uHomeComments, setUHomeComments] = useState([]);
-    const [username, setUsername] = useState("");
-    const [userId, setUserId] = useState("");
-    const [userAff, setUserAff] = useState("");
-    const [userAffAuth, setUserAffAuth] = useState("");
+    // const {auth} = useAuth();
 
-    useEffect(() => {
-        console.log(id);
-        fetch(`https://rise-up-back-end.herokuapp.com/users/${props.userId || id}`, {
-            method: "GET",
-            headers: {
-                "x-access-token": localStorage.getItem("token"),
-            },
-        })
-            .then((response) => response.json())
-            .then((responseJson) => {
-                console.log("=================userData", responseJson);
-                setUsername(responseJson.username);
-                setUserId(responseJson.id);
-                setUHomePosts(responseJson.Posts)
-                setUHomeComments(responseJson.Comments)
-                console.log('Here are the comments',uHomeComments)
-            })
-            .catch((err) => {
-                console.log(err);
-                alert(`There was an error: ${err}`);
-            })
+    // const [uHomePosts, setUHomePosts] = useState([]);
+    // const [uHomePostsFoll, setUHomePostsFoll] = useState([]);
+    // const [uHomeComments, setUHomeComments] = useState([]);
+    // const [username, setUsername] = useState("");
+    // const [userId, setUserId] = useState("");
+    // const [userAff, setUserAff] = useState("");
+    // const [userAffAuth, setUserAffAuth] = useState("");
+    // const auth = useAuth();
+    // setUserId(auth.userId)
+    // console.log(userId);
 
             const randNum = Math.floor(Math.random() * 30 + 1)
             fetch(`https://rise-up-back-end.herokuapp.com/affirmations/${randNum}`, {
@@ -94,8 +78,8 @@ const UserHome = (props) => {
             
         // setUsername(username);
         // setUserId(userId)
-    }
-    ,[]);
+    // }
+    // ,[]);
     // const [getForum, setGetForum] = useState(false)
     // const [getToDos, setGetToDos] = useState(false)
     // const [getStory, setGetStory] = useState(false)
@@ -140,10 +124,8 @@ const UserHome = (props) => {
                     <button className="btnUseHome">Read a Story</button>
 
                 </div>
-                <div className="todo-app">
-                    <TodoList />
-                </div>
-            </div>
+                
+            </div>  
         </div>
     );
 };
