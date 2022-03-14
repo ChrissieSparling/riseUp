@@ -19,7 +19,6 @@ const ForumHome = (props) => {
     useEffect(()=>{
         setSavedUserID(props.userId)
         console.log(topic)
-
         API.getTopicPosts(topic)
         .then(responseJson => {
         console.log('=================postData', responseJson)

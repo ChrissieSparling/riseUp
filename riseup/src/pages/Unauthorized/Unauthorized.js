@@ -2,7 +2,7 @@
 
 const Unauthorized = () => {
   return (
-    <div>
+    <div className="unauth">
     <h1>You aren't authorized to see that!</h1>
     </div>
   )

@@ -1,8 +1,6 @@
 import React, { Children } from 'react'
 import "./ForumTopicHome.css"
 import Sunrise from '../../assets/images/stylized_sunrise.png'
-// import Testing from '../../assets/images/testing.jpeg'
-// import Universe from '../../assets/images/universe.webp'
 import {useNavigate} from 'react-router-dom'
 import { flexbox } from '@mui/system'
 
@@ -10,11 +8,6 @@ const ForumTopicHome = () => {
   let navigate = useNavigate();
   
     const forumTopics = [
-        // {
-        //     topic: "Testing",
-        //     image: Sunrise,
-        //     description: 'Testing, testing, testing...'
-        // },
         {
             topic: "Family",
             image: Sunrise,
@@ -50,7 +43,6 @@ const ForumTopicHome = () => {
     console.log('forum topics', forumTopics)
 
     const getPosts = (topic) => {
-      // e.preventDefault();
       navigate(`/forums/${topic}`)
       console.log('value', topic)
     }
@@ -72,37 +64,6 @@ const ForumTopicHome = () => {
                         </div>
                     </div>
                 )}
-                {/* <div className="post cursor">
-      <div className="postInfo">
-        <div className="postCats">
-        <span className="postTitle">Philosophy</span>
-          <hr/>
-        
-          <p className="postSub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
-        </div>
-      </div>
-    </div>
-    <div className="post cursor">
-      <div className="postInfo">
-        <div className="postCats">
-          <span className="postTitle">Healing Activities</span>
-          <hr/>
-          
-          <p className="postSub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
-        </div>
-      </div>
-    </div>
-    <div className="post cursor">
-      <div className="postInfo">
-        <div className="postCats">
-        <span className="postTitle">Homeopathic Therapies</span>
-          <hr/>
-          
-          <p className="postSub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.lit. Quaerat, maiores iusto perspiciatis, minus vel veniam debitis magni praesentium, excepturi nisi sint. Ab aut numquam temporibus, facilis vitae illum quae quibusdam.</p>
-        </div>
-      </div>
-    </div>
-     */}
             </div>
         </div>
     );
