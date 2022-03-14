@@ -21,6 +21,7 @@ const redirect = (e, url) => {
             userName: data.username, 
             role: data.role, 
         })
+      
         }).then(newdata=>{
           navigate(url);
         })
@@ -92,4 +93,3 @@ const redirect = (e, url) => {
 
 export default Navbar;
 
-// work, family, personal wellness, finacial, relationship, recovery
