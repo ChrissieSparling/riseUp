@@ -92,14 +92,7 @@ const redirect = (e, url) => {
           <a className="navA" href='/horoscope'>
             Horoscope
           </a>
-<<<<<<< HEAD
-          {/* <a className="navA" href="/horoscope">
-            Care List
-          </a> */}
-          <a className="navA" href="/crisis">
-=======
           <a className="navA" href='/crisis'>
->>>>>>> 35f001e67b9c2f1f1da85217acffa8c56426a63b
             Crisis Links
           </a>
           <a className="navA" onClick={logMeOut}>
