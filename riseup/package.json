@@ -28,7 +28,8 @@
     "styled-components": "^5.3.3",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^2.1.4"
-  },
+  },  
+  "proxy": "http://localhost:3005",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -1,11 +1,67 @@
 import {React, useState} from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import useAuth from "../../utils/hooks/useAuth";
+import API from "../../utils/API";
 
 import "../Login/login.css";
 
 
-function Login(props) {
-  let navigate = useNavigate();
+function Login() {
+  const {setAuth} = useAuth();
+  // console.log(setAuth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/profile';
+
+  const [username, setUsername] = useState("");
+  // const [userId, setUserId] = useState(0);
+  // const [token, setToken] = useState("");
+  const [loginInfo, setLoginInfo] = useState({
+    username: '',
+    password: ''
+  })
+
+  const handleLoginInputChange = e=>{
+    console.log(e.target.name,e.target.value)
+    setLoginInfo({
+      ...loginInfo,
+      [e.target.name]:e.target.value
+    })
+  }
+
+  async function handleLogin (e){
+    e.preventDefault()
+  console.log('login info', loginInfo)
+    API.login(loginInfo.username,loginInfo.password)
+      .then(data => {
+        console.log(data);
+        if(data.accessToken){
+          const userId = data?.id;
+          const userName = data?.username
+          const token = data?.accessToken;
+          const role = data?.role;
+          setAuth({userId, userName, role, token})
+          console.log('auth info', userId, userName, role, token)
+          // setUserId(data.id);
+          // setUsername(data?.username);
+          // setToken(data?.accessToken);
+          localStorage.setItem("token", data.accessToken);
+          setLoginInfo({
+            username: '',
+            password: ''
+          })
+          // console.log('userID', data.id)
+          // console.log('data', data)
+          navigate(from, {replace: true});
+          // console.log('the button was clicked')
+          // console.log('==========uname', loginInfo.username)
+          // console.log('==========password', loginInfo.password)
+ 
+        } else {alert('Your username or password was incorrect!')}
+      }).catch(err=>{
+        console.log(err);
+      });
+  };
 
   return (
     <div className="mainLogin">
@@ -21,16 +77,16 @@ function Login(props) {
             <div className="email-input">
               <input type="text" 
               placeholder="username" 
-              onChange={props.handleInputChange}
-              value={props.loginInfo.username}
+              onChange={handleLoginInputChange}
+              value={loginInfo.username}
               name="username"
               className="input-field inputLogin" />
             </div>
             <div>
               <input
                 type="password"
-                onChange={props.handleInputChange}
-                value={props.loginInfo.password}
+                onChange={handleLoginInputChange}
+                value={loginInfo.password}
                 placeholder="password"
                 name="password"
                 className="input-field inputLogin"
@@ -39,7 +95,7 @@ function Login(props) {
 
             <div className="login-btn">
               <button className="btnLogSign"
-              onClick={props.handleLogin}
+              onClick={handleLogin}
               type="submit">Login</button>
             </div>
 

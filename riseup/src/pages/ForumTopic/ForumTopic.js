@@ -1,12 +1,14 @@
 import {useState, useEffect} from 'react'
 import {useParams, useNavigate} from 'react-router-dom'
 import SinglePost from '../../components/SinglePost/SinglePost'
+import API from '../../utils/API'
 import './ForumTopic.css'
 
 
-const ForumHome = () => {
+const ForumHome = (props) => {
     let {topic} = useParams();
     const [posts, setPosts] = useState([])
+    const [savedUserID, setSavedUserID] = useState('')
     let navigate = useNavigate();
 
     const getSinglePost = (id) => {
@@ -16,14 +18,16 @@ const ForumHome = () => {
     }
     console.log(topic)
     useEffect(()=>{
+        setSavedUserID(props.userId)
         console.log(topic)
-        fetch(`https://rise-up-back-end.herokuapp.com/posts/forum/${topic}`,{
-            method: 'GET',
-            headers: {
-                'x-access-token': localStorage.getItem('token'),
-            },
-        })
-        .then(response => response.json())
+        // fetch(`https://rise-up-back-end.herokuapp.com/posts/forum/${topic}`,{
+        //     method: 'GET',
+        //     headers: {
+        //         'x-access-token': localStorage.getItem('token'),
+        //     },
+        // })
+        // .then(response => response.json())
+        API.getTopicPosts(topic)
         .then(responseJson => {
         console.log('=================postData', responseJson)
           setPosts(responseJson)
