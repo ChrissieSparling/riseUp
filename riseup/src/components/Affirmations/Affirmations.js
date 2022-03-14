@@ -1,7 +1,7 @@
 import React from "react";
 import "../Affirmations/affirmations.css"
 import "../Affirmations/Affirmations";
-import {Link} from "react-router-dom";
+
 
 
 

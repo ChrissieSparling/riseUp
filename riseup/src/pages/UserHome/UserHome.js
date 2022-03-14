@@ -3,14 +3,14 @@ import "./UserHome.css";
 import UserHomeMenu from "../../components/UserHomeMenu/UserHomeMenu";
 import ForumTopicHome from "../ForumTopic/ForumTopic";
 import { useNavigate, useParams } from "react-router-dom";
-import TodoList from "../../components/Todo/TodoList";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPenToSquare,
-  faTrashCan,
-  faComment,
-  faHeart,
-} from "@fortawesome/free-solid-svg-icons";
+import TodoList from '../../components/Todo/TodoList';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faPenToSquare,
+//   faTrashCan,
+//   faComment,
+//   faHeart,
+// } from "@fortawesome/free-solid-svg-icons";
 
 const UserHome = (props) => {
   let navigate = useNavigate();
