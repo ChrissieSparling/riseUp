@@ -14,11 +14,11 @@
   
   .crisisBox {
     background-color:rgb(240, 238, 195);
-    width: 40%;
+    width: auto;
     height: 90%;
     border-radius: 20px;
     margin-top: 40px;
-    /* margin: 20px; */
+  padding: 20px;
     border: 5px solid #ffd400;;
   }
   .crisisTitle {
@@ -52,4 +52,10 @@
     justify-content: center;
     font-size: 18px;
     margin-bottom: 20px;
+  }
+
+  @media only screen and (max-width:500px){
+    .crisisBox h1 {
+      font-size:1.75rem;
+    }
   }

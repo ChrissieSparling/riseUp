@@ -8,7 +8,11 @@ const EditPost = props => {
     let navigate = useNavigate();
     let {id} = useParams();
     const [postToEdit, setPostToEdit] = useState({})
-    const [editedPost, setEditedPost] = useState({})
+    const [editedPost, setEditedPost] = useState({
+      likeCount: postToEdit.likeCount,
+      title:'',
+      body:''
+    })
     useEffect(()=>{
         API.getPost(id)
         .then(responseJson => {
@@ -56,7 +60,8 @@ const EditPost = props => {
                 </div>
                 <h1>Edit Your Post</h1>
                 <p>Fix what you want fixed below, then hit the button! Remember, keep it respectful of others! This is a place for seeking positive growth and change.</p>
-                <NewPostBox handleInputChange={handleInputEdit} titleContent={postToEdit.title} boxContent={postToEdit.body}/>
+                <h2>Your previous title was "{postToEdit.title}". Either give it a new one, or enter the old one again.</h2>
+                <NewPostBox handleInputChange={handleInputEdit} titleContent={' '} oldTitle = {postToEdit.title} boxContent={postToEdit.body}/>
        
             <button onClick={editPost} className="SF-home-btn TF">Edit</button>
             </div>

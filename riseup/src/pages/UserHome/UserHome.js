@@ -14,7 +14,9 @@ const UserHome = () => {
 
     return (
         <div className="user-home">
-            
+        <div className="user-home-btn-box">
+                       
+        </div>
         </div>
     );
 };

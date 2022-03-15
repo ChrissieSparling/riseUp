@@ -15,6 +15,17 @@
 
 }
 
+.write h2 {
+    margin-top: 10px;
+    width: 70vw;
+    color: slategray;
+    font-family: Verdana;
+
+    /* margin-bottom:30px; */
+    /* font-size: 1.5rem; */
+}
+
+
 .write p {
     margin-top: 10px;
     width: 70vw;

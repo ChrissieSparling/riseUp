@@ -83,7 +83,7 @@ function SignUp(props) {
                   onChange={props.handleCollectUser}
                 />
               </div>
-              <div className="email-input">
+              {/* <div className="email-input">
                 <input
                   type="text"
                   className="input-field inputSign"
@@ -92,7 +92,7 @@ function SignUp(props) {
                   name='role'
                   onChange={props.handleCollectUser}
                 />
-              </div>
+              </div> */}
               <label>
                 <input type="checkbox"  className="checkbox"></input>I have read and agreed to the 
                 <a href="/terms" className='checkboxLinks'>Terms of Service </a>and <a href="/privacy" className='checkboxLinks'>Privacy</a>

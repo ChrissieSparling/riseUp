@@ -19,6 +19,13 @@ const SingleForum = (props) => {
   let { id } = useParams();
   const [currUser, setCurrUser] = useState({});
   const [post, setPost] = useState({});
+  const [likePost, setLikePost] = useState(false)
+  const [postLiked, setPostLiked] = useState({
+    likeCount: '',
+    title: '',
+    body: ''
+  })
+  const [newLikeCount, setNewLikeCount] = useState('');
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({
     body: '',
@@ -56,6 +63,7 @@ const SingleForum = (props) => {
           body: responseJson.body,
           author: responseJson.user.username,
           createdAt: responseJson.createdAt,
+          likeCount: responseJson.likeCount
         });
         setComments(responseJson.Comments);
       })
@@ -108,16 +116,17 @@ const SingleForum = (props) => {
     API.editComment(commId, editedComment)
       .then(data => {
         console.log(commId)
-     const newComments = comments.map(comm=>{if(comm.id===commId){
-          comm.body = editedComment.body;
-          comm.author = auth.userName
-          return comm
-        } else {return comm}
-      })
+        const newComments = comments.map(comm => {
+          if (comm.id === commId) {
+            comm.body = editedComment.body;
+            comm.author = auth.userName
+            return comm
+          } else { return comm }
+        })
         setComments(newComments)
         document.querySelector('form').reset();
         const editBoxes = document.querySelectorAll('.edit-comment');
-        editBoxes.forEach((box)=>{
+        editBoxes.forEach((box) => {
           box.setAttribute('style', 'display: none;')
         })
 
@@ -135,16 +144,16 @@ const SingleForum = (props) => {
     });
   };
 
- 
+
   const getEditComment = (e, id) => {
     e.preventDefault();
     // const commentEditBoxes = document.querySelectorAll
     const editBoxes = document.querySelectorAll('.edit-comment');
-    editBoxes.forEach((box)=>{
-      if (id===parseInt(box.id)){
-      console.log('id', id)
-      console.log('here\'s box id', box.id)
-      box.setAttribute('style', 'display: block;')
+    editBoxes.forEach((box) => {
+      if (id === parseInt(box.id)) {
+        console.log('id', id)
+        console.log('here\'s box id', box.id)
+        box.setAttribute('style', 'display: block;')
       }
     })
   }
@@ -154,7 +163,7 @@ const SingleForum = (props) => {
     e.preventDefault();
     API.deleteComment(id)
       .then(data => {
-        const filteredComments = comments.filter(comm=>{if(comm.id!==id){return comm}})
+        const filteredComments = comments.filter(comm => { if (comm.id !== id) { return comm } })
         setComments(filteredComments)
         console.log('data', data)
       })
@@ -190,12 +199,6 @@ const SingleForum = (props) => {
     }
   };
 
-  //test id-ing posts and comments
-  // console.log("is this your post?", currUser.id === post.userId);
-  // comments.forEach((c) => {
-  //   console.log("is this your comment?", currUser.username === c.author);
-  // });
-
   return (
     <div className=" singleForum">
       <div className="singleFormBox">
@@ -218,6 +221,7 @@ const SingleForum = (props) => {
           id={post.id}
           body={post.body}
           createdAt={post.createdAt}
+          comments={comments}
           getSinglePost={"return"}
         />
 
@@ -247,10 +251,10 @@ const SingleForum = (props) => {
                 <FontAwesomeIcon className="singlePostIcon" icon={faComment} />
                 <p>Comment</p>
               </div>
-              <div className="last-icon icon">
-                <FontAwesomeIcon className="singlePostIcon" icon={faHeart} />
+              {/* {!likePost ? (<div className="last-icon icon">
+                <FontAwesomeIcon onClick={handleLikePost} className="singlePostIcon" icon={faHeart} />
                 <p>Like</p>
-              </div>
+              </div>) : null} */}
             </div>
           )}
 
@@ -297,7 +301,7 @@ const SingleForum = (props) => {
                             icon={faComment}
                           />
                         </div>
-                        {currUser.id !== p.userId ? (
+                        {/* {currUser.id !== p.userId ? (
                           <div
                             className="last-icon icon comment-icon"
                           >
@@ -306,15 +310,15 @@ const SingleForum = (props) => {
                               icon={faHeart}
                             />
                           </div>
-                        ) : null}
+                        ) : null} */}
                       </div>
                       {/* buttons on each comment's box */}
                       {currUser.id === p.userId ? (
                         <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
                           <div
-                            onClick={e=>getEditComment(e, p.id)}
+                            onClick={e => getEditComment(e, p.id)}
                             className="first-icon icon"
-                            
+
                           >
                             <FontAwesomeIcon
                               className="singlePostIcon"
@@ -323,7 +327,7 @@ const SingleForum = (props) => {
                             />
                           </div>
                           <div
-                            onClick={e=>deleteComment(e, p.id)}
+                            onClick={e => deleteComment(e, p.id)}
                             className="last-icon icon"
                           >
                             <FontAwesomeIcon
@@ -335,12 +339,12 @@ const SingleForum = (props) => {
                       ) : null}
                     </div>
                   </div>
-                  <div className="edit-comment" id={p.id} style={{display: 'none'}}>
+                  <div className="edit-comment" id={p.id} style={{ display: 'none' }}>
                     <form>
-                    <textarea className='edit-comment-box' onChange={handleEditedComment}></textarea>
-                    <button className='SF-home-btn save' onClick={e=>saveCommentEdit(e, p.id)}>Save</button>
+                      <textarea className='edit-comment-box' onChange={handleEditedComment}></textarea>
+                      <button className='SF-home-btn save' onClick={e => saveCommentEdit(e, p.id)}>Save</button>
                     </form>
-                    </div>
+                  </div>
                 </div>
               );
             })
