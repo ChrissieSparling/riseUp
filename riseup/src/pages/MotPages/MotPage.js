@@ -77,39 +77,7 @@ const MotPage = () => {
             </div>
           </div>
         </div>
-        <div className="postHome cursorHome">
-          <div className="postInfoHome">
-            <div className="postCatsHome">
-              <img className="flowerImg" src={happyImg} />
-             
-              <hr />
-
-              <p className="postSubHome">
-              {userMot}
-              </p>
-              <p>
-                  {userMotAuth}
-              </p>
-            </div>
-          </div>
-        </div>
         
-        <div className="postHome cursorHome">
-          <div className="postInfoHome">
-            <div className="postCatsHome">
-              <img className="flowerImg" src={happyImg} />
-             
-              <hr />
-
-              <p className="postSubHome">
-              {userMot}
-              </p>
-              <p>
-                  {userMotAuth}
-              </p>
-            </div>
-          </div>
-        </div>     
     </div>
   </div>
    
