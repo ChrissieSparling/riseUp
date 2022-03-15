@@ -9,14 +9,14 @@
   display: flex;
   background-color: rgb(228, 135, 85);
   align-items: center;
-  justify-content: space-between;
+  justify-content:right;
 }
 
 nav {
   border-bottom: 3px solid rgb(248, 101, 2);
 }
 
-.searchNav {
+/* .searchNav {
   display: flex;
 }
 .searchNavBtn {
@@ -34,7 +34,7 @@ nav {
   height: 35px;
   border-radius: 5px;
   border: none;
-}
+} */
 
 .hamburger {
   display: block;

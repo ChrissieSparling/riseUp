@@ -16,16 +16,10 @@ const Crisis = () => {
               target="_blank"
               href="https://www.apa.org/topics/crisis-hotlines"
             >
-              Crisis Hotline
+              Crisis Hotline Link
             </a>
             <p className="crisisDesc">Crisis hotline and resources</p>
-            <a
-              className="crisisLink"
-              target="_blank"
-              href="https://www.apa.org/topics/crisis-hotlines"
-            >
-              https://www.apa.org/topics/crisis-hotlines
-            </a>
+      
           </div>
 
           <div className="crisisBtn">
@@ -34,16 +28,10 @@ const Crisis = () => {
               target="_blank"
               href="https://finder.psychiatry.org/?_ga=2.20744058.392515291.1646800358-1644409809.1646800358"
             >
-              Psychiatrist
+             American Psychiatrist Association Link
             </a>
             <p className="crisisDesc">Find a psychiatrist in your local area</p>
-            <a
-              className="crisisLink"
-              target="_blank"
-              href="https://finder.psychiatry.org/?_ga=2.20744058.392515291.1646800358-1644409809.1646800358"
-            >
-              https://finder.psychiatry.org/?_ga=2.20744058.392515291.1646800358-1644409809.1646800358
-            </a>
+            
           </div>
 
           <div className="crisisBtn">
@@ -52,16 +40,10 @@ const Crisis = () => {
               target="_blank"
               href="https://www.nami.org/Support-Education"
             >
-              Support Groups
+              National Alliance on Mental Illness Link
             </a>
             <p className="crisisDesc">Find a support group for you</p>
-            <a
-              className="crisisLink"
-              target="_blank"
-              href="https://www.nami.org/Support-Education"
-            >
-              https://www.nami.org/Support-Education
-            </a>
+            
           </div>
         </div>
       </div>

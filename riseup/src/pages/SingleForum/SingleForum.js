@@ -303,7 +303,7 @@ const SingleForum = (props) => {
               );
             })
           ) : (
-            <h1 className="nothing-to-show">No comments to display!</h1>
+            <h1 className="nothing-to-show bob">No comments to display!</h1>
           )}
         </div>
       </div>

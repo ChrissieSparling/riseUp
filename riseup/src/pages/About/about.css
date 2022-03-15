@@ -1,56 +1,62 @@
 .aboutUs {
-    border: 5px solid rgb(248, 101, 2);
-    text-align: center;
-    color: whitesmoke;
-    font-family: sansita swashed;
-    text-shadow: 1px 1px 6px black;
-    font-size: 3rem;
-    width: 42%;
-    margin-left: 33%;
-    margin-top: 15px;
-    background-color: rgb(248, 153, 28);
-    padding-bottom: 8px;
-    display: block;
-  }
-  .postsAbout {
-    display: flex;
-    flex-wrap: wrap;
-    /* margin: 20px; */
-  }
-  .aboutImg {
-    height: 50%;
-    width: 50%;
-    /* animation: rotation 6s 1 linear; */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-  }
-  .postAbout {
-    background-color: rgb(248, 241, 228);
-    height: 50%;
-    width: 30%;
-    margin: 2% 1% 2% 13%;
-    border-radius: 20px;
-    border: 3px solid rgb(248, 153, 28);
-    padding-top: 10px;
-  }
-  .postInfoAbout {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  .postTitleAbout {
-    font-size: 20px;
-    font-weight: 700;
-    margin-right: 65px;
-    padding-left: 10%;
-    text-align: center;
-  }
-  .postSubAbout {
-    font-size: 18px;
-    padding: 10px;
-  }
+  border: 5px solid rgb(248, 101, 2);
+  text-align: center;
+  color: whitesmoke;
+  font-family: sansita swashed;
+  text-shadow: 1px 1px 6px black;
+  font-size: 3.5rem;
+  width: 50%;
+  margin-left: 33%;
+  margin-top: 15px;
+  background-color: rgb(248, 153, 28);
+  padding-bottom: 8px;
+  display: block;
+  
+}
+
+.postsAbout {
+  flex-wrap: wrap;
+  display: flex;
+  margin: 20px;
+}
+
+.aboutImg {
+  height: 50%;
+  width: 50%;
+  /* animation: rotation 6s 1 linear; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+.postAbout {
+  display: block;
+  background-color: rgb(248, 241, 228);
+  height: 50%;
+  width: 30%;
+  margin: 2% 1% 2% 13%;
+  border-radius: 20px;
+  border: 3px solid rgb(248, 153, 28);
+  padding-top: 10px;
+}
+.postInfoAbout {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.postTitleAbout {
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 65px;
+  padding-left: 10%;
+  text-align: center;
+}
+
+.postSubAbout {
+  font-size: 18px;
+  padding: 10px;
+}
 
 
 /* butterfly Code */
@@ -159,8 +165,3 @@ body {
     left: 15px;
 }
 
-/* @media screen (min-aspect-ratio: 912px) {
-  .aboutUs {
-flex-wrap:wrap
-  }  
-} */

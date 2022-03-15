@@ -1,149 +1,128 @@
 .singleForum {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.singleFormBox{
-    background-color: #ffd400; 
-    padding: 40px;
-    width: 80%
+.singleFormBox {
+  background-color: #ffd400;
+  padding: 40px;
+  width: 80%;
 }
-
 .SF-btn-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
 .SF-home-btn {
-    width:150px;
-    height:30px;
-    margin: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: black;
-    background-color: rgb(240, 168, 36);
-    box-shadow: 2px 2px 2px darkslategray;
-    border: none;
-    border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  margin: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(240, 168, 36);
+  box-shadow: 2px 2px 2px darkslategray;
+  border: none;
+  border-radius: 5px;
 }
-
 .SF-home-btn:link {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
-
 .SF-home-btn:hover {
-    cursor: pointer;
-    box-shadow: 0 0 5px 5px rgb(248, 101, 2);
+  cursor: pointer;
+  box-shadow: 0 0 5px 5px rgb(248, 101, 2);
 }
-
-
 .singlePostIcon {
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  .singlePostCommentIcon {
-    font-size: 24px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  
+  margin-left: 10px;
+  cursor: pointer;
+}
+.singlePostCommentIcon {
+  font-size: 24px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .icon {
-    margin: 0 30px;
-    display: flex;
-    align-items: center;
-
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
 }
-
 .icon p {
-    font-family: Verdana;
-    font-size: 16px;
-    padding: 0 5px;
+  font-family: Verdana;
+  font-size: 16px;
+  padding: 0 5px;
 }
-
-  .first-icon{
-      color: teal;
-  }
-  
-  .last-icon{
-      color: tomato;
-    
-  }
-
-  .SF-comment-box {
-      display: flex;
-      flex-direction: column;
-      align-items:center;
-      justify-content: center;
-      /* width: 70%; */
-      padding: 15px;
-      margin-bottom: 50px;
-      background-color: rgb(240, 238, 195);
-      border: 5px solid rgb(240, 168, 36);
-      border-radius: 15px
-      
-  }
-
-.SF-comment-btn-box { 
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
-    width: 100%;
+.first-icon {
+  color: teal;
 }
-
+.last-icon {
+  color: tomato;
+}
+.SF-comment-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* width: 70%; */
+  padding: 15px;
+  margin-bottom: 50px;
+  background-color: rgb(240, 238, 195);
+  border: 5px solid rgb(240, 168, 36);
+  border-radius: 15px;
+}
+.SF-comment-btn-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 .SF-comment-input {
-width: 65%;
-border: 3px solid rgb(240, 168, 36);
+  width: 65%;
+  border: 3px solid rgb(240, 168, 36);
 }
-
 .whole-comment {
-    width: 70%;
-    display: flex;
-    border: 2px solid rgb(240, 168, 36);
-    margin: 10px
+  width: 70%;
+  display: flex;
+  border: 2px solid rgb(240, 168, 36);
+  margin: 10px;
 }
-
 .posted-comment {
-    width: 100%;
-    list-style: none;
-    padding:10px;
+  width: 100%;
+  list-style: none;
+  padding: 10px;
 }
-
-.posted-comment li{
-    padding: 2px;
+.posted-comment li {
+  padding: 2px;
 }
-
 .posted-comment-body {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 .comment-btn {
-background-color: #ff7700 ;
-border-radius: 90px; 
-margin: 0 10px;
-padding: 5px;
-font-size: 1rem;
-font-weight: bold;
-border: none;
+  background-color: #ff7700;
+  border-radius: 90px;
+  margin: 0 10px;
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
 }
-
-.comment-btn-box{
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 0 10px;
+.comment-btn-box {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
 }
-
 .comment-btn-box .icon {
-    font-size: 20px;
-    margin: 0;
-    padding:5px;
+  font-size: 20px;
+  margin: 0;
+  padding: 5px;
+}
+
+.bob {
+  font-size: 14px;
 }
