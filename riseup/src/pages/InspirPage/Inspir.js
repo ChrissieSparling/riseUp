@@ -1,36 +1,120 @@
-// this is joes fishy app need to adjust for inspir
-// import {useEffect,useState} from 'react'
-// import {useParams} from "react-router-dom"
-// import "./style.css"
-// import Fish from '../../components/Fish';
-// import API from '../../utils/API';
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate, Navigate } from "react-router-dom";
+import API from "../../utils/API";
+import useAuth from "../../utils/hooks/useAuth";
+import UserHome from "../UserHome/UserHome";
+import ModHome from "../ModHome/ModHome";
+import AdminHome from "../AdminHome/AdminOne";
+import TodoList from "../../components/Todo/TodoList";
+import "./Inspir.css"
+import happyImg from "../../assets/images/happyFlower.png";
 
-// export default function TankDetail() {
-//     const params = useParams();
-//     const [tank, setTank] = useState({
-//         name:"",
-//         Fishes:[]
-//     })
-//     useEffect(() => {
-//         API.getSinglePhilosophy(params.id)
-//        .then(data=>{
-//             setTank({
-//                 name:data.name,
-//                 Fishes:data.Fishes
-//             })
-//         })
-//     }, [])
-//     return (<div className="inspirations-container" > 
-     
-//     <div className="affJumbo">
-//     <h1 className="affTitle">🌻  Inspiration  🌻</h1>
-//     <h1 className="affWords">Let us be your MUSE! Sign up to get inspired every day by community of fellow sunflowers all trying to find light in a dark world!!</h1>
-//     </div>  
-//           <h1>{inspiration.name}</h1>
-//       <div className="TankDetail">
-//           {inspiration.Fishes.map(fishie=><Fish key={fishie.id} name={fishie.name} color={fishie.color} width={fishie.width}/>)}
-//       </div>
-//       <div className="seaFloor"></div>
-//      </div>
-//     )
-// }
+const InspirPage = () => {
+  const [role, setRole] = useState("");
+  const [username, setUsername] = useState("");
+  const [uHomePosts, setUHomePosts] = useState([]);
+  const [userInsp, setUserInsp] = useState("");
+  const [userInspAuth, setUserInspAuth] = useState("");
+  const { auth } = useAuth();
+  const navigate = useNavigate();
+  
+//   const roleName = role.toUpperCase();
+
+  useEffect(() => {
+    setRole(auth.role);
+  }, []);
+
+  useEffect(() => {
+    API.getUser(auth.userId)
+      .then((responseJson) => {
+        console.log("=================userData", responseJson);
+        setUsername(responseJson.username);
+        setUHomePosts(responseJson.Posts);
+        // setUHomeComments(responseJson.Comments)
+        // console.log('Here are the comments',uHomeComments)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(`There was an error: ${err}`);
+      });
+  }, []);
+
+  useEffect(() => {
+    const randNum = Math.floor(Math.random() * 11 + 1);
+    API.getInsp(randNum)
+      .then((responseJson) => {
+        console.log("=================InspData", responseJson);
+        setUserInsp(responseJson.body);
+        setUserInspAuth(responseJson.authorName);
+        // console.log('Here are the comments',uHomeComments)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(`There was an error: ${err}`);
+      });
+  }, []);
+  // setRole(auth.role[0])
+  console.log("this is the user role", auth.role);
+  return (
+    <>
+      <div className="user-home">
+        <div className="random">
+
+
+        <div className="postHome cursorHome">
+          <div className="postInfoHome">
+            <div className="postCatsHome">
+              <img className="flowerImg" src={happyImg} />
+             
+              <hr />
+
+              <p className="postSubHome">
+              {userInsp}
+              </p>
+              <p>
+                  {userInspAuth}
+              </p>
+            </div>
+          </div>
+        </div>
+        
+    <div className="postHome cursorHome">
+          <div className="postInfoHome">
+            <div className="postCatsHome">
+              <img className="flowerImg" src={happyImg} />
+             
+              <hr />
+
+              <p className="postSubHome">
+              {userInsp}
+              </p>
+              <p>
+                  {userInspAuth}
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="postHome cursorHome">
+          <div className="postInfoHome">
+            <div className="postCatsHome">
+              <img className="flowerImg" src={happyImg} />
+             
+              <hr />
+
+              <p className="postSubHome">
+              {userInsp}
+              </p>
+              <p>
+                  {userInspAuth}
+              </p>
+            </div>
+          </div>
+        </div>     
+    </div>
+  </div>
+    </>
+  );
+};
+
+export default InspirPage;

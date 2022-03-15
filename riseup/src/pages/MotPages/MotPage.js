@@ -1,39 +1,120 @@
-// // this is joes fishy app need to adjust for inspir
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate, Navigate } from "react-router-dom";
+import API from "../../utils/API";
+import useAuth from "../../utils/hooks/useAuth";
+import UserHome from "../UserHome/UserHome";
+import ModHome from "../ModHome/ModHome";
+import AdminHome from "../AdminHome/AdminOne";
+import TodoList from "../../components/Todo/TodoList";
+import "./Mot.css"
+import happyImg from "../../assets/images/happyFlower.png";
 
-// import {useEffect,useState} from 'react'
-// import {useParams} from "react-router-dom"
+const MotPage = () => {
+  const [role, setRole] = useState("");
+  const [username, setUsername] = useState("");
+  const [uHomePosts, setUHomePosts] = useState([]);
+  const [userMot, setUserMot] = useState("");
+  const [userMotAuth, setUserMotAuth] = useState("");
+  const { auth } = useAuth();
+  const navigate = useNavigate();
+  
+//   const roleName = role.toUpperCase();
+
+  useEffect(() => {
+    setRole(auth.role);
+  }, []);
+
+  useEffect(() => {
+    API.getUser(auth.userId)
+      .then((responseJson) => {
+        console.log("=================userData", responseJson);
+        setUsername(responseJson.username);
+        setUHomePosts(responseJson.Posts);
+        // setUHomeComments(responseJson.Comments)
+        // console.log('Here are the comments',uHomeComments)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(`There was an error: ${err}`);
+      });
+  }, []);
+
+  useEffect(() => {
+    const randNum = Math.floor(Math.random() * 11 + 1);
+    API.getMotiv(randNum)
+      .then((responseJson) => {
+        console.log("=================motData", responseJson);
+        setUserMot(responseJson.body);
+        setUserMotAuth(responseJson.authorName);
+        // console.log('Here are the comments',uHomeComments)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(`There was an error: ${err}`);
+      });
+  }, []);
+  // setRole(auth.role[0])
+  console.log("this is the user role", auth.role);
+  return (
+    <>
+      <div className="user-home">
+        <div className="random">
 
 
-// export default function Motivation() {
-//     const params = useParams();
-//     const [Motivation, setMotivation] = useState({
-//         name:"",
-//         motivation:[]
-//     })
-//     useEffect(() => {
-//         API.getSingleMotivation(params.id)
-//        .then(data=>{
-//             setMotivation({
-//                 name:author.name,
-//                 Motivations:data.Motivgations
-//             })
-//         })
-//     }, [])
-//     return (
-    
-//         <div className="motivation-container" > 
-     
-//         <div className="motJumbo">
-//         <h1 className="motTitle">🌻 {username} , today let's SAY YES 🌻</h1>
-//         <h1 className="motWords">The words Do not feel like it need a vaction from our vocabulary!  Today we FEEL LIKE DOING IT! One foot in front of the other. No matter what you are up against GET moving. Sometimes all it takes to feel a little happier, or a little healthier, is getting active. Today's challenge. Be a Yes Man. Try saying yes instead of NO to things you would normally deny.No ridiculous stuff. But small things. If you do not want to call your mom for some reason. Call her. If you get asked to go to a friends house - Go. The world blossoms for us sunflowers when we step into the sun. Try it- Say yes to at least one thing out of the ordinary today and break the cycle of redundancy. You can do it!! We believe in you!</h1>
-//         </div>  
-//             <h2>Your Daily Dose of Dopamine:</h2>
-//             <p style={{fontWeight: 'bold', fontSize:'2rem'}}>{userMot}</p>
-//             <p>{userMotAuth}</p>
-//             <div className="MotivationDetails">
-//             {motivation.map(motivation=><Motivation key={motivation.id} authorName={motivation.authorName} images = {motivation.images} topic={motivation.topic}/>)}
-//         </div>
-//     </div>
-            
-//     )
-// }
+        <div className="postHome cursorHome">
+          <div className="postInfoHome">
+            <div className="postCatsHome">
+              <img className="flowerImg" src={happyImg} />
+             
+              <hr />
+
+              <p className="postSubHome">
+              {userMot}
+              </p>
+              <p>
+                  {userMotAuth}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="postHome cursorHome">
+          <div className="postInfoHome">
+            <div className="postCatsHome">
+              <img className="flowerImg" src={happyImg} />
+             
+              <hr />
+
+              <p className="postSubHome">
+              {userMot}
+              </p>
+              <p>
+                  {userMotAuth}
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="postHome cursorHome">
+          <div className="postInfoHome">
+            <div className="postCatsHome">
+              <img className="flowerImg" src={happyImg} />
+             
+              <hr />
+
+              <p className="postSubHome">
+              {userMot}
+              </p>
+              <p>
+                  {userMotAuth}
+              </p>
+            </div>
+          </div>
+        </div>     
+    </div>
+  </div>
+   
+    </>
+  );
+};
+
+export default MotPage;
