@@ -4,7 +4,7 @@ import "../SinglePost/singlePost.css";
 const SinglePost = (props) => {
 
   return (
-
+    
       <div className="singlePost" id={props.id} onClick={() => props.getSinglePost() ? props.getSinglePost(props.id) : null}>
         <div className="singlePostWrapper">
           <h1 className="singlePostTitle">{props.title}</h1>
@@ -14,15 +14,15 @@ const SinglePost = (props) => {
               <span className="singlePostAuthor">Author: <b>{props.author}</b>{" "}</span>
               <span className="singlePostAuthor">{props.createdAt}</span>
             </div>
-            <div className="singlePostBody">
+            
               <p className="singlePostBody-p">
                 {props.body}
               </p>
             </div>
           </div>
         </div>
-      </div>
-
+     
+    
 
 
   );

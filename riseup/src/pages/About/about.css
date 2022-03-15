@@ -6,11 +6,13 @@
   font-family: sansita swashed;
   text-shadow: 1px 1px 6px black;
   font-size: 3.5rem;
-  width: 30%;
+  width: 50%;
   margin-left: 33%;
   margin-top: 15px;
   background-color: rgb(248, 153, 28);
   padding-bottom: 8px;
+  display: block;
+  
 }
 
 .postsAbout {
@@ -20,8 +22,8 @@
 }
 
 .aboutImg {
-  height: 200px;
-  width: 200px;
+  height: 50%;
+  width: 50%;
   /* animation: rotation 6s 1 linear; */
   display: block;
   margin-left: auto;
@@ -29,7 +31,7 @@
   border-radius: 10px;
 }
 .postAbout {
-  display: flex;
+  display: block;
   background-color: rgb(248, 241, 228);
   height: 50%;
   width: 30%;

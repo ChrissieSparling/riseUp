@@ -32,6 +32,7 @@ function Footer() {
                 </a>
               </p>
             </div>
+            
             <div className="socialFooter">
               <SocialIcon
                 className="socialFoot"
@@ -71,7 +72,15 @@ function Footer() {
               <a className="crisisLinkFoot" href="/crisis">
                 Crisis Links
               </a>
+              {/* <a
+                className="crisisLinkFoot"
+                href="pages/Terms/TermsCond"
+
+              >
+                Terms
+              </a> */}
             </div>
+            
           </div>
         </div>
       </div>

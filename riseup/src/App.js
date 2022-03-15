@@ -38,7 +38,9 @@ import AffPage from "./pages/AffirmationPage/AffPage"
 function App() {
   const navigate = useNavigate();
   const {auth, setAuth} = useAuth();
+ 
   const [username, setUsername] = useState("");
+  
   const [newUser, setNewUser] = useState({
     firstName: '',
     lastName: '',
@@ -51,6 +53,8 @@ function App() {
   });
   const [userId, setUserId] = useState(0);
   const [token, setToken] = useState("");
+
+
 
   const handlePostUser = (e) => {
     console.log(newUser)
@@ -98,6 +102,9 @@ function App() {
           <Route path='/horoscope'element={<Horoscope userId={userId}/>}/>
           <Route path='/crisis'element={<Crisis userId={userId}/>}/>
           <Route path='/about'element={<About/>}/>
+          <Route path='/terms'element={<TermsCond/>}/>
+          <Route path='/privacy'element={<PrivacyPolicy/>}/>
+          <Route path='/cookie'element={<CookiePolicy/>}/>
 
 
           {/* protected routes */}
