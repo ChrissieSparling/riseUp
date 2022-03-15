@@ -6,7 +6,7 @@
 
 .containerNav {
   width: 100%;
-  display: flex;
+  /* display: flex; */
   background-color: rgb(228, 135, 85);
   align-items: center;
   justify-content:right;

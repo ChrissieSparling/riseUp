@@ -27,7 +27,8 @@ const About = (props) => {
             </div>
           </div>
         </div>
-
+        
+{/* butterfly */}
         <div class="container">
     <div class="hover-container">
         <div class="left wing"></div>
