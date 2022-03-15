@@ -4,7 +4,7 @@ import "../SinglePost/singlePost.css";
 const SinglePost = (props) => {
 
   return (
-    <div>
+
       <div className="singlePost" id={props.id} onClick={() => props.getSinglePost() ? props.getSinglePost(props.id) : null}>
         <div className="singlePostWrapper">
           <h1 className="singlePostTitle">{props.title}</h1>
@@ -22,7 +22,7 @@ const SinglePost = (props) => {
           </div>
         </div>
       </div>
-    </div>
+
 
 
   );
