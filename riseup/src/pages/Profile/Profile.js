@@ -73,13 +73,13 @@ const Profile = () => {
             {uHomePosts.length ? (
               uHomePosts.map((post) => {
                 return (
-                  <h2
+                  <li
                     key={post.id}
                     onClick={() => navigate(`/forums/post/${post.id}`)}
                     className="user-post-title"
                   >
-                    {post.title}
-                  </h2>
+                    {' ' + post.title}
+                  </li>
                 );
               })
             ) : (
@@ -99,7 +99,7 @@ const Profile = () => {
               {/* <button className="btnUseHome">Visit ToDos</button>
                     <button className="btnUseHome">Read a Story</button> */}
               {auth.role === "paidUser" ? (
-                <UserHome />
+                null
               ) : auth.role === "mod" ? (
                 <ModHome />
               ) : auth.role === "admin" ? (

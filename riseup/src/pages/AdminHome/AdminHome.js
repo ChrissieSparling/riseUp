@@ -8,10 +8,10 @@ const AdminHome = () => {
     const navigate = useNavigate();
 
     return(
-        <div className="user-home-btn-box">
-                       <button className="btnUseHome" onClick={() => navigate("/adduser")}>Add New User</button>
+        <div className="user-home-btn-box admin-btn">
+                       {/* <button className="btnUseHome" onClick={() => navigate("/adduser")}>Edit a User</button>
                        <button className="btnUseHome" onClick={() => navigate("/forums")}>See All Users</button>
-                       <button className="btnUseHome" onClick={() => navigate("/forums")}>See All Posts</button>
+                       <button className="btnUseHome" onClick={() => navigate("/forums")}>See All Posts</button> */}
                        
         </div>
     );
