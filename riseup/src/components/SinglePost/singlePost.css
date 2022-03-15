@@ -1,20 +1,19 @@
 .singlePost {
   display: flex;
   /* flex: 9; */
-
   background-color: rgb(235, 211, 167);
   border-radius: 40px;
   margin: 20px 0;
   border: 5px solid rgb(248, 101, 2);
   height: auto;
-  min-width: 80px;
+  /* min-width: 80px; */
+  align-self: stretch;
 }
-
-
 .singlePostWrapper {
   padding: 20px;
+  width: 100%;
+  /* border: 2px solid magenta */
 }
-
 .singlePostTitle {
   text-align: center;
   margin: 10px;
@@ -22,37 +21,27 @@
   /* border: 1px solid black; */
 }
 .singlePostEdit {
-  width:100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
-
   font-size: 16px;
-  width: 90%;
-  padding: 1vh 2vw;
-  /* border: 1px solid black; */
+  /* border: 1px solid purple; */
+  
 }
-
-
-
 .singlePostInfo {
   display: flex;
   flex-direction: column;
-    /* margin-bottom: 20px; */
-    padding: 0 20px; 
-    /* border: 1px solid black; */
-    /* justify-content: space-between; */
-    
-}
-
-.singlePostBody {
-  display: flex;
-  /* min-width: 300px; */
-  /* border: 1px solid black; */
+  width: 100%;
+  align-items: center;
+  /* border: 2px solid cyan; */
+  text-align: center;
 }
 
 .singlePostBody-p {
   display: flex;
-  min-width: 300px;
-  font-size: 1.5rem;
+  width: 90%;
+  font-size: 14px;
+  text-align: center;
   /* border: 1px solid black; */
+  flex-wrap: wrap;
 }

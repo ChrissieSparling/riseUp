@@ -1,13 +1,6 @@
 
 /* heather make pretty */
-h1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    place-content: center;
-    color: #773cff;
-    
-}
+
 .col-aff2 {
     flex: border-box;
     flex-wrap: wrap;
@@ -38,23 +31,20 @@ h1{
   .affTitle {
     text-align: center;
     font-size: 50px;
-  }
-  .affWords {
-    text-align: center;
-    margin: 20px;
-  }
-    
-  .affTitle{
-    color:rgb(86, 86, 179);
-    font-size: 40px;
-    font-weight: bold;
+    color: #773cff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    place-content: center;
     font-family: sansita swashed;
-    
   }
+  
   .affWords{
     color: darkgreen;
     text-align: center;
     margin: 20px; 
+    text-align: center;
+    margin: 20px;
   }
   .affirmation:hover{
     filter: brightness(60%); 

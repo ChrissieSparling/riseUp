@@ -7,7 +7,9 @@
     display: grid;
     place-content: center;
   } 
-
+.col {
+  text-align: center;
+}
   .list-unstyled {
       padding-left: 10%;
   }
@@ -23,16 +25,18 @@
   }
 .crisisFooter{
   text-align: right;
-    margin-right: -200px ;
-    margin-top: -25px;
+    margin-right: -1% ;
+    margin-top: -2%;
 font-weight: 600;
   color: grey;  
+  flex-wrap: wrap;
   }
 
   .socialFooter {
     text-align: left;
-    margin-left: -200px ;
-    margin-top: -20px;
+    margin-left: -1% ;
+    margin-top: -2.5%;
+    flex-wrap: wrap;
   }
   .socialFoot {
       margin-right: 5px;
