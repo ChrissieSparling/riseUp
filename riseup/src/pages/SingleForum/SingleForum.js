@@ -24,12 +24,17 @@ const SingleForum = (props) => {
     body: '',
     author: ''
   });
+  // const [commentToEdit, setCommentToEdit] = useState({});
   const [editedComment, setEditedComment] = useState({});
+  const [commentEditBox, setCommentEditBox] = useState({});
+  const [wantEditComment, setWantEditComment] = useState(false);
+  const [seeEditComment, setSeeEditComment] = useState('none');
   const [wantComment, setWantComment] = useState(false);
   const [commId, setCommId] = useState(1)
 
 
   console.log('sf line 34', currUser)
+
   useEffect(() => {
     console.log("incoming user Id", auth.userId);
     setCurrUser({
@@ -60,12 +65,13 @@ const SingleForum = (props) => {
       });
   }, []);
 
+  //new comment
   const postComment = (e) => {
     e.preventDefault();
     console.log("this is the new comment", newComment);
     API.saveComment(id, newComment)
       .then((newData) => {
-        comments.push(newData);
+        comments.unshift(newData);
         console.log(newData);
         document.querySelector("form").reset();
         setWantComment(false);
@@ -95,40 +101,67 @@ const SingleForum = (props) => {
     });
   };
 
-  const getComment = (id, e) => {
+  //edit comment
+  const saveCommentEdit = (e, commId) => {
     e.preventDefault();
-    setWantComment(true);
-    const clickedComment = comments.filter((comment) => {
-      return comment.id === id;
-    });
-    console.log(clickedComment[0].body);
-    document.getElementById("comment-input").textContent =
-      clickedComment[0].body;
-    comments.forEach((comment) => {
-      console.log("is this the clicked comment?", comment.id === id);
-      console.log(comment.id);
-      console.log(id);
-    });
-    console.log(comments);
-    console.log(clickedComment);
-  };
-
-  const editComment = (e) => {
-    e.preventDefault();
+    console.log('editedComment', editedComment)
     API.editComment(commId, editedComment)
       .then(data => {
-        console.log('data', data)
+        console.log(commId)
+     const newComments = comments.map(comm=>{if(comm.id===commId){
+          comm.body = editedComment.body;
+          comm.author = auth.userName
+          return comm
+        } else {return comm}
+      })
+        setComments(newComments)
+        document.querySelector('form').reset();
+        const editBoxes = document.querySelectorAll('.edit-comment');
+        editBoxes.forEach((box)=>{
+          box.setAttribute('style', 'display: none;')
+        })
+
+
       })
   }
 
-  const deleteComment = (e) => {
+  const handleEditedComment = e => {
     e.preventDefault();
-    API.deleteComment(commId)
+    console.log("you're typing", e.target.name, e.target.value);
+    setCommentEditBox(e.target);
+    setEditedComment({
+      body: e.target.value,
+      // author: auth.userName
+    });
+  };
+
+ 
+  const getEditComment = (e, id) => {
+    e.preventDefault();
+    // const commentEditBoxes = document.querySelectorAll
+    const editBoxes = document.querySelectorAll('.edit-comment');
+    editBoxes.forEach((box)=>{
+      if (id===parseInt(box.id)){
+      console.log('id', id)
+      console.log('here\'s box id', box.id)
+      box.setAttribute('style', 'display: block;')
+      }
+    })
+  }
+
+  //delete comment
+  const deleteComment = (e, id) => {
+    e.preventDefault();
+    API.deleteComment(id)
       .then(data => {
+        const filteredComments = comments.filter(comm=>{if(comm.id!==id){return comm}})
+        setComments(filteredComments)
         console.log('data', data)
       })
   };
 
+
+  //post CRUD
   const goEdit = (e) => {
     e.preventDefault();
     console.log(post.id);
@@ -156,16 +189,18 @@ const SingleForum = (props) => {
       return;
     }
   };
-  console.log("is this your post?", currUser.id === post.userId);
-  comments.forEach((c) => {
-    console.log("is this your comment?", currUser.username === c.author);
-  });
+
+  //test id-ing posts and comments
+  // console.log("is this your post?", currUser.id === post.userId);
+  // comments.forEach((c) => {
+  //   console.log("is this your comment?", currUser.username === c.author);
+  // });
 
   return (
     <div className=" singleForum">
       <div className="singleFormBox">
         {/* buttons at top of page */}
-        <div className='SF-btn-box'>
+        <div className='SF-btn-box SF-top-btn'>
           <button
             onClick={() => navigate(`/forums/${post.topic}`)}
             className="SF-home-btn"
@@ -242,63 +277,70 @@ const SingleForum = (props) => {
           {comments.length ? (
             comments.map((p) => {
               return (
-                <div className="whole-comment">
-                  <div className="posted-comment" key={p.id}>
-                    <li className="posted-comment-body">{p.body}</li>
-                    <li>
-                      Created on: {p.createdAt} By: {p.author}
-                    </li>
-                  </div>
-                  <div className='SF-comm-icon-box'>
-                    <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
-                      <div
-                        onClick={handleWantComment}
-                        className="first-icon icon comment-icon"
-                        data-index={p.id}
-                      >
-                        <FontAwesomeIcon
-                          className="singlePostIcon"
-                          icon={faComment}
-                        />
-                      </div>
-                  {currUser.id !== p.userId ? (
-                      <div
-                        className="last-icon icon comment-icon"
-                        data-index={p.id}
-                      >
-                        <FontAwesomeIcon
-                          className="singlePostIcon"
-                          icon={faHeart}
-                        />
-                      </div>
-                      ) : null}
+                <div className='big-comment-box'>
+                  <div className="whole-comment">
+                    <div className="posted-comment" key={p.id}>
+                      <li className="posted-comment-body">{p.body}</li>
+                      <li>
+                        Created on: {p.createdAt} By: {p.author}
+                      </li>
+
                     </div>
-                    {/* buttons on each comment's box */}
-                  {currUser.id === p.userId ? (
+                    <div className='SF-comm-icon-box'>
                       <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
                         <div
-                          onClick={(e) => getComment(p.id, e)}
-                          className="first-icon icon"
-                          data-index={p.id}
+                          onClick={handleWantComment}
+                          className="first-icon icon comment-icon"
                         >
                           <FontAwesomeIcon
                             className="singlePostIcon"
-                            icon={faPenToSquare}
+                            icon={faComment}
                           />
                         </div>
-                        <div
-                          onClick={deleteComment}
-                          className="last-icon icon"
-                          data-index={p.id}
-                        >
-                          <FontAwesomeIcon
-                            className="singlePostIcon"
-                            icon={faTrashCan}
-                          />
-                        </div>
+                        {currUser.id !== p.userId ? (
+                          <div
+                            className="last-icon icon comment-icon"
+                          >
+                            <FontAwesomeIcon
+                              className="singlePostIcon"
+                              icon={faHeart}
+                            />
+                          </div>
+                        ) : null}
                       </div>
-                    ) : null}
+                      {/* buttons on each comment's box */}
+                      {currUser.id === p.userId ? (
+                        <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
+                          <div
+                            onClick={e=>getEditComment(e, p.id)}
+                            className="first-icon icon"
+                            
+                          >
+                            <FontAwesomeIcon
+                              className="singlePostIcon"
+                              icon={faPenToSquare}
+                              key={p.id}
+                            />
+                          </div>
+                          <div
+                            onClick={e=>deleteComment(e, p.id)}
+                            className="last-icon icon"
+                          >
+                            <FontAwesomeIcon
+                              className="singlePostIcon"
+                              icon={faTrashCan}
+                            />
+                          </div>
+                        </div>
+                      ) : null}
+                    </div>
                   </div>
+                  <div className="edit-comment" id={p.id} style={{display: 'none'}}>
+                    <form>
+                    <textarea className='edit-comment-box' onChange={handleEditedComment}></textarea>
+                    <button className='SF-home-btn save' onClick={e=>saveCommentEdit(e, p.id)}>Save</button>
+                    </form>
+                    </div>
                 </div>
               );
             })

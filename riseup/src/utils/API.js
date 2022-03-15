@@ -193,8 +193,8 @@ const API = {
       })
         .then((data) => data.json())
     },
-    editComment: (commentId, editedComment) =>{
-      return fetch(`${BASEURL}/comments/${commentId}`,{
+    editComment: (id, editedComment) =>{
+      return fetch(`${BASEURL}/comments/${id}`,{
           method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -202,7 +202,7 @@ const API = {
         },
         body: JSON.stringify({
             // topic: editedPost.topic,
-            body: editedComment.body
+            ...editedComment
          }),
       })
       .then((data) => data.json())
