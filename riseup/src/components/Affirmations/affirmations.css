@@ -16,22 +16,18 @@
   width: 75%;
   margin: 5% 13%;
   background-color: linear-gradient(to top, #fab1b6, #ffa28e, rgb(250, 231, 157),rgb(166, 210, 240),rgb(210, 210, 255));
-  
 }
-.affTitle {
+.tinaTitle {
   text-align: center;
-  font-size: 50px;
+  font-size: 2.5rem;
 }
 .affWords1 {
   text-align: center;
   margin: 20px;
-  color:rgb(0, 0, 0)
+  color:rgb(0, 0, 0);
+  font-size: 1.5rem;
 }
-
-
 
 .affirmations:hover{
   filter: brightness(60%); 
-
-
 }
