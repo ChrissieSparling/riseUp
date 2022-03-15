@@ -30,7 +30,11 @@ import Missing from './components/Missing/Missing'
 import TermsCond from "./pages/Terms/TermsCond";
 import PrivacyPolicy from "./pages/Terms/PrivacyPolicy";
 import CookiePolicy from "./pages/Terms/CookiePolicy";
-
+import AffPage from "./pages/AffirmationPage/AffPage";
+import MotPage from "./pages/MotPages/MotPage";
+import Phil from "./pages/PhilosophyPage/Phil";
+import InspirPage from "./pages/InspirPage/Inspir";
+import Asp from "./pages/AspirationPage/Asp";
 
 
 function App() {
@@ -65,7 +69,7 @@ function App() {
           setUsername(newData.username);
           setToken(newData.accessToken);
           localStorage.setItem("token", newData.accessToken);
-          navigate(`/users/login`)
+          navigate(`/login`)
         } else {
           alert('Your request was not successful. \nPlease check the form and try again.');
           console.log('front end post req prob:', newData)
@@ -103,6 +107,10 @@ function App() {
           <Route path='/terms'element={<TermsCond/>}/>
           <Route path='/privacy'element={<PrivacyPolicy/>}/>
           <Route path='/cookie'element={<CookiePolicy/>}/>
+          <Route path={`/MotPages`} element={<MotPage />}/>
+          <Route path={`/Phil`} element={<Phil />}/>
+          <Route path={`/InspirPage`} element={<InspirPage />}/>
+          <Route path={`/AspirationPage`} element={<Asp />}/>
 
 
           {/* protected routes */}
