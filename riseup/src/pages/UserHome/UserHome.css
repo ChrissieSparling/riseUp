@@ -8,8 +8,9 @@
     align-items: center;
 }
 .checklist {
-    width: 28%;
-    /* right:150px; */    
+    width: 80%;
+    align-self: flex-start;
+    margin: 0 20px;   
 }
 
 .user-home {
@@ -20,6 +21,7 @@
     align-items: center;
     padding-top: 15vh;
     background-color:rgb(235, 211, 167);
+
 }
 
 .user-welcome {
@@ -39,6 +41,8 @@
     padding: 10px;
     margin:20px; 
     text-align: center;
+    background-color: rgb(240, 238, 195); 
+    border: 7px double;
 }
 
 .aff-box h2 {
@@ -52,10 +56,24 @@
 }
 
 .user-post-list {
+    width:50%;
+    min-width: 250px;
+    margin:10px;
     border: 2px solid orange;
     background-color: #ffd400;
     font-size: .75rem;
-    width: 75%;
+    padding: 10px;
+
+}
+
+.user-post-list h1 {
+    text-align: center;
+    font-family: 'Sansita Swashed', Verdana;
+}
+
+.post-li{
+    font-size: 1.25rem;
+    text-align: center;
 }
 
 .user-post-title {
@@ -63,12 +81,24 @@
     color: black;
 }
 
+.user-post-title:hover {
+    cursor: pointer;
+}
+
 .user-home-btn-box{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color:none; 
 
 }
+.prof {
+    border:2px solid rgb(248, 101, 2);
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(240, 238, 195); 
+}
+
 .btnUserHome{
     border-color:2px solid rgb(248, 101, 2);   
 }
@@ -81,4 +111,29 @@
     background-color:  rgb(248, 153, 28);
     color: whitesmoke;
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 900px){
+    .user-home{
+        flex-direction: column;
+        
+    }
+    .random {
+
+        margin-bottom:-90px;
+    }
+    .checklist {
+        width: auto;
+     
+    }
+}
+@media only screen and (max-width: 600px){
+    .random h1 {
+        font-size: 2.5rem;
+   
+    }
+ 
+    /* .checklist {
+        align-self: center;
+    } */
 }

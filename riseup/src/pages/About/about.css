@@ -1,3 +1,10 @@
+.about-us-box {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 .aboutUs {
   border: 5px solid rgb(248, 101, 2);
   text-align: center;
@@ -5,18 +12,18 @@
   font-family: sansita swashed;
   text-shadow: 1px 1px 6px black;
   font-size: 3.5rem;
-  width: 50%;
-  margin-left: 33%;
-  margin-top: 15px;
+  width: 350px;
+    margin-top: 15px;
   background-color: rgb(248, 153, 28);
   padding-bottom: 8px;
   display: block; 
 }
 
 .postsAbout {
-  flex-wrap: wrap;
-  display: flex;
-  margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    /* margin: 20px; */
 }
 
 .aboutImg {
@@ -28,12 +35,12 @@
   margin-right: auto;
   border-radius: 10px;
 }
-.postAbout {
+.postAbout2 {
   display: block;
   background-color: rgb(248, 241, 228);
-  height: 50%;
-  width: 30%;
-  margin: 2% 1% 2% 13%;
+  height: auto;
+  width: 300px;
+  margin: 30px 100px;
   border-radius: 20px;
   border: 3px solid rgb(248, 153, 28);
   padding-top: 10px;
@@ -53,7 +60,7 @@
 }
 
 .postSubAbout {
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px;
 }
 
@@ -162,5 +169,12 @@ body {
     transform: rotateX(34deg) rotateZ(-20deg) translateY(20px);
     top: -7px;
     left: 15px;
+}
+
+@media only screen and (max-width:550px){
+    .aboutUs{
+        font-size: 2.5rem;
+        width:200px;
+    }
 }
 
