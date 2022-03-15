@@ -9,6 +9,11 @@
   /* min-width: 80px; */
   align-self: stretch;
 }
+
+.singlePost:hover {
+  cursor: pointer;
+}
+
 .singlePostWrapper {
   padding: 20px;
   width: 100%;
@@ -44,4 +49,9 @@
   text-align: center;
   /* border: 1px solid black; */
   flex-wrap: wrap;
+}
+
+.post-icon {
+  align-self: flex-start;
+  flex-direction: row;
 }

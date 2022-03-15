@@ -4,6 +4,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+.singlePost:hover {
+  cursor: auto;
+}
+
 .singleFormBox {
   background-color: #ffd400;
   padding: 40px;
