@@ -1,79 +1,73 @@
 
-.postsHome {
+/* heather make pretty */
+h1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    place-content: center;
+    color: #773cff;
+    
+}
+.col-aff2 {
+    flex: border-box;
     flex-wrap: wrap;
     display: flex;
     margin: 20px;
     background-color: #ffd400;
+    width: 100%;
+    height: 100%;
+    padding: 0.25em;
+    background-size: 100%;
+    color: rgb(0, 0, 0);
+    place-content: center;
     
   }
-  .homeAffLinks{
-    color:rgb(86, 86, 179);
+  .col-aff1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    place-content: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/images/sunrisesss.jpeg");
+    background-size: 100%;
+    display: grid;
+    place-content: center;
+  }
+  
+  .affTitle {
+    text-align: center;
     font-size: 50px;
   }
-  .cursorHome:hover{
-      cursor: pointer;
-      box-shadow: 0 0 5px 5px rgb(248, 153, 28);
-      
-  }
-  
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .flowerImg {
-    height:200px;
-    width: 200px;
-    margin-left: 33%;
-    animation: rotation 6s 1 linear;
-    display: block;  
-    margin-left: auto;  
-    margin-right: auto;  
-  
-  }
-  .postHome {
-    display: flex;
-    background-color: rgb(240, 238, 195);
-    height: 50%;
-    width: 40%;
-    margin: 2% 1% 2% 6%;
-    border-radius: 20px;
-    border:3px solid rgb(248, 153, 28)
-  }
-  .postInfoHome {
-    display: flex;
-    flex-direction: column;
+  .affWords {
     text-align: center;
+    margin: 20px;
+  }
+    
+  .affTitle{
+    color:rgb(86, 86, 179);
+    font-size: 40px;
+    font-weight: bold;
+    font-family: sansita swashed;
     
   }
-  
-  .postTitleHome {
-    font-size: 20px;
-    font-weight: 700;
-    margin-right: 65px;
-    padding-left: 10%;
+  .affWords{
+    color: darkgreen;
     text-align: center;
-    
+    margin: 20px; 
+  }
+  .affirmation:hover{
+    filter: brightness(60%); 
     
   }
-  
-  .postSubHome {
-    font-size: 18px;
-    padding: 10px;
-   
-  }
-  
+
   @media (min-width: 913px){
-   .MuiAccordion-root {
-    display: none}
-  }
-  
-  @media (max-width: 912px){
-    .postsHome {
-      display: none;
-    }
-  }
+    .mdb-react-ui-kit {
+     display: none}
+   }
+   
+   @media (max-width: 912px){
+     .postsHome {
+       display: none;
+     }
+   }
