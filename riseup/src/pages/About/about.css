@@ -63,7 +63,17 @@
   font-size: 16px;
   padding: 10px;
 }
-
+.mission{
+    border:5px solid #ffd400;
+    border-radius: 20px;
+    width: 80%;
+    text-align: center;
+    font-size: 16px
+}
+.buttflr{
+    height: 200px;
+    width:200px;
+}
 
 /* butterfly Code */
 @keyframes flap {
