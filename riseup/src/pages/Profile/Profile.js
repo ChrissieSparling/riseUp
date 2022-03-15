@@ -4,7 +4,7 @@ import API from "../../utils/API";
 import useAuth from "../../utils/hooks/useAuth";
 import UserHome from "../UserHome/UserHome";
 import ModHome from "../ModHome/ModHome";
-import AdminHome from "../AdminHome/AdminOne";
+import AdminHome from "../AdminHome/AdminHome";
 import TodoList from "../../components/Todo/TodoList";
 
 const Profile = () => {
@@ -57,9 +57,11 @@ const Profile = () => {
     <>
       <div className="user-home">
         <div className="random">
-          <h1 className="user-welcome">
+          {auth.role!=='paidUser' ? (<h1 className="user-welcome">
             Hello {username}! This is the {roleName} homepage!
-          </h1>
+          </h1>) : <h1 className="user-welcome">
+            Hello {username}! Welcome to your homepage!
+          </h1>}
           <div className="aff-box">
             <h2>Your Daily Dose of Dopamine:</h2>
             <p style={{ fontWeight: "bold", fontSize: "2rem" }}>"{userAff}"</p>
@@ -68,7 +70,7 @@ const Profile = () => {
 
           <div className="user-post-list">
             <h1>MyPosts:</h1>
-            {uHomePosts ? (
+            {uHomePosts.length ? (
               uHomePosts.map((post) => {
                 return (
                   <h1
@@ -81,7 +83,7 @@ const Profile = () => {
                 );
               })
             ) : (
-              <h1>You don't have any posts</h1>
+              <h2 className='no-posts'>You don't have any posts</h2>
             )}
           </div>
 
