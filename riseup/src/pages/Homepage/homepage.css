@@ -7,7 +7,7 @@
 }
 .homeAffLinks{
   color:rgb(86, 86, 179);
-  font-size: 50px;
+  font-size: 3rem;
 }
 .cursorHome:hover{
     cursor: pointer;
@@ -51,13 +51,11 @@
 }
 
 .postTitleHome {
-  font-size: 50px;
+  font-size: 3rem;
   font-weight: 700;
   margin-right: 65px;
   padding-left: 10%;
-  text-align: center;
-  
-  
+  text-align: center; 
 }
 
 .postSubHome {

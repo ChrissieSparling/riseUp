@@ -42,7 +42,7 @@ function TodoForm(props) {
       ) : (
         <>
           <input
-            placeholder='Care for yourself by...'
+            placeholder='Care for you by...'
             value={input}
             onChange={handleChange}
             name='text'

@@ -63,9 +63,9 @@ const Profile = () => {
             Hello {username}! Welcome to your homepage!
           </h1>}
           <div className="aff-box">
-            <h2>Your Daily Dose of Dopamine:</h2>
+            <h2>Random Ray of Sunshine:</h2>
             <p style={{ fontWeight: "bold", fontSize: "2rem" }}>"{userAff}"</p>
-            <p>- {userAffAuth}</p>
+            {/* <p>- {userAffAuth}</p> */}
           </div>
 
           <div className="user-post-list">

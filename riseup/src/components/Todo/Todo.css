@@ -1,23 +1,24 @@
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 1.5px;
   padding: 0;
 }
 .todo-app {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 520px;
-  min-height: 600px;
+  width: 100%;
+  min-height: 60%;
   text-align: center;
   margin: 128px auto;
+  border:dotted#f3efca;
   border-radius: 10px;
   padding-bottom: 32px;
 }
 .checkTitle {
   margin: 32px 0;
   color: whitesmoke;
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   font-family: sansita swashed;
   text-shadow: 1px 1px 6px black;
 }
@@ -39,7 +40,7 @@
   border-radius: 4px 0 0 4px;
   border: 2px solid rgb(250, 173, 29);
   outline: none;
-  width: 320px;
+  width: 60%;
   background: transparent;
   color: #fff;
 }
@@ -83,16 +84,16 @@
   );
   padding: 16px;
   border-radius: 5px;
-  width: 90%;
+  width: 80%;
 }
 .icons {
   display: flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
 }
 .delete-icon {
-  margin-right: 5px;
+  margin-right: 4px;
   color: #fff;
 }
 .edit-icon {

@@ -20,7 +20,7 @@ const HomePage = (props) => {
           <div className="postInfoHome">
             <div className="postCatsHome">
               <img className="flowerImg" src={happyImg} />
-              <span className="postTitleHome"><a classname="homeAffLinks" href="../MotPages">Motivation</a></span>
+              <span className="postTitleHome"><a className="homeAffLinks" href="../MotPages">Motivation</a></span>
               <hr />
 
               <p className="postSubHome">
@@ -34,7 +34,7 @@ const HomePage = (props) => {
           <div className="postInfoHome">
             <div className="postCatsHome">
               <img className="flowerImg" src={happyImg} />
-              <span className="postTitleHome"><a classname="homeAffLinks" href="#">Philosophy</a></span>
+              <span className="postTitleHome"><a className="homeAffLinks" href="#">Philosophy</a></span>
               <hr />
 
               <p className="postSubHome">
@@ -47,7 +47,7 @@ const HomePage = (props) => {
           <div className="postInfoHome">
             <div className="postCatsHome">
               <img className="flowerImg" src={happyImg} />
-              <span className="postTitleHome"><a classname="homeAffLinks" href="#">Inspiration</a></span>
+              <span className="postTitleHome"><a className="homeAffLinks" href="#">Inspiration</a></span>
               <hr />
 
               <p className="postSubHome">
