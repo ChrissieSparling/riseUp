@@ -32,6 +32,7 @@ function Footer() {
                 </a>
               </p>
             </div>
+            <div className="gene">
             <div className="socialFooter">
               <SocialIcon
                 className="socialFoot"
@@ -71,6 +72,7 @@ function Footer() {
               <a className="crisisLinkFoot" href="/crisis">
                 Crisis Links
               </a>
+            </div>
             </div>
           </div>
         </div>

@@ -9,12 +9,14 @@
 .singleFormBox{
     background-color: #ffd400; 
     padding: 40px;
+    width: 80%
 }
 
 .SF-btn-box {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .SF-home-btn {
@@ -50,6 +52,7 @@
     padding: 10px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   

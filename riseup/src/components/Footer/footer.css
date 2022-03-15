@@ -5,11 +5,11 @@
     background-color: rgb(248, 101, 2);
     color: aliceblue;
     display: grid;
-    place-content: center;
+    justify-content: center;
   } 
 
   .list-unstyled {
-      padding-left: 10%;
+      /* padding-left: 10%; */
   }
 
   .footTag {
@@ -21,6 +21,11 @@
       justify-content: space-between;
       
   }
+
+.gene{
+ justify-content: space-around;
+}
+
 .crisisFooter{
   text-align: right;
     margin-right: -200px ;
