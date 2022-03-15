@@ -34,3 +34,14 @@
   text-shadow: 1px 1px 6px black;
   font-size: 3.5rem;
 }
+@media only screen and (max-width: 900px){
+  .horoscope-box {
+    width:auto;
+    font-size: 2.5rem;
+ 
+  }
+
+  /* .checklist {
+      align-self: center;
+  } */
+}

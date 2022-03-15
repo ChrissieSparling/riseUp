@@ -37,7 +37,7 @@ const Backdrop = styled("div")`
   bottom: 0;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(0, 0, 0, 0.7);
   -webkit-tap-highlight-color: solid;
 `;
 
@@ -48,7 +48,7 @@ const style = {
   p: 2,
   px: 4,
   pb: 3,
-  color: "white"
+  color: "white",
 };
 
 function Horoscope() {
@@ -76,55 +76,51 @@ function Horoscope() {
   return (
     <div className="horoscope-box">
       <h1 className="horoTitle">Let's have some fun! What's your sign?</h1>
-    <div className="grid">
-      
-      {signs.map((sign) => (
-        <button
-          className="sign"
-          key={sign}
-          onClick={() => onSignSelected(sign)}
+      <div className="grid">
+        {signs.map((sign) => (
+          <button
+            className="sign"
+            key={sign}
+            onClick={() => onSignSelected(sign)}
+          >
+            {sign}
+          </button>
+        ))}
+        <StyledModal
+          aria-labelledby="unstyled-modal-title"
+          aria-describedby="unstyled-modal-description"
+          open={modalIsOpen}
+          onClose={handleClose}
+          BackdropComponent={Backdrop}
         >
-          {sign}
-        </button>
-      ))}
-      <StyledModal
-        aria-labelledby="unstyled-modal-title"
-        aria-describedby="unstyled-modal-description"
-        open={modalIsOpen}
-        onClose={handleClose}
-        BackdropComponent={Backdrop}
-      >
-        <Box sx={style}>
-      
-      <div>
-        <h3>Date Range:</h3>
-        {horoscopeData.date_range}
+          <Box sx={style}>
+            <div>
+              <h3>Date Range:</h3>
+              {horoscopeData.date_range}
+            </div>
+            <div>
+              <h3>Description:</h3>
+              {horoscopeData.description}
+            </div>
+            <div>
+              <h3>Lucky Number:</h3>
+              {horoscopeData.lucky_number}
+            </div>
+            <div>
+              <h3>Lucky Time:</h3>
+              {horoscopeData.lucky_time}
+            </div>
+            <div>
+              <h3>Mood:</h3>
+              {horoscopeData.mood}
+            </div>
+            <div>
+              <h3>Color:</h3>
+              {horoscopeData.color}
+            </div>
+          </Box>
+        </StyledModal>
       </div>
-      <div>
-        <h3>Description:</h3>
-        {horoscopeData.description}
-      </div>
-      <div>
-        <h3>Lucky Number:</h3>
-        {horoscopeData.lucky_number}
-      </div>
-      <div>
-        <h3>Lucky Time:</h3>
-        {horoscopeData.lucky_time}
-      </div>
-      <div>
-        <h3>Mood:</h3>
-        {horoscopeData.mood}
-      </div>
-      <div>
-        <h3>Color:</h3>
-        {horoscopeData.color}
-      </div>
-        </Box>
-      </StyledModal>
-
-     
-    </div>
     </div>
   );
 }
