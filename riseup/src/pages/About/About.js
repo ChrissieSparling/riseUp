@@ -65,6 +65,9 @@ const About = (props) => {
             </div>
           </div>
         </div>
+        <div className='mission'>
+
+        </div>
       </div>
    </div>
   );
