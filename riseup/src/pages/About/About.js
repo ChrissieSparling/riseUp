@@ -6,10 +6,10 @@ import Loop from '../../assets/images/loop.jpg'
 import Nile from '../../assets/images/nile.jpg'
 const About = (props) => {
   return (
-    <div>
+    <div className='about-us-box'>
      <div className="aboutUs">About Us</div>
       <div className="postsAbout">
-        <div className="postAbout">
+        <div className="postAbout2">
           <div className="postInfoAbout">
             <div className="postCatsAbout">
               <img className="aboutImg" src={Chrissie} />
@@ -29,7 +29,7 @@ const About = (props) => {
         <div class="head"></div>
     </div>
 </div>
-        <div className="postAbout">
+        <div className="postAbout2">
           <div className="postInfoAbout">
             <div className="postCatsAbout">
               <img className="aboutImg" src={Denise} />
@@ -41,7 +41,7 @@ const About = (props) => {
             </div>
           </div>
         </div>
-        <div className="postAbout">
+        <div className="postAbout2">
           <div className="postInfoAbout">
             <div className="postCatsAbout">
               <img className="aboutImg" src={Loop} />
@@ -53,7 +53,7 @@ const About = (props) => {
             </div>
           </div>
         </div>
-        <div className="postAbout">
+        <div className="postAbout2">
           <div className="postInfoAbout">
             <div className="postCatsAbout">
               <img className="aboutImg" src={Nile} />
