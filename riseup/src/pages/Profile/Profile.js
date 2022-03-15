@@ -69,26 +69,26 @@ const Profile = () => {
           </div>
 
           <div className="user-post-list">
-            <h1>MyPosts:</h1>
+            <h1 >MyPosts</h1>
             {uHomePosts.length ? (
               uHomePosts.map((post) => {
                 return (
-                  <h1
+                  <h2
                     key={post.id}
                     onClick={() => navigate(`/forums/post/${post.id}`)}
                     className="user-post-title"
                   >
                     {post.title}
-                  </h1>
+                  </h2>
                 );
               })
             ) : (
-              <h2 className='no-posts'>You don't have any posts</h2>
+              <h2 className='post-li'>You don't have any posts</h2>
             )}
           </div>
 
           <div>
-            <div className="user-home-btn-box">
+            <div className="user-home-btn-box prof">
               <h2>What would you like to do?</h2>
               <button
                 className="btnUseHome"

@@ -4,8 +4,10 @@
 
 .random{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
 }
 .checklist {
     width: auto;
@@ -20,6 +22,7 @@
     align-items: center;
     padding-top: 15vh;
     background-color:rgb(235, 211, 167);
+
 }
 
 .user-welcome {
@@ -66,10 +69,10 @@
 
 .user-post-list h1 {
     text-align: center;
-    text-decoration:underline;
+    font-family: 'Sansita Swashed', Verdana;
 }
 
-.no-posts{
+.post-li{
     font-size: 1.25rem;
     text-align: center;
 }
@@ -79,12 +82,24 @@
     color: black;
 }
 
+.user-post-title:hover {
+    cursor: pointer;
+}
+
 .user-home-btn-box{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color:none; 
 
 }
+.prof {
+    border:2px solid rgb(248, 101, 2);
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(240, 238, 195); 
+}
+
 .btnUserHome{
     border-color:2px solid rgb(248, 101, 2);   
 }

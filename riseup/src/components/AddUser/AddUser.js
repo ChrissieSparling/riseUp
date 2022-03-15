@@ -8,9 +8,9 @@ import './add-user.css'
 const AddUser = () => {
     const { auth, setAuth } = useAuth();
     const navigate = useNavigate();
-    const [username, setUsername] = useState("");
+    // const [username, setUsername] = useState("");
 
-    const [newUser, setNewUser] = useState({
+    const [userToAdd, setUserToAdd] = useState({
         firstName: '',
         lastName: '',
         username: '',
@@ -20,23 +20,23 @@ const AddUser = () => {
         birthday: '',
         zipCode: '',
     });
-    const [userId, setUserId] = useState(0);
-    const [token, setToken] = useState("");
+    // const [userId, setUserId] = useState(0);
+    // const [token, setToken] = useState("");
 
 
 
     const handlePostNewUser = (e) => {
-        console.log(newUser)
+        console.log(userToAdd)
         e.preventDefault();
-        API.signUp(newUser)
+        API.signUp(userToAdd)
             .then((newData) => {
                 if (newData.id) {
                     console.log(newData)
-                    setUserId(newData.id);
-                    setUsername(newData.username);
-                    setToken(newData.accessToken);
-                    localStorage.setItem("token", newData.accessToken);
-                    navigate(`/users/profile`)
+                    // setUserId(newData.id);
+                    // setUsername(newData.username);
+                    // setToken(newData.accessToken);
+                    // localStorage.setItem("token", newData.accessToken);
+                    alert('User has been added!')
                 } else {
                     alert('Your request was not successful. \nPlease check the form and try again.');
                     console.log('front end post req prob:', newData)
@@ -52,8 +52,8 @@ const AddUser = () => {
 
     const handleCollectUser = e => {
         console.log(e.target.name, e.target.value)
-        setNewUser({
-            ...newUser,
+        setUserToAdd({
+            ...userToAdd,
             [e.target.name]: e.target.value
         })
     }
@@ -61,8 +61,8 @@ const AddUser = () => {
 
     return (
         <div className="admin-user">
-            <form className='admin-form2' onSubmit={handlePostNewUser}>
-                <h1 className="signTitle admin">Add User</h1>
+            {/* <form className='admin-form2' onSubmit={handlePostNewUser}> */}
+                {/* <h1 className="admin-form-title">Add User</h1>
 
                 <input
                     type="text"
@@ -126,18 +126,22 @@ const AddUser = () => {
                     required
                     name='password'
                     onChange={handleCollectUser}
-                />
+                /> */}
 
-                <input
+                {/* <input
                     type="text"
                     className="admin-inpt"
                     placeholder="role"
                     required
                     name='role'
                     onChange={handleCollectUser}
-                />
+                /> */}
 
-                <select className="admin-inpt">
+                {/* <select 
+                required
+                name='role'
+                onChange={handleCollectUser}
+                className="admin-inpt">
                     <option>Choose Role</option>
                     <option>Admin</option>
                     <option>Moderator</option>
@@ -151,9 +155,9 @@ const AddUser = () => {
 
                 <button className="btnLogSign">Add User</button>
 
-            </form>
+            </form> */}
             <form className='admin-form2'>
-                <h1 className="signTitle  admin">Update User</h1>
+                <h1 className="admin-form-title">Update User</h1>
 
                 <input
                     type="text"
@@ -209,7 +213,7 @@ const AddUser = () => {
                     name='username'
                     onChange={handleCollectUser}
                 />
-
+{/* 
                 <input
                     type="text"
                     placeholder="password"
@@ -217,21 +221,31 @@ const AddUser = () => {
                     required
                     name='password'
                     onChange={handleCollectUser}
-                />
+                /> */}
 
-                <input
+                {/* <input
                     type="text"
                     className="admin-inpt"
                     placeholder="role"
                     required
                     name='role'
                     onChange={handleCollectUser}
-                />
-
+                /> */}
+                                <select 
+                required
+                name='role'
+                onChange={handleCollectUser}
+                className="admin-inpt">
+                    <option>Choose Role</option>
+                    <option value={'admin'}>Admin</option>
+                    <option value={'mod'}>Moderator</option>
+                    <option value={'paidUser'}>User</option>
+                </select>
+{/* 
                 <label>
                     <input type="checkbox" className="checkbox"></input>
                     Has user agreed to terms and been provided a copy?
-                </label>
+                </label> */}
 
                 <button className="btnLogSign">Update User</button>
 
