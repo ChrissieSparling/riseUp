@@ -1,3 +1,4 @@
+import { Button, yellow } from '@material-ui/core/index';
 import React from 'react'
 import "./Terms.css"
 
@@ -6,10 +7,12 @@ const styles = {
     marginTop: '30px',
     color: 'Black',
     backgroundColor: 'yellow',
-  
+    backgroundColor: 'yellow',
+    hover: 'yellow',
   },
   p: {
-    fontSize: '12px'
+    fontSize: '12px',
+    hover: 'yellow',
   }
 }
 
@@ -114,7 +117,12 @@ export function CookiePolicy () {
         <strong>© WeRiseUpToday 2022</strong>
         </p>
         </div>
+       
     )
+    
 }
+<a href="/signup" target="_blank">
+<Button class="btnLogSign"> Sign up</Button>
+</a>
 
 export default CookiePolicy

@@ -1,3 +1,4 @@
+import { Button, yellow } from '@material-ui/core/index';
 import React from 'react'
 import "./Terms.css"
 
@@ -7,11 +8,14 @@ const styles = ({
     marginTop: '30px',
     color: 'black',
     backgroundColor: 'yellow',
+    backgroundColor: 'yellow',
+    hover: 'yellow',
     
     
   },
   p: {
-    fontSize: '12px'
+    fontSize: '12px',
+    hover: 'yellow',
   }
 })
 
@@ -268,6 +272,9 @@ export function PrivacyPolicy () {
         We will update this Privacy Policy from time to time. We always indicate the date the last changes were published, and if changes are significant, we/'ll provide a more prominent notice as required by law, such as by emailing you or highlighting the changes within the services.</p>
         
         </div>
+        <a href="/signup" target="_blank">
+          <Button class="btnLogSign"> Sign up</Button>
+        </a>
         </container>
         </>
        )
