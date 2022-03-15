@@ -76,41 +76,7 @@ const InspirPage = () => {
               </p>
             </div>
           </div>
-        </div>
-        
-    <div className="postHome cursorHome">
-          <div className="postInfoHome">
-            <div className="postCatsHome">
-              <img className="flowerImg" src={happyImg} />
-             
-              <hr />
-
-              <p className="postSubHome">
-              {userInsp}
-              </p>
-              <p>
-                  {userInspAuth}
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div className="postHome cursorHome">
-          <div className="postInfoHome">
-            <div className="postCatsHome">
-              <img className="flowerImg" src={happyImg} />
-             
-              <hr />
-
-              <p className="postSubHome">
-              {userInsp}
-              </p>
-              <p>
-                  {userInspAuth}
-              </p>
-            </div>
-          </div>
-        </div>     
+        </div>   
     </div>
   </div>
     </>
