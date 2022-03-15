@@ -3,7 +3,7 @@
 }
 .grid {
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-columns: 2fr 2fr;
   grid-gap: 10px;
   background-image: url(../../assets/images/universe.webp);
   width: 100%;
@@ -13,7 +13,7 @@
 .sign {
   color: rgb(255, 252, 252);
   padding: 10px;
-  font-size: 14px;
+  font-size: 36px;
   cursor: pointer;
   border: 3px opacity 10 rgb(255, 252, 252);
   background: linear-gradient(
@@ -33,4 +33,10 @@
   color: whitesmoke;
   font-family: sansita swashed;
   text-shadow: 1px 1px 6px black;
+}
+
+@media (min-width:414px) {
+  .sign {
+    font-size: 14px;
+  }
 }

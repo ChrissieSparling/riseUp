@@ -5,6 +5,7 @@ import {React, useState, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route, Link, useNavigate} from "react-router-dom";
 import API from "./utils/API"
 import Layout from './pages/Layout/Layout'
+import AddUser from "./components/AddUser/AddUser";
 import RequireAuth from './components/RequireAuth/RequireAuth'
 import useAuth from './utils/hooks/useAuth'
 import Header from "./components/Header/Header";
@@ -121,6 +122,7 @@ function App() {
           <Route element={<RequireAuth allowedRoles={['mod']}/>}>
           </Route>
           <Route element={<RequireAuth allowedRoles={['admin']}/>}>
+            <Route path='/adduser' element={<AddUser/>}/>
           </Route>
           
           {/* error route */}
