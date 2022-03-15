@@ -135,6 +135,9 @@ function App() {
           {/* <Route path='/story'/> */}
           <Route path='/crisis'element={<Crisis userId={userId}/>}/>
           <Route path='/about'element={<About/>}/>
+          <Route path='/terms'element={<TermsCond/>}/>
+          <Route path='/privacy'element={<PrivacyPolicy/>}/>
+          <Route path='/cookie'element={<CookiePolicy/>}/>
 
 
           {/* protected routes */}

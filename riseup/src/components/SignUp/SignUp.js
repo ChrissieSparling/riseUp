@@ -96,7 +96,7 @@ function SignUp(props) {
               </div>
               <label>
                 <input type="checkbox"  className="checkbox"></input>I have read and agreed to the 
-                <a href="#" className='checkboxLinks'>Terms of Service </a>and <a href="#" className='checkboxLinks'>Privacy</a>
+                <a href="/terms" className='checkboxLinks'>Terms of Service </a> and <a href="/privacy" className='checkboxLinks'>Privacy</a>
               </label>
               <div className="login-btn">
                 <button className="btnLogSign">Sign Up</button>

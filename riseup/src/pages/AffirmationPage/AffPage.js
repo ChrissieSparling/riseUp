@@ -23,6 +23,7 @@ function affPage(props) {
   
     </MDBContainer>
     </>
-    );}
+    );
+  }
 
 export default affPage
