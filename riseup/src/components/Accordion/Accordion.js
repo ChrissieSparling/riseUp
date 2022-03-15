@@ -99,7 +99,7 @@ export default function CustomizedAccordions() {
           <Typography>Philosophy</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography><a href="#">
+          <Typography><a href="../Phil">
             In order to get started on this journey, we need to be able to
             identify the real problems facing us. All problems are a matter of
             perspective. The better we understand our own perspectives, we are
@@ -120,12 +120,12 @@ export default function CustomizedAccordions() {
           <Typography>Inspiration</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography><a href="../InspirPage">
             WeRiseUpToday was Inspired by YOU! The world has seen some dark days
             and we have every intention of shining bright lights into that
             darkness by helping that one person in your life who matters most.
             YOU!
-          </Typography>
+         </a> </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion
@@ -137,13 +137,13 @@ export default function CustomizedAccordions() {
           <Typography>Aspirations</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography><a href="../AspirationPage">
             We believe in Dreams. More than that, we Want to SEE your dreams
             come true. When you join every day you will access to a community
             who wants nothing more than to see you thrive. Get quotes, images,
             ideas, or send us an email and tell us what you'd like to see here
             to make your goals more achievable.
-          </Typography>
+          </a></Typography>
         </AccordionDetails>
       </Accordion>
     </div>
