@@ -125,5 +125,4 @@ function Horoscope() {
   );
 }
 
-export default Horoscope;
-// client side routing react-router-dom tag the v5 or v6 on end on google search this goes in app.js
+export default Horoscope; 

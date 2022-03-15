@@ -10,6 +10,7 @@ const About = (props) => {
   return (
     <div className="about-us-box">
       <div className="aboutUs">About Us</div>
+
       <div className="postsAbout">
         <div className="postAbout2">
           <div className="postInfoAbout">
@@ -25,6 +26,8 @@ const About = (props) => {
             </div>
           </div>
         </div>
+
+        {/* butterfly */}
         <div class="container">
           <div class="hover-container">
             <div class="left wing"></div>
@@ -74,14 +77,19 @@ const About = (props) => {
           </div>
         </div>
         <div className="mission">
-          <p>Rise Up is here to empower, inform, inspire and nurture our fellow
-          sunflowers to find help and positivity; We Rise Up Today!</p>
-          <img className= "buttflr" src={buttflr} alt= "buttflower" ></img>
-          <p>As we go through life we face some ups and downs. Sometimes when we
-          are in a down it's hard for us to see the light. Here at Rise Up, our
-          mascot is the sunflower because we RISE UP to see the light in any
-          given situation. As Rise Up sunflowers you can get support from one
-          another. As well as find resources for mental health professionals.</p>
+          <p>
+            Rise Up is here to empower, inform, inspire and nurture our fellow
+            sunflowers to find help and positivity; We Rise Up Today!
+          </p>
+          <img className="buttflr" src={buttflr} alt="buttflower"></img>
+          <p>
+            As we go through life we face some ups and downs. Sometimes when we
+            are in a down it's hard for us to see the light. Here at Rise Up,
+            our mascot is the sunflower because we RISE UP to see the light in
+            any given situation. As Rise Up sunflowers you can get support from
+            one another. As well as find resources for mental health
+            professionals.
+          </p>
         </div>
       </div>
     </div>

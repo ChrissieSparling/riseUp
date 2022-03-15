@@ -14,10 +14,13 @@ const options = [
   { name: "About", href: "/about" },
   { name: "Horoscope", href: "/horoscope" },
   { name: "Crisis Links", href: "/crisis" },
-  { name: "Login", href: "/users/login" },
+  { name: "Login", href: "/login" },
   { name: "Sign Up", href: "/signup" },
   { name: "Logout", href: "/logout" },
 ];
+
+
+
 
 const ITEM_HEIGHT = 48;
 
@@ -145,6 +148,7 @@ const Navbar = (props) => {
                   selected={option === "Pyxis"}
                   onClick={handleClose}
                 >
+                  
                   <a href={option.href}>{option.name}</a>
                 </MenuItem>
               ))}
