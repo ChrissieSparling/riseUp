@@ -1,19 +1,19 @@
-import { yellow } from '@material-ui/core/colors'
+import { Button, yellow } from '@material-ui/core/index';
 import React from 'react'
 import "./Terms.css"
-
 
 const styles = {
   h1: {
     marginTop: '30px',
     color: 'black',
     backgroundColor: 'yellow',
-    
-    
-  },
+    hover: 'yellow',
+ },
   p: {
-    fontSize: '12px'
-  }
+    fontSize: '12px',
+    hover: 'yellow',
+  },
+
 }
 
 export function Terms () {
@@ -330,6 +330,9 @@ export function Terms () {
         of any matter otherwise subject to indemnification by you, and in such case, you agree to cooperate with WeRiseUpToday defense of such claim.
         <br /> Any questions or concerns / More Information Please send up an email at https://www.WeRiseUpToday.com
         <br />
+        <a href="/signup" target="_blank">
+          <Button class="btnLogSign"> Sign up</Button>
+        </a>
         <br />
         <strong>© WeRiseUpToday 2022</strong>
         </p>

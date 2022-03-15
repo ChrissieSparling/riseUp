@@ -1,18 +1,23 @@
+import { Button, yellow } from '@material-ui/core/index';
 import React from 'react'
 import "./Terms.css"
+
 const styles = {
   h1: {
     marginTop: '30px',
     color: 'Black',
-  
+    backgroundColor: 'yellow',
+    hover: 'orange',
   },
   p: {
-    fontSize: '12px'
-  }
+    fontSize: '12px',
+    hover: 'yellow',
+  },
 }
 
-export function DataBreachPolicy () {
-  return 
+export function DataBreachPolicy (){
+  return (
+  <container>
     <div className='d-flex row justify-content-center'>
       <h1 style={styles.h1} className='col-12'>WeRiseUpToday Data Breach or Imminent Breach Procedures</h1>
       <p style={styles.p} className='col-10'>
@@ -61,8 +66,11 @@ export function DataBreachPolicy () {
                 <br />
                 <strong>© WeRiseUpToday 2022</strong>
           </div>
-    ;
-      
+          <a href="/signup" target="_blank">
+          <Button class="btnLogSign"> Sign up</Button>
+        </a>
+    </container>
+  )
 }
 
 export default DataBreachPolicy

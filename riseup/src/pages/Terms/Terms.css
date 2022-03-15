@@ -1,12 +1,32 @@
+.btnLogSign {
+  text-align: center;
+  align-items: center;
+  cursor: default;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: #ffe100;
+  font-size: 25px;
+  border: 3px solid rgb(248, 101, 2);
+}
 
+.login-btn {
+  padding-top: 20px;
 
+}
 
-
+a {
+  text-decoration: none;
+  color: rgb(82, 82, 233);
+}
 
 .checkbox {
-    margin-right: 5px;
-  }
-  
-  .checkboxLinks {
-    color: rgb(103, 103, 228);
-  }
+  margin-right: 5px;
+}
+
+.checkboxLinks {
+  color: rgb(103, 103, 228);
+}
+
+
+
