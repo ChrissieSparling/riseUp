@@ -76,10 +76,10 @@ const Navbar = (props) => {
   return (
     <nav>
       <div className="containerNav">
-        <div className="searchNav">
+        {/* <div className="searchNav">
           <button className="searchNavBtn">Search</button>
           <input className="inputNav" type="text" />
-        </div>
+        </div> */}
         <div className="menuNav">
           {!auth.userName ? (
             <>
