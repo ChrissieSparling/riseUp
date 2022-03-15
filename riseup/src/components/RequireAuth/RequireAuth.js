@@ -3,13 +3,10 @@ import {useLocation, Navigate, Outlet} from 'react-router-dom';
 import API from "../../utils/API";
 import useAuth from '../../utils/hooks/useAuth';
 
-
 const RequireAuth = ({allowedRoles}) => {
     const {auth, setAuth} = useAuth();
     const location = useLocation();
    
- 
-
     return (
         <>
             {!auth.loading ?

@@ -9,11 +9,8 @@ const AdminHome = () => {
     return(
         <div className="user-home-btn-box">
                        <button className="btnUseHome" onClick={() => navigate("/forums")}>Add New User</button>
-                       {/* <button className="btnUseHome" onClick={() => navigate("/forums")}>Change User Status</button> */}
-                       {/* <button className="btnUseHome" onClick={() => navigate("/forums")}>Remove a User</button> */}
                        <button className="btnUseHome" onClick={() => navigate("/forums")}>See All Users</button>
                        <button className="btnUseHome" onClick={() => navigate("/forums")}>See All Posts</button>
-                       {/* <button className="btnUseHome" onClick={() => navigate("/forums")}>Remove User Item</button> */}
         </div>
     );
 }
