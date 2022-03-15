@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import "../Login/login.css";
-// import {useNavigate} from "react-router-dom";
 
 function SignUp(props) {
   return (

@@ -14,33 +14,32 @@ import {
 
 const SingleForum = (props) => {
   const navigate = useNavigate();
-  const {auth, setAuth} = useAuth();
+  const { auth, setAuth } = useAuth();
 
   let { id } = useParams();
   const [currUser, setCurrUser] = useState({});
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState({});
+  const [newComment, setNewComment] = useState({
+    body: '',
+    author: ''
+  });
   const [editedComment, setEditedComment] = useState({});
   const [wantComment, setWantComment] = useState(false);
   const [commId, setCommId] = useState(1)
 
+
+  console.log('sf line 34', currUser)
   useEffect(() => {
-    console.log("incoming user Id", props.userId);
+    console.log("incoming user Id", auth.userId);
     setCurrUser({
       id: auth.userId,
-      username: auth.username,
+      username: auth.userName,
     });
     const timer = setTimeout(() => console.log("this is a delay"), 500);
     clearTimeout(timer);
     console.log(id);
-    // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
-    //   method: "GET",
-    //   headers: {
-    //     "x-access-token": localStorage.getItem("token"),
-    //   },
-    // })
-    //   .then((response) => response.json())
+    console.log('this is current user', currUser)
     API.getPost(id)
       .then((responseJson) => {
         console.log("=================postData", responseJson);
@@ -63,20 +62,8 @@ const SingleForum = (props) => {
 
   const postComment = (e) => {
     e.preventDefault();
-    console.log("this is the new post", newComment, currUser.username);
-    // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}/comments/new`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "x-access-token": localStorage.getItem("token"),
-    //   },
-    //   body: JSON.stringify({
-    //     body: newComment.body,
-    //     author: currUser.username,
-    //   }),
-    // })
-    //   .then((data) => data.json())
-    API.saveComment(id, newComment.body, currUser.username)
+    console.log("this is the new comment", newComment);
+    API.saveComment(id, newComment)
       .then((newData) => {
         comments.push(newData);
         console.log(newData);
@@ -103,8 +90,8 @@ const SingleForum = (props) => {
     e.preventDefault();
     console.log("you're typing", e.target.name, e.target.value);
     setNewComment({
-      ...newComment,
-      [e.target.name]: e.target.value,
+      body: e.target.value,
+      author: auth.userName
     });
   };
 
@@ -129,17 +116,17 @@ const SingleForum = (props) => {
   const editComment = (e) => {
     e.preventDefault();
     API.editComment(commId, editedComment)
-    .then(data=>{
-      console.log('data', data)
-    })
+      .then(data => {
+        console.log('data', data)
+      })
   }
 
   const deleteComment = (e) => {
     e.preventDefault();
     API.deleteComment(commId)
-    .then(data => {
-      console.log('data', data)
-    })
+      .then(data => {
+        console.log('data', data)
+      })
   };
 
   const goEdit = (e) => {
@@ -156,13 +143,6 @@ const SingleForum = (props) => {
       )
     ) {
       console.log(post.id);
-      // fetch(`https://rise-up-back-end.herokuapp.com/posts/${id}`, {
-      //   method: "DELETE",
-      //   headers: {
-      //     "x-access-token": localStorage.getItem("token"),
-      //   },
-      // })
-      //   .then((response) => response.json())
       API.deletePost(id)
         .then((responseJson) => {
           console.log("=================postData", responseJson);
@@ -184,15 +164,19 @@ const SingleForum = (props) => {
   return (
     <div className=" singleForum">
       <div className="singleFormBox">
-        <button
-          onClick={() => navigate(`/forums/${post.topic}`)}
-          className="SF-home-btn"
-        >
-          Return to Topic
-        </button>
-        <button onClick={() => navigate(`/forums`)} className="SF-home-btn">
-          Go to Forums
-        </button>
+        {/* buttons at top of page */}
+        <div className='SF-btn-box'>
+          <button
+            onClick={() => navigate(`/forums/${post.topic}`)}
+            className="SF-home-btn"
+          >
+            Return to Topic
+          </button>
+          <button onClick={() => navigate(`/forums`)} className="SF-home-btn">
+            Go to Forums
+          </button>
+        </div>
+        {/* single post displayed here */}
         <SinglePost
           title={post.title}
           author={post.author}
@@ -202,6 +186,7 @@ const SingleForum = (props) => {
           getSinglePost={"return"}
         />
 
+        {/* big comment box below single post */}
         <div className="SF-comment-box">
           {currUser.id === post.userId ? (
             <div className="singlePostCommentIcon">
@@ -210,9 +195,15 @@ const SingleForum = (props) => {
                   className="singlePostIcon"
                   icon={faPenToSquare}
                 />
+                <p>Edit Post</p>
               </div>
               <div onClick={deletePost} className="last-icon icon">
                 <FontAwesomeIcon className="singlePostIcon" icon={faTrashCan} />
+                <p>Delete Post</p>
+              </div>
+              <div onClick={handleWantComment} className="first-icon icon">
+                <FontAwesomeIcon className="singlePostIcon" icon={faComment} />
+                <p>Comment</p>
               </div>
             </div>
           ) : (
@@ -228,6 +219,8 @@ const SingleForum = (props) => {
             </div>
           )}
 
+
+          {/* comment input box pops up when comment button clicked */}
           {wantComment ? (
             <form className="SF-comment-btn-box">
               <textarea
@@ -244,6 +237,8 @@ const SingleForum = (props) => {
             </form>
           ) : null}
 
+
+          {/* comments are populated as boxes below comment input box */}
           {comments.length ? (
             comments.map((p) => {
               return (
@@ -254,58 +249,61 @@ const SingleForum = (props) => {
                       Created on: {p.createdAt} By: {p.author}
                     </li>
                   </div>
-                  <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
-                    <div
-                      onClick={handleWantComment}
-                      className="first-icon icon comment-icon"
-                      data-index={p.id}
-                    >
-                      <FontAwesomeIcon
-                        className="singlePostIcon"
-                        icon={faComment}
-                      />
-                    </div>
-                    <div
-                      className="last-icon icon comment-icon"
-                      data-index={p.id}
-                    >
-                      <FontAwesomeIcon
-                        className="singlePostIcon"
-                        icon={faHeart}
-                      />
-                    </div>
-                  </div>
-
-                  {currUser.id === p.userId ? (
+                  <div className='SF-comm-icon-box'>
                     <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
                       <div
-                        onClick={(e) => getComment(p.id, e)}
-                        className="first-icon icon"
+                        onClick={handleWantComment}
+                        className="first-icon icon comment-icon"
                         data-index={p.id}
                       >
                         <FontAwesomeIcon
                           className="singlePostIcon"
-                          icon={faPenToSquare}
+                          icon={faComment}
                         />
                       </div>
+                  {currUser.id !== p.userId ? (
                       <div
-                        onClick={deleteComment}
-                        className="last-icon icon"
+                        className="last-icon icon comment-icon"
                         data-index={p.id}
                       >
                         <FontAwesomeIcon
                           className="singlePostIcon"
-                          icon={faTrashCan}
+                          icon={faHeart}
                         />
                       </div>
+                      ) : null}
                     </div>
-                  ) : null}
+                    {/* buttons on each comment's box */}
+                  {currUser.id === p.userId ? (
+                      <div className="singlePostCommentIcon singlePostCommentBox comment-btn-box">
+                        <div
+                          onClick={(e) => getComment(p.id, e)}
+                          className="first-icon icon"
+                          data-index={p.id}
+                        >
+                          <FontAwesomeIcon
+                            className="singlePostIcon"
+                            icon={faPenToSquare}
+                          />
+                        </div>
+                        <div
+                          onClick={deleteComment}
+                          className="last-icon icon"
+                          data-index={p.id}
+                        >
+                          <FontAwesomeIcon
+                            className="singlePostIcon"
+                            icon={faTrashCan}
+                          />
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
-                // <li className='list-group-item' style={{width: "40vw"}} key={p.id}><h1>{p.title}</h1><p>{p.topic}</p><p>{p.body}</p><p>User: {p.userId}</p></li>
               );
             })
           ) : (
-            <h1 className="nothing-to-show">No comments to display!</h1>
+            <h1 className="nothing-to-show bob">No comments to display!</h1>
           )}
         </div>
       </div>

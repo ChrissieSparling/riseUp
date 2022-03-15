@@ -32,6 +32,7 @@ function Footer() {
                 </a>
               </p>
             </div>
+            
             <div className="socialFooter">
               <SocialIcon
                 className="socialFoot"
@@ -79,6 +80,7 @@ function Footer() {
                 Terms
               </a> */}
             </div>
+            
           </div>
         </div>
       </div>

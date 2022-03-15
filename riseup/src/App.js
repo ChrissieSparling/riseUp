@@ -91,11 +91,8 @@ function App() {
 
   return (
     <div className="app">
-      {/* <Header />
-      <Navbar id={userId} logMeOut={logMeOut}/> */}
 
       <Routes>
-        {/* <Route path='/'element={<Homepage/>}/> */}
         <Route path='/'element={<Layout/>}>
           
           {/* public routes */}
@@ -103,7 +100,6 @@ function App() {
           <Route path='/signup' element={<SignUp handlePostUser={handlePostUser} handleCollectUser={handleCollectUser}  userId={userId}/>}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/horoscope'element={<Horoscope userId={userId}/>}/>
-          {/* <Route path='/story'/> */}
           <Route path='/crisis'element={<Crisis userId={userId}/>}/>
           <Route path='/about'element={<About/>}/>
 
