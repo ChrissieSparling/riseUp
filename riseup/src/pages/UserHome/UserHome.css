@@ -4,12 +4,12 @@
 
 .random{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
 }
 .checklist {
-    width: 50%;
-    right:150px;
+    width: 28%;
+    /* right:150px; */    
 }
 
 .user-home {
@@ -55,6 +55,7 @@
     border: 2px solid orange;
     background-color: #ffd400;
     font-size: .75rem;
+    width: 75%;
 }
 
 .user-post-title {
