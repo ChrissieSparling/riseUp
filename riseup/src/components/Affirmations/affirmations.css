@@ -9,6 +9,12 @@
   place-content: center;
   background-repeat: no-repeat;
 }
+
+.teddy {
+  /* border: 3px solid black; */
+  width: 100%;
+  height: 30%;
+}
 .affJumbo {
   padding: 10px;
   border-radius: 20px;

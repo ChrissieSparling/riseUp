@@ -1,7 +1,6 @@
 import React from "react";
 import "../Affirmations/affirmations.css";
 import "../Affirmations/Affirmations";
-
 function Affirmations(props) {
   return (
     <div>
@@ -27,5 +26,4 @@ function Affirmations(props) {
     </div>
   );
 }
-
 export default Affirmations;
