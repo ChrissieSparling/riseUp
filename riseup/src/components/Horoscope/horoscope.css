@@ -4,10 +4,9 @@
 .grid {
   display: grid;
   grid-template-columns: 2fr 2fr;
-  grid-gap: 10px;
+  grid-gap:10px;
   background-image: url(../../assets/images/universe.webp);
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .sign {
@@ -25,7 +24,8 @@
     linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
   border-radius: 20px;
   width: 50%;
-  margin: 5% 25%;
+  margin: 5% 23%;
+ 
 }
 
 .horoTitle {
@@ -35,8 +35,9 @@
   text-shadow: 1px 1px 6px black;
 }
 
-@media (min-width:414px) {
+@media (max-width:414px) {
   .sign {
-    font-size: 14px;
+    font-size: 8px;
   }
 }
+
