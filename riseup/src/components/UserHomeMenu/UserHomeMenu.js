@@ -8,15 +8,15 @@ const UserHomeMenu = ({username, setGetMenu, setGetForum, setGetToDos, setGetAff
             setGetForum(true)
         } else if (e.target.id === 'todo'){
             setGetToDos(true)
-        } else if (e.target.id === 'affirmations'){
+        } else if (e.target.id === 'affirmation'){
             setGetAffirmation(true)
-        } else if (e.target.id === 'motivations'){
+        } else if (e.target.id === 'motivation'){
             setGetMotivation(true)
-        } else if (e.target.id === 'inspirations'){
+        } else if (e.target.id === 'inspiration'){
             setGetInspirations(true)
-        } else if (e.target.id === 'quotes'){
+        } else if (e.target.id === 'quote'){
             setGetQuotes(true)
-        } else if (e.target.id === 'philosophies'){
+        } else if (e.target.id === 'philosophy'){
             setGetPhilosophy(true)
         } else {setGetStory(true)
     }
@@ -28,11 +28,11 @@ const UserHomeMenu = ({username, setGetMenu, setGetForum, setGetToDos, setGetAff
                 <div className="user-home-btn-box">
                     <h2>What would you like to do?</h2>
                     <button className="btnUserHome" id="forum" onClick={setGetForum(true)}>Visit the Forums</button>
-                    <button className="btnUserHome" id="affirmations" onClick={setGetAffirmation(true)}>Affirmations</button>
-                    <button className="btnUserHome" id="motivations" onClick={setGetMotivation(true)}>Motivations</button>
-                    <button className="btnUserHome" id="philosophies" onClick={setGetPhilosophy(true)}>Philosophies</button>
-                    <button className="btnUserHome" id="quotes" onClick={setGetQuotes(true)}>Aspirations</button>
-                    <button className="btnUserHome" id="inspirations" onClick={setGetInspirations(true)}>Inspiration</button>
+                    <button className="btnUserHome" id="affirmation" onClick={setGetAffirmation(true)}>Affirmations</button>
+                    <button className="btnUserHome" id="motivation" onClick={setGetMotivation(true)}>Motivations</button>
+                    <button className="btnUserHome" id="philosophy" onClick={setGetPhilosophy(true)}>Philosophies</button>
+                    <button className="btnUserHome" id="quote" onClick={setGetQuotes(true)}>Aspirations</button>
+                    <button className="btnUserHome" id="inspiration" onClick={setGetInspirations(true)}>Inspiration</button>
                     <button className="btnUserHome" id="todo" onClick={setGetToDos(true)}>Visit ToDos</button>
                     <button className="btnUserHome" id="story" onClick={setGetStory(true)}>Read a Story</button>
                 </div>
