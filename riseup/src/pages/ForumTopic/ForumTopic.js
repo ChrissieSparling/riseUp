@@ -28,6 +28,7 @@ const ForumHome = (props) => {
             alert(`There was an error: ${err}`)
         })
       }, []);
+      console.log(posts)
 
     return (
         <div className="FT-big-box">
@@ -42,7 +43,14 @@ const ForumHome = (props) => {
             <div className="FT-post-box">
             {posts.length ? (posts.map(p=>{
                 return(
-                <SinglePost author={p.user.username} getSinglePost={()=>getSinglePost(p.id)} id={p.id} title={p.title} body={p.body} createdAt={p.createdAt}/>
+                <SinglePost 
+                author={p.user.username} 
+                getSinglePost={()=>getSinglePost(p.id)} 
+                id={p.id} 
+                title={p.title} 
+                body={p.body} 
+                createdAt={p.createdAt}
+                comments={p.Comment}/>
                 )
             })) : <h1 className="nothing-to-show">No posts to display!</h1>}
             </div>

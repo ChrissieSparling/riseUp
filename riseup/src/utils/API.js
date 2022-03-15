@@ -149,6 +149,8 @@ const API = {
       .then((data) => data.json())
     },
     editPost: (postId, editedPost)=>{
+      console.log('PUT postId',postId)
+      console.log('PUT editedPost',editedPost)
       return fetch(`${BASEURL}/posts/${postId}`,{
         method: 'PUT',
         headers: {
@@ -158,7 +160,8 @@ const API = {
         body: JSON.stringify({
             // topic: editedPost.topic,
             title: editedPost.title,
-            body: editedPost.body
+            body: editedPost.body,
+            likeCount: editedPost.likeCount
          }),
       })
       .then((data) => data.json())

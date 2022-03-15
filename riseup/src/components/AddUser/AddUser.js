@@ -9,7 +9,7 @@ const AddUser = () => {
     const { auth, setAuth } = useAuth();
     const navigate = useNavigate();
     // const [username, setUsername] = useState("");
-
+    const [userID, setUserID] = useState('')
     const [userToAdd, setUserToAdd] = useState({
         firstName: '',
         lastName: '',
@@ -58,104 +58,17 @@ const AddUser = () => {
         })
     }
 
+  
+
 
     return (
         <div className="admin-user">
-            {/* <form className='admin-form2' onSubmit={handlePostNewUser}> */}
-                {/* <h1 className="admin-form-title">Add User</h1>
-
-                <input
-                    type="text"
-                    placeholder="first name"
-                    className="admin-inpt"
-                    required
-                    name='firstName'
-                    onChange={handleCollectUser}
-                />
-
-                <input
-                    type="text"
-                    placeholder="
-                last name"
-                    className="admin-inpt"
-                    required
-                    name='lastName'
-                    onChange={handleCollectUser}
-                />
-
-                <input
-                    type="date"
-                    placeholder="birthday"
-                    className="admin-inpt"
-                    required
-                    name='birthday'
-                    onChange={handleCollectUser}
-                />
-
-                <input
-                    type="text"
-                    placeholder="zip code"
-                    className="admin-inpt"
-                    required
-                    name='zipCode'
-                    onChange={handleCollectUser}
-                />
-
-                <input
-                    type="text"
-                    placeholder="email"
-                    className="admin-inpt"
-                    required
-                    name='email'
-                    onChange={handleCollectUser}
-                />
-
-                <input
-                    type="text"
-                    placeholder="user name"
-                    className="admin-inpt"
-                    required
-                    name='username'
-                    onChange={handleCollectUser}
-                />
-
-                <input
-                    type="text"
-                    placeholder="password"
-                    className="admin-inpt"
-                    required
-                    name='password'
-                    onChange={handleCollectUser}
-                /> */}
-
-                {/* <input
-                    type="text"
-                    className="admin-inpt"
-                    placeholder="role"
-                    required
-                    name='role'
-                    onChange={handleCollectUser}
-                /> */}
-
-                {/* <select 
-                required
-                name='role'
-                onChange={handleCollectUser}
-                className="admin-inpt">
-                    <option>Choose Role</option>
-                    <option>Admin</option>
-                    <option>Moderator</option>
-                    <option>User</option>
-                </select>
-
-                <label>
-                    <input type="checkbox" className="checkbox"></input>
-                    Has user agreed to terms and been provided a copy?
-                </label>
-
-                <button className="btnLogSign">Add User</button>
-
-            </form> */}
+            <form className="which-user">
+                <h2>Find the User:</h2>
+                <label for='user-id'>User ID: </label>
+                <input name='user-id' type='number' onChange={e=>setUserID(e.target.value)}></input>
+                <button>Find User</button>    
+            </form>
             <form className='admin-form2'>
                 <h1 className="admin-form-title">Update User</h1>
 

@@ -8,7 +8,7 @@ const ModHome = () => {
 
     return(
         <div>
-            <button className="btnUseHome" onClick={() => navigate("/forums")}>See All Posts</button>
+            {/* <button className="btnUseHome" onClick={() => navigate("/forums")}>See All Posts</button> */}
         </div>
     );
 }
