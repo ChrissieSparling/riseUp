@@ -41,6 +41,15 @@ const EditPost = props => {
     const editPost = e => {
       e.preventDefault();
       console.log('this is the new post', editedPost)
+      if(editedPost.title===''){
+        alert('You need to give your post a title!')
+        return
+      }
+      if(editedPost.body===''){
+        alert('You need to add a message to your post!')
+        return
+      }
+      if(editedPost.title!=='' && editedPost.body!==''){
       API.editPost(id, editedPost)
       .then((newData) => {
         console.log(newData)
@@ -49,6 +58,7 @@ const EditPost = props => {
         console.log('There was a problem: ', err)
         alert({message: 'there was an error: ', err})
       })
+    }
     }
 
     return (

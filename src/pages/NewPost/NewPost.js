@@ -27,20 +27,16 @@ const Write = () => {
 
   const savePost = e => {
     e.preventDefault();
+    if(newPost.title===''){
+      alert('You need to give your post a title!')
+      return
+    }
+    if(newPost.body===''){
+      alert('You need to add a message to your post!')
+      return
+    }
+    if(newPost.title!=='' && newPost.body!==''){
     console.log('this is the new post', newPost)
-    // fetch('https://rise-up-back-end.herokuapp.com/posts/new', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'x-access-token': localStorage.getItem('token'),
-    //   },
-    //   body: JSON.stringify({
-    //     topic: newPost.topic,
-    //     title: newPost.title,
-    //     body: newPost.body
-    //   }),
-    // })
-    //   .then((data) => data.json())
     API.savePost(newPost)
       .then((newData) => {
         console.log(newData)
@@ -49,6 +45,7 @@ const Write = () => {
         console.log('There was a problem: ', err)
         alert({ message: 'there was an error: ', err })
       })
+    }
   }
 
   return (

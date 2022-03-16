@@ -109,3 +109,14 @@ a {
 .checkboxLinks {
   color: rgb(103, 103, 228);
 }
+
+.form-alert-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-alert {
+  font-size: 0.8rem;
+  color: red;
+  font-weight: bold;
+}

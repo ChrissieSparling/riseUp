@@ -32,7 +32,7 @@ const SingleForum = (props) => {
     author: ''
   });
   // const [commentToEdit, setCommentToEdit] = useState({});
-  const [editedComment, setEditedComment] = useState({});
+  const [editedComment, setEditedComment] = useState('');
   const [commentEditBox, setCommentEditBox] = useState({});
   const [wantEditComment, setWantEditComment] = useState(false);
   const [seeEditComment, setSeeEditComment] = useState('none');
@@ -77,6 +77,11 @@ const SingleForum = (props) => {
   const postComment = (e) => {
     e.preventDefault();
     console.log("this is the new comment", newComment);
+    if(newComment.body===''){
+      alert('Please add a message to your comment.')
+      return
+    }
+    if(newComment.body!==''){
     API.saveComment(id, newComment)
       .then((newData) => {
         comments.unshift(newData);
@@ -89,6 +94,7 @@ const SingleForum = (props) => {
         console.log("There was a problem: ", err);
         alert({ message: "there was an error: ", err });
       });
+    }
   };
 
   const handleWantComment = (e) => {
@@ -113,6 +119,11 @@ const SingleForum = (props) => {
   const saveCommentEdit = (e, commId) => {
     e.preventDefault();
     console.log('editedComment', editedComment)
+    if(editedComment===''){
+      alert('Please make your edits and save.\nIf you want to delete the comment, \nuse the delete button')
+      return
+    }
+    if(editedComment!==''){
     API.editComment(commId, editedComment)
       .then(data => {
         console.log(commId)
@@ -129,9 +140,8 @@ const SingleForum = (props) => {
         editBoxes.forEach((box) => {
           box.setAttribute('style', 'display: none;')
         })
-
-
       })
+    }
   }
 
   const handleEditedComment = e => {
