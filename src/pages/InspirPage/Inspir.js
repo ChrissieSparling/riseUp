@@ -6,7 +6,7 @@ import UserHome from "../UserHome/UserHome";
 // import ModHome from "../ModHome/ModHome";
 // import AdminHome from "../AdminHome/AdminOne";
 // import TodoList from "../../components/Todo/TodoList";
-import "./Inspir.css"
+import "./Inspir.css";
 import happyImg from "../../assets/images/happyFlower.png";
 
 const InspirPage = () => {
@@ -17,8 +17,8 @@ const InspirPage = () => {
   const [userInspAuth, setUserInspAuth] = useState("");
   const { auth } = useAuth();
   const navigate = useNavigate();
-  
-//   const roleName = role.toUpperCase();
+
+  //   const roleName = role.toUpperCase();
 
   useEffect(() => {
     setRole(auth.role);
@@ -57,28 +57,18 @@ const InspirPage = () => {
   console.log("this is the user role", auth.role);
   return (
     <>
-      <div className="user-home">
-        <div className="random">
+      <div className="user-inspir">
+        <div className="postInspir">
+          <div className="postInfoInspir">
+            <div className="postCatsInspir">
+              <img className="flowerImgInspir" src={happyImg} />
 
-
-        <div className="postHome cursorHome">
-          <div className="postInfoHome">
-            <div className="postCatsHome">
-              <img className="flowerImg" src={happyImg} />
-             
-              <hr />
-
-              <p className="postSubHome">
-              {userInsp}
-              </p>
-              <p>
-                  {userInspAuth}
-              </p>
+              <p className="postSubInspir">{userInsp}</p>
+              <p>{userInspAuth}</p>
             </div>
           </div>
-        </div>   
-    </div>
-  </div>
+        </div>
+      </div>
     </>
   );
 };

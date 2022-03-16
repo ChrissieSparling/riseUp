@@ -3,11 +3,11 @@ import "."
 import "../src/App.css"
 import {React, useState} from 'react';
 import {BrowserRouter as Router, Routes, Route, useNavigate} from "react-router-dom";
-import API from "./utils/API"
+
 import Layout from './pages/Layout/Layout'
 import AddUser from "./components/AddUser/AddUser";
 import RequireAuth from './components/RequireAuth/RequireAuth'
-import useAuth from './utils/hooks/useAuth'
+
 
 import Unauthorized from './pages/Unauthorized/Unauthorized'
 import Profile from './pages/Profile/Profile'
@@ -38,58 +38,93 @@ import Asp from "./pages/AspirationPage/Asp";
 
 
 function App() {
-  const navigate = useNavigate();
-  const {auth, setAuth} = useAuth();
+  // const navigate = useNavigate();
+  // const {auth, setAuth} = useAuth();
  
-  const [username, setUsername] = useState("");
-  
-  const [newUser, setNewUser] = useState({
-    firstName: '',
-    lastName: '',
-    username: '',
-    password: '',
-    role: 'paidUser',
-    email: '',
-    birthday: '',
-    zipCode: '',
-  });
-  const [userId, setUserId] = useState(0);
-  const [token, setToken] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [usernameShow, setUsernameShow] = useState('none');
+  // const [passwordShow, setPasswordShow] = useState('none');
+  // const [firstNameShow, setFirstNameShow] = useState('none');
+  // const [lastNameShow, setLastNameShow] = useState('none');
+  // const [emailShow, setEmailShow] = useState('none');
+  // const [birthdayShow, setBirthdayShow] = useState('none');
+  // const [zipCodeShow, setZipCodeShow] = useState('none');
+  // const [newUser, setNewUser] = useState({
+  //   firstName: '',
+  //   lastName: '',
+  //   username: '',
+  //   password: '',
+  //   role: 'paidUser',
+  //   email: '',
+  //   birthday: '',
+  //   zipCode: '',
+  // });
+  // const [userId, setUserId] = useState(0);
+  // const [token, setToken] = useState("");
 
 
 
-  const handlePostUser = (e) => {
-    console.log(newUser)
-    e.preventDefault();
-    API.signUp(newUser)
-      .then((newData) => {
-        if(newData.id){
-          console.log(newData)
-          setUserId(newData.id);
-          setUsername(newData.username);
-          setToken(newData.accessToken);
-          localStorage.setItem("token", newData.accessToken);
-          navigate(`/login`)
-        } else {
-          alert('Your request was not successful. \nPlease check the form and try again.');
-          console.log('front end post req prob:', newData)
-          return
-        }
-      })
-      .catch(err=>{
-        alert('Sorry! Our bad, there was a problem.');
-        console.log('there was an error', err)
-        return
-      })
-  };
+  // const handlePostUser = (e) => {
+  //   console.log(newUser)
+  //   e.preventDefault();
+  //   if(!newUser.username){
+  //     setUsernameShow('inline')
+  //     return
+  //   }
+  //   if (!newUser.firstName) {
+  //     setFirstNameShow('inline')
+  //     return
+  //   }
+  //   if (!newUser.lastName) {
+  //     setLastNameShow('inline')
+  //     return
+  //   }
+  //   if (!newUser.email) {
+  //     setEmailShow('inline')
+  //     return
+  //   }
+  //   if (!newUser.birthday) {
+  //     setBirthdayShow('inline')
+  //     return
+  //   }
+  //   if (!newUser.zipCode) {
+  //     setZipCodeShow('inline')
+  //     return
+  //   }
+  //   if (!newUser.password) {
+  //     setPasswordShow('inline')
+  //     return
+  //   }
+  //   if (newUser.username!=='' && newUser.password!=='' && newUser.firstName!=='' && newUser.lastName!=='' && newUser.email!=='' && newUser.birthday!=='' && newUser.zipCode!=='') {
+  //   API.signUp(newUser)
+  //     .then((newData) => {
+  //       if(newData.id){
+  //         console.log(newData)
+  //         setUserId(newData.id);
+  //         setUsername(newData.username);
+  //         setToken(newData.accessToken);
+  //         localStorage.setItem("token", newData.accessToken);
+  //         navigate(`/login`)
+  //       } else {
+  //         alert('Your request was not successful. \nPlease check the form and try again.');
+  //         console.log('front end post req prob:', newData)
+  //         return
+  //       }
+  //     })
+  //     .catch(err=>{
+  //       alert('Sorry! Our bad, there was a problem.');
+  //       console.log('there was an error', err)
+  //       return
+  //     })
+  // };
 
-  const handleCollectUser = e=>{
-    console.log(e.target.name,e.target.value)
-    setNewUser({
-      ...newUser,
-      [e.target.name]:e.target.value
-    })
-  }
+  // const handleCollectUser = e=>{
+  //   console.log(e.target.name,e.target.value)
+  //   setNewUser({
+  //     ...newUser,
+  //     [e.target.name]:e.target.value
+  //   })
+  // }
 
   return (
     <div className="app">
@@ -99,10 +134,10 @@ function App() {
           
           {/* public routes */}
           <Route path='/'element={<Homepage/>}/>
-          <Route path='/signup' element={<SignUp handlePostUser={handlePostUser} handleCollectUser={handleCollectUser}  userId={userId}/>}/>
+          <Route path='/signup' element={<SignUp />}/>
           <Route path='/login' element={<Login />}/>
-          <Route path='/horoscope'element={<Horoscope userId={userId}/>}/>
-          <Route path='/crisis'element={<Crisis userId={userId}/>}/>
+          <Route path='/horoscope'element={<Horoscope />}/>
+          <Route path='/crisis'element={<Crisis />}/>
           <Route path='/about'element={<About/>}/>
           <Route path='/terms'element={<TermsCond/>}/>
           <Route path='/privacy'element={<PrivacyPolicy/>}/>
@@ -116,12 +151,12 @@ function App() {
           {/* protected routes */}
           <Route element={<RequireAuth allowedRoles={['paidUser', 'mod', 'admin']}/>}>
             <Route path={`/profile`} element={<Profile />}/>
-            <Route path='/forums'element={<ForumTopicHome userId={userId} />}/>
-            <Route path='/forums/:topic'element={<ForumTopic userId={userId}/>}/>
-            <Route path='/forums/post/:id'element={<SingleForum username={username} userId={userId}/>}/>
-            <Route path='/forums/edit/post/:id'element={<EditPost userId={userId}/>}/>
+            <Route path='/forums'element={<ForumTopicHome />}/>
+            <Route path='/forums/:topic'element={<ForumTopic />}/>
+            <Route path='/forums/post/:id'element={<SingleForum/>}/>
+            <Route path='/forums/edit/post/:id'element={<EditPost />}/>
             
-            <Route path='/forums/post/:topic/new'element={<NewPost userId={userId}/>}/>
+            <Route path='/forums/post/:topic/new'element={<NewPost />}/>
           </Route>
 
           <Route element={<RequireAuth allowedRoles={['mod']}/>}>

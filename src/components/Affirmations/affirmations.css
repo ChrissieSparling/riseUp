@@ -25,7 +25,10 @@
 }
 .tinaTitle {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 48px;
+  width: 200%;
+  margin-left: -50%;
+   /* border: 5px solid #ffd400; */
 }
 .affWords1 {
   text-align: center;
@@ -36,4 +39,10 @@
 
 .affirmations:hover{
   filter: brightness(60%); 
+}
+
+@media (max-width:414px) {
+  .tinaTitle {
+    font-size: 25px;
+  }
 }
