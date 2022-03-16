@@ -6,7 +6,7 @@ import UserHome from "../UserHome/UserHome";
 // import ModHome from "../ModHome/ModHome";
 // import AdminHome from "../AdminHome/AdminOne";
 // import TodoList from "../../components/Todo/TodoList";
-import "./Phil.css"
+import "./Phil.css";
 import happyImg from "../../assets/images/happyFlower.png";
 
 const Phil = () => {
@@ -17,8 +17,8 @@ const Phil = () => {
   const [userPhilAuth, setUserPhilAuth] = useState("");
   const { auth } = useAuth();
   const navigate = useNavigate();
-  
-//   const roleName = role.toUpperCase();
+
+  //   const roleName = role.toUpperCase();
 
   useEffect(() => {
     setRole(auth.role);
@@ -57,30 +57,18 @@ const Phil = () => {
   console.log("this is the user role", auth.role);
   return (
     <>
-      <div className="user-home">
-        <div className="random">
+      <div className="user-phil">
+        <div className="postPhil">
+          <div className="postInfoPhil">
+            <div className="postCatsPhil">
+              <img className="flowerImgPhil" src={happyImg} />
 
-
-        <div className="postHome cursorHome">
-          <div className="postInfoHome">
-            <div className="postCatsHome">
-              <img className="flowerImg" src={happyImg} />
-             
-              <hr />
-
-              <p className="postSubHome">
-              {userPhil}
-              </p>
-              <p>
-                  {userPhilAuth}
-              </p>
+              <p className="postSubPhil">{userPhil}</p>
+              <p>{userPhilAuth}</p>
             </div>
           </div>
         </div>
-        
-        
-    </div>
-  </div>
+      </div>
     </>
   );
 };
