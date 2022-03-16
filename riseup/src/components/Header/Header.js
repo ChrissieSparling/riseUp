@@ -1,15 +1,17 @@
-import React from 'react'
-import "../Header/header.css"
-import logoImg  from '../../assets/images/riseup.png'
+import React from "react";
+import "../Header/header.css";
+import logoImg from "../../assets/images/riseup.png";
 
 const Header = () => {
   return (
     <div>
       <header className="header">
-      <img className="photoHeader" src={logoImg} alt="rise up" />
-    </header>
+        <a href="/">
+          <img className="photoHeader" src={logoImg} alt="rise up" />
+        </a>
+      </header>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

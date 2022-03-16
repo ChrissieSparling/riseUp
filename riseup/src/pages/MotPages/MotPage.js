@@ -57,18 +57,17 @@ const MotPage = () => {
   console.log("this is the user role", auth.role);
   return (
     <>
-      <div className="user-home">
-        <div className="random">
+      <div className="user-mot">
+        
 
 
-        <div className="postHome cursorHome">
-          <div className="postInfoHome">
-            <div className="postCatsHome">
-              <img className="flowerImg" src={happyImg} />
-             
-              <hr />
+        <div className="postMot cursorMot">
+          <div className="postInfoMot">
+            <div className="postCatsMot">
+              <img className="flowerImgMot" src={happyImg} />
+            
 
-              <p className="postSubHome">
+              <p className="postSubMot">
               {userMot}
               </p>
               <p>
@@ -76,7 +75,7 @@ const MotPage = () => {
               </p>
             </div>
           </div>
-        </div>
+       
         
     </div>
   </div>

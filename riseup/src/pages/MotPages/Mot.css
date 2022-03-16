@@ -1,40 +1,27 @@
-.postsHome {
-  flex-wrap: wrap;
+.postsMot {
+  /* flex-wrap: wrap; */
   display: flex;
   margin: 20px;
-  background-color: #ffd400;
+  height: 100%;
+  /* background-color: #ffd400; */
   
 }
-.homeAffLinks{
-  color:rgb(86, 86, 179);
-  font-size: 3rem;
-}
-.cursorHome:hover{
-    cursor: pointer;
-    box-shadow: 0 0 5px 5px rgb(248, 153, 28);
-    
+
+.user-mot {
+  border: 3px solid #ffd400;
 }
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.flowerImg {
+.flowerImgMot {
   height:200px;
   width: 200px;
   margin-left: 33%;
-  animation: rotation 6s 1 linear;
+  /* animation: rotation 6s 1 linear; */
   display: block;  
   margin-left: auto;  
   margin-right: auto;  
 
 }
-.postHome {
+/* .postMot {
   display: flex;
   background-color: rgb(240, 238, 195);
   height: 50%;
@@ -42,15 +29,16 @@
   margin: 2% 1% 2% 6%;
   border-radius: 20px;
   border:3px solid rgb(248, 153, 28)
-}
-.postInfoHome {
+  
+} */
+.postInfoMot {
   display: flex;
   flex-direction: column;
   text-align: center;
   
 }
 
-.postTitleHome {
+.postTitleMot {
   font-size: 3rem;
   font-weight: 700;
   margin-right: 65px;
@@ -58,13 +46,13 @@
   text-align: center; 
 }
 
-.postSubHome {
+.postSubMot {
   font-size: 18px;
   padding: 10px;
  
 }
 
-@media (min-width: 913px){
+/* @media (min-width: 913px){
  .MuiAccordion-root {
   display: none}
 }
@@ -73,4 +61,4 @@
   .postsHome {
     display: none;
   }
-}
+} */
