@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# riseUp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application is a forum site that allows users to seek support and advice from one another when they are faced with trials in life. 
+    
+For on-the-spot inspiration, the user can access random affirmations and quotes, or visit the forums to share their stories or offer advice to others. The forums will be moderated to ensure that content posted is of a supportive nature and not designed with the intent to do harm to others. Additional resources on the site include direct links to national crisis hotlines and resources to find mental health professionals or support groups in your local area. There are also a couple of fun features like our horoscope page.
 
-## Available Scripts
+## Table of Contents
+* [Tech Used](#tech-used)
+* [Instructions for Use](#instructions-for-use)
+* [Screenshots and Links](#screenshots-and-links)
+* [Credits](#credits)
+* [License](#license)
+    
+## Tech Used
+1. This program uses the following technologies:<ul><li>Node.js / Express (server and routing)</li><li>MySQL / Sequelize (database and ORM)</li><li>React.js</li><li>react-router-dom (frontend routing)</li><li>Material UI (UI framework)</li><li>AccessControl (role permission and resource control)</li></ul>
 
-In the project directory, you can run:
 
-### `npm start`
+## Instructions for Use
+<ul><li>Please contact the git administrator to discuss participating in the development of the application.</li></ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshots and Links
+The following are screenshots from the deployed app, a link to the backend repository, and a link to the Heroku deployment of the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+###Screenshots:
+<img src="./assets/images/RG_step-6.png" alt="screenshot of image info entry" title="screenshot 2" width="200px">
+<img src="./assets/images/RG_step-6.png" alt="screenshot of image info entry" title="screenshot 2" width="200px">
+<img src="./assets/images/RG_step-6.png" alt="screenshot of image info entry" title="screenshot 2" width="200px">
+<img src="./assets/images/RG_step-6.png" alt="screenshot of image info entry" title="screenshot 2" width="200px">
 
-### `npm test`
+###Links:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Heroku Deployment:
+https://weriseuptoday.herokuapp.com/
 
-### `npm run build`
+Backend Repository:
+https://github.com/ChrissieSparling/riseUp-back-end
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Credits 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+- [@Chrissie Sparling](ChrissieSparling): 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  - Chrissie was the one that conceptualized the project and authored / integrated the quote APIs that were used into both the frontend and the backend database and routes. She also acted as GitHub Admin for the project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [@Heather Loop](hloop132): 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  - Heather was the main architect and designer of the React UI and developed the horoscope page.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [@Denise Arevalo](denisearevalo): 
 
-## Learn More
+  - Denise was our project manager, designed the personal wellness checklist, and pitched in in both the front- and backend wherever was needed. She was great at making sure we were always taking care of ourselves.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [@Nile Clark](BUButtercup): 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - Nile set up the basic database connection for the forums, the server, routing for the forums in the backend, and added logic and functionality to the front end components.
+- [UW Full Stack Web Dev Bootcamp](https://bootcamp.uw.edu/)
 
-### Code Splitting
+  -Thank you for all the knowledge and support throughout our journey!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+The files in this repository are covered by the [MIT License](https://choosealicense.com/licenses/mit/).
