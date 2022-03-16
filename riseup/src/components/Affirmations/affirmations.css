@@ -11,21 +11,21 @@
 }
 
 .teddy {
-  /* border: 3px solid black; */
   width: 100%;
   height: 30%;
 }
 .affJumbo {
   padding: 10px;
   border-radius: 20px;
-  /* border: 5px solid #ffd400; */
   width: 75%;
-  margin: 5% 13%;
+  margin: 5% 12%;
   background-color: linear-gradient(to top, #fab1b6, #ffa28e, rgb(250, 231, 157),rgb(166, 210, 240),rgb(210, 210, 255));
 }
 .tinaTitle {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 48px;
+  width: 200%;
+  margin-left: -50%;
 }
 .affWords1 {
   text-align: center;
@@ -36,4 +36,10 @@
 
 .affirmations:hover{
   filter: brightness(60%); 
+}
+
+@media (max-width:414px) {
+  .tinaTitle {
+    font-size: 25px;
+  }
 }
