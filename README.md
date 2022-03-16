@@ -22,10 +22,12 @@ For on-the-spot inspiration, the user can access random affirmations and quotes,
 The following are screenshots from the deployed app, a link to the backend repository, and a link to the Heroku deployment of the application.
 
 ###Screenshots:
-<img src="./assets/images/RG_step-6.png" alt="screenshot of image info entry" title="screenshot 2" width="200px">
-<img src="./assets/images/RG_step-6.png" alt="screenshot of image info entry" title="screenshot 2" width="200px">
-<img src="./assets/images/RG_step-6.png" alt="screenshot of image info entry" title="screenshot 2" width="200px">
-<img src="./assets/images/RG_step-6.png" alt="screenshot of image info entry" title="screenshot 2" width="200px">
+<img src="https://drive.google.com/file/d/1xCjtCqSnZtgvTPSP2BYjGu0ggc8rPJc8/view?usp=sharing" alt="riseUp homepage" title="Landing Page" width="700px">
+<img src="https://drive.google.com/file/d/1oF77tEx5oHsDUkxdAu1ethZ4P_dpQv6u/view?usp=sharing" alt="user homepage" title="User Homepage" width="700px">
+<img src="https://drive.google.com/file/d/1mnbdTwDHhaKJm87Zddjx6dQERtC80av6/view?usp=sharing" alt="forum homepage" title="Forum Homepage" width="700px">
+<img src="https://drive.google.com/file/d/1EEVbWrMIWQMkot_1FeA8MDbtlUzm6ojS/view?usp=sharing" alt="forum topic page" title="https://drive.google.com/file/d/1EEVbWrMIWQMkot_1FeA8MDbtlUzm6ojS/view?usp=sharing" width="700px">
+<img src="https://drive.google.com/file/d/1mRDmAiZeeYOyBMrZ4lLwdzXALRDL9M9O/view?usp=sharing" alt="individual post" title="individual post" width="700px">
+<img src="https://drive.google.com/file/d/1euPJQ1a0KP264Sqd-bv0g2nuW2rJxDHd/view?usp=sharing" alt="horoscope page" title="horoscope page" width="700px">
 
 ###Links:
 
