@@ -13,8 +13,7 @@
 .photoHeader {
   height: 400px;
   width: 650px;
-  margin-right: 10%;
-  margin-left: 15%;
+ align-items: center;
 }
  
 @media (max-width:510px ){
